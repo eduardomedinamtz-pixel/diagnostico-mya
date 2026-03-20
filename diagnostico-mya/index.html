@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Diagnóstico Laboral — Medina & Alatorre Abogados</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --dark:    #051226;
+  --blue:    #004AC7;
+  --gray:    #667587;
+  --off:     #F0F0F0;
+  --light:   #f4f7fb;
+  --border:  #dce3ed;
+  --accent:  #e8f0fd;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Raleway', system-ui, sans-serif;
+  background: var(--light);
+  color: #111;
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+.header {
+  background: linear-gradient(120deg, #051226 0%, #0a2353 55%, #004AC7 100%);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, #004AC7, #051226);
+}
+.header-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 24px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+.header-left h1 {
+  font-family: 'DM Serif Text', Georgia, serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--off);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.header-left h1 em { color: var(--blue); font-style: italic; }
+.header-left .sub {
+  font-size: 12px;
+  color: rgba(240,240,240,0.7);
+  line-height: 1.5;
+  max-width: 420px;
+}
+.header-right {
+  text-align: right;
+  flex-shrink: 0;
+}
+.brand-name {
+  font-family: 'DM Serif Text', Georgia, serif;
+  font-size: 15px;
+  color: var(--off);
+  letter-spacing: .02em;
+}
+.brand-name em { color: rgba(240,240,240,0.6); font-style: italic; }
+.brand-tag {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(240,240,240,0.5);
+  margin-top: 3px;
+}
+
+/* ── PROGRESO ── */
+.progress-bar {
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  position: relative;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--blue);
+  transition: width .4s ease;
+  width: 0%;
+}
+
+/* ── LAYOUT ── */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+}
+
+/* ── SECCIONES ── */
+.seccion {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px 26px;
+  margin-bottom: 18px;
+  box-shadow: 0 1px 4px rgba(5,18,38,.05);
+  animation: fadeIn .3s ease;
+}
+@keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+.sec-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--blue);
+}
+.sec-num {
+  background: var(--dark);
+  color: #e2c97e;
+  font-weight: 700;
+  font-size: 11px;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.sec-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--dark);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+/* ── CAMPOS ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.grid-1 { grid-template-columns: 1fr; }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+
+.campo { display: flex; flex-direction: column; gap: 5px; }
+.campo label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #4b5563;
+  letter-spacing: .02em;
+}
+.campo label .req { color: var(--blue); margin-left: 2px; }
+.campo input,
+.campo select,
+.campo textarea {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-family: 'Raleway', sans-serif;
+  color: #111;
+  background: #fafbfc;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+  width: 100%;
+}
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(0,74,199,.08);
+  background: white;
+}
+.campo textarea { resize: vertical; min-height: 90px; line-height: 1.5; }
+.campo select { cursor: pointer; }
+.campo .hint { font-size: 10px; color: #9ca3af; line-height: 1.4; }
+
+/* ── RADIO / CHECKBOX GROUPS ── */
+.opciones { display: flex; flex-direction: column; gap: 8px; }
+.opciones.horizontal { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+.opcion {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
+  background: #fafbfc;
+}
+.opcion:hover { border-color: var(--blue); background: var(--accent); }
+.opcion input { margin-top: 2px; accent-color: var(--blue); flex-shrink: 0; width: 15px; height: 15px; cursor: pointer; }
+.opcion .opt-text { font-size: 12px; color: #374151; line-height: 1.4; }
+.opcion .opt-text strong { display: block; font-size: 13px; color: #111; margin-bottom: 1px; }
+.opcion.selected { border-color: var(--blue); background: var(--accent); }
+
+/* ── ESCALA ── */
+.escala-wrap { display: flex; flex-direction: column; gap: 12px; }
+.escala-item { display: flex; flex-direction: column; gap: 6px; }
+.escala-label { font-size: 12px; font-weight: 600; color: #374151; }
+.escala-btns { display: flex; gap: 6px; }
+.escala-btn {
+  flex: 1;
+  padding: 8px 4px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: #fafbfc;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'Raleway', sans-serif;
+  cursor: pointer;
+  text-align: center;
+  transition: all .15s;
+  color: var(--gray);
+}
+.escala-btn:hover { border-color: var(--blue); color: var(--blue); }
+.escala-btn.sel { background: var(--blue); border-color: var(--blue); color: white; }
+.escala-nums { display: flex; justify-content: space-between; font-size: 9px; color: #9ca3af; padding: 0 2px; }
+
+/* ── BOTÓN ENVIAR ── */
+.btn-submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  cursor: pointer;
+  transition: background .15s, transform .1s;
+  margin-top: 8px;
+}
+.btn-submit:hover { background: #0040b0; }
+.btn-submit:active { transform: scale(.99); }
+
+/* ── CONFIRMACIÓN ── */
+#confirmacion {
+  display: none;
+  text-align: center;
+  padding: 60px 24px;
+}
+#confirmacion .check-icon {
+  width: 70px; height: 70px;
+  background: linear-gradient(135deg, var(--dark), var(--blue));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-size: 32px;
+}
+#confirmacion h2 {
+  font-family: 'DM Serif Text', Georgia, serif;
+  font-size: 24px;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+#confirmacion p {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.6;
+  max-width: 400px;
+  margin: 0 auto 6px;
+}
+
+/* ── NOTA PIE ── */
+.nota-pie {
+  text-align: center;
+  font-size: 10px;
+  color: #9ca3af;
+  line-height: 1.6;
+  margin-top: 28px;
+}
+
+@media (max-width: 600px) {
+  .header-inner { flex-direction: column; gap: 12px; }
+  .header-right { text-align: left; }
+  .escala-btns { gap: 3px; }
+  .escala-btn { font-size: 10px; padding: 7px 2px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-inner">
+    <div class="header-left">
+      <h1>Diagnóstico <em>/</em> Asesoría Preventiva<br/>en Materia Laboral</h1>
+      <p class="sub">Este cuestionario nos permite identificar los principales riesgos de cumplimiento en su empresa y diseñar una estrategia de protección jurídica preventiva.</p>
+    </div>
+    <div class="header-right">
+      <div class="brand-name">Medina <em>&</em> Alatorre</div>
+      <div class="brand-tag">Abogados</div>
+    </div>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="progreso"></div></div>
+</div>
+
+<!-- FORMULARIO PRINCIPAL -->
+<div class="container">
+<form name="diagnostico-laboral" method="POST" id="formDiag" onsubmit="return enviarFormulario(event)">
+  <input type="hidden" name="form-name" value="diagnostico-laboral"/>
+  <input type="hidden" name="bot-field" style="display:none"/>
+
+  <!-- 1. DATOS DE LA EMPRESA -->
+  <div class="seccion">
+    <div class="sec-title">
+      <div class="sec-num">1</div>
+      <div class="sec-label">Datos de la Empresa</div>
+    </div>
+    <div class="grid" style="gap:14px">
+      <div class="campo">
+        <label>Nombre o razón social <span class="req">*</span></label>
+        <input type="text" name="empresa" placeholder="Ej. Empresa S.A. de C.V." required/>
+      </div>
+      <div class="campo">
+        <label>Nombre del responsable <span class="req">*</span></label>
+        <input type="text" name="responsable" placeholder="Nombre completo" required/>
+      </div>
+      <div class="campo">
+        <label>Cargo / Puesto</label>
+        <input type="text" name="cargo" placeholder="Ej. Director General, RRHH"/>
+      </div>
+      <div class="campo">
+        <label>Correo electrónico <span class="req">*</span></label>
+        <input type="email" name="correo" placeholder="correo@empresa.com" required/>
+      </div>
+      <div class="campo">
+        <label>Teléfono / WhatsApp <span class="req">*</span></label>
+        <input type="tel" name="telefono" placeholder="33 1234 5678" required/>
+      </div>
+      <div class="campo">
+        <label>Ciudad / Estado</label>
+        <input type="text" name="ciudad" placeholder="Ej. Guadalajara, Jalisco"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. PERFIL DE LA EMPRESA -->
+  <div class="seccion">
+    <div class="sec-title">
+      <div class="sec-num">2</div>
+      <div class="sec-label">Perfil de la Empresa</div>
+    </div>
+    <div class="grid" style="gap:14px">
+      <div class="campo">
+        <label>Giro o actividad principal <span class="req">*</span></label>
+        <select name="giro" required>
+          <option value="">Selecciona...</option>
+          <option>Manufactura / Industria</option>
+          <option>Comercio / Retail</option>
+          <option>Servicios profesionales</option>
+          <option>Tecnología</option>
+          <option>Construcción</option>
+          <option>Salud / Farmacéutico</option>
+          <option>Alimentos y bebidas</option>
+          <option>Transporte y logística</option>
+          <option>Educación</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label>Número de trabajadores <span class="req">*</span></label>
+        <select name="num_trabajadores" required>
+          <option value="">Selecciona...</option>
+          <option>1 a 10</option>
+          <option>11 a 50</option>
+          <option>51 a 100</option>
+          <option>101 a 500</option>
+          <option>Más de 500</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label>Años de operación</label>
+        <select name="anos_operacion">
+          <option value="">Selecciona...</option>
+          <option>Menos de 1 año</option>
+          <option>1 a 3 años</option>
+          <option>4 a 10 años</option>
+          <option>Más de 10 años</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label>¿Cuenta con área de RRHH o nómina interna?</label>
+        <select name="area_rrhh">
+          <option value="">Selecciona...</option>
+          <option>Sí, área interna</option>
+          <option>No, servicio externo (outsourcing)</option>
+          <option>No, lo maneja la dirección</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CONTRATOS Y RELACIONES LABORALES -->
+  <div class="seccion">
+    <div class="sec-title">
+      <div class="sec-num">3</div>
+      <div class="sec-label">Contratos y Relaciones Laborales</div>
+    </div>
+    <div class="grid grid-1" style="gap:12px">
+
+      <div class="campo">
+        <label>¿Qué tipos de contrato utiliza actualmente?</label>
+        <div class="opciones">
+          <label class="opcion"><input type="checkbox" name="contratos" value="Tiempo indeterminado"/> <span class="opt-text">Tiempo indeterminado</span></label>
+          <label class="opcion"><input type="checkbox" name="contratos" value="Tiempo determinado"/> <span class="opt-text">Tiempo determinado</span></label>
+          <label class="opcion"><input type="checkbox" name="contratos" value="Obra determinada"/> <span class="opt-text">Obra o servicio determinado</span></label>
+          <label class="opcion"><input type="checkbox" name="contratos" value="Honorarios/prestador servicios"/> <span class="opt-text">Honorarios / Prestador de servicios independiente</span></label>
+          <label class="opcion"><input type="checkbox" name="contratos" value="Outsourcing/Insourcing"/> <span class="opt-text">Outsourcing / Insourcing (régimen de subcontratación)</span></label>
+          <label class="opcion"><input type="checkbox" name="contratos" value="Sin contrato escrito"/> <span class="opt-text"><strong>Sin contrato escrito</strong></span></label>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label>¿Sus contratos están actualizados con la reforma laboral 2021 (subcontratación)?</label>
+        <div class="opciones horizontal">
+          <label class="opcion"><input type="radio" name="contratos_actualizados" value="Sí"/> <span class="opt-text">Sí</span></label>
+          <label class="opcion"><input type="radio" name="contratos_actualizados" value="No"/> <span class="opt-text">No</span></label>
+          <label class="opcion"><input type="radio" name="contratos_actualizados" value="No sé"/> <span class="opt-text">No sé</span></label>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label>¿Cuenta con Reglamento Interior de Trabajo registrado ante la STPS?</label>
+        <div class="opciones horizontal">
+          <label class="opcion"><input type="radio" name="rit" value="Sí, registrado"/> <span class="opt-text">Sí, registrado</span></label>
+          <label class="opcion"><input type="radio" name="rit" value="Sí, sin registrar"/> <span class="opt-text">Sí, sin registrar</span></label>
+          <label class="opcion"><input type="radio" name="rit" value="No"/> <span class="opt-text">No</span></label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. NÓMINA Y PRESTACIONES -->
+  <div class="seccion">
+    <div class="sec-title">
+      <div class="sec-num">4</div>
+      <div class="sec-label">Nómina y Prestaciones</div>
+    </div>
+    <div class="grid grid-1" style="gap:12px">
+
+      <div class="campo">
+        <label>¿Cómo se pagan las prestaciones de ley?</label>
+        <div class="opciones">
+          <label class="opcion"><input type="checkbox" name="prestaciones" value="Integradas en el salario (salario integrado)"/> <span class="opt-text">Integradas en el salario (salario integrado)</span></label>
+          <label class="opcion"><input type="checkbox" name="prestaciones" value="Separadas del salario base"/> <span class="opt-text">Separadas del salario base</span></label>
+          <label class="opcion"><input type="checkbox" name="prestaciones" value="Solo las mínimas de ley"/> <span class="opt-text">Solo las mínimas de ley</span></label>
+          <label class="opcion"><input type="checkbox" name="prestaciones" value="Superiores a la ley"/> <span class="opt-text">Superiores a las de ley</span></label>
+          <label class="opcion"><input type="checkbox" name="prestaciones" value="No tengo claridad"/> <span class="opt-text">No tengo claridad sobre cómo se calculan</span></label>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label>¿Tiene trabajadores con jornada reducida o especial?</label>
+        <div class="opciones horizontal">
+          <label class="opcion"><input type="radio" name="jornada_reducida" value="Sí"/> <span class="opt-text">Sí</span></label>
+          <label class="opcion"><input type="radio" name="jornada_reducida" value="No"/> <span class="opt-text">No</span></label>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label>¿Cómo registra las vacaciones y prima vacacional?</label>
+        <div class="opciones horizontal">
+          <label class="opcion"><input type="radio" name="vacaciones_control" value="Sistema/software"/> <span class="opt-text">Sistema o software</span></label>
+          <label class="opcion"><input type="radio" name="vacaciones_control" value="Hoja de cálculo"/> <span class="opt-text">Hoja de cálculo</span></label>
+          <label class="opcion"><input type="radio" name="vacaciones_control" value="Sin control formal"/> <span class="opt-text">Sin control formal</span></label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 5. SEGURIDAD SOCIAL Y STPS -->
+  <div class="seccion">
+    <div class="sec-title">
+      <div class="sec-num">5</div>
+      <div class="sec-label">Seguridad Social y Obligaciones STPS</div>
+    </div>
+    <div class="grid grid-1" style="gap:12px">
+
+      <div class="campo">
+        <label>¿Todos sus trabajadores están inscritos en el IMSS con el salario real?</label>
+        <div class="opciones horizontal">
+          <label class="opcion"><input type="radio" name="imss_real" value="Sí, todos"/> <span class="opt-text">Sí, todos</span></label>
+          <label class="opcion"><input type="radio" name="imss_real" value="Solo algunos"/> <span class="opt-text">Solo algunos</span></label>
+          <label class="opcion"><input type="radio" name="imss_real" value="No"/> <span class="opt-text">No</span></label>
+          <label class="opcion"><input type="radio" name="imss_real" value="No sé"/> <span class="opt-text">No sé</span></label>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label>¿Con qué obligaciones de la STPS cumple actualmente?</label>
+        <div class="opciones">
+          <label class="opcion"><input type="checkbox" name="stps" value="Comisión de Seguridad e Higiene"/> <span class="opt-text">Comisión de Seguridad e Higiene</span></label>
+          <label class="opcion"><input type="checkbox" name="stps" value="IMSS SUA actualizado"/> <span class="opt-text">SUA / Determinación de cuotas IMSS actualizada</span></label>
+          <label class="opcion"><input type="checkbox" name="stps" value="NOM-035 (riesgos psicosociales)"/> <span class="opt-text">NOM-035 (factores de riesgo psicosocial)</span></label>
+          <label class="opcion"><input type="checkbox" name="stps" value="NOM-030 (servicios preventivos)"/> <span class="opt-text">NOM-030 (servicios preventivos de seguridad)</span></label>
+          <label class="opcion"><input type="checkbox" name="stps" value="Ninguna de las anteriores"/> <span class="opt-text">Ninguna de las anteriores</span></label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 6. PROTECCIÓN DE DATOS (LFPDPPP) -->
+  <div class="seccion">
+    <div class="sec-title">
+      <div class="sec-num">6</div>
+      <div class="sec-label">Protección de Datos Personales — LFPDPPP</div>
+    </div>
+    <div class="grid grid-1" style="gap:12px">
+
+      <div class="campo">
+        <label>¿Cuenta con Aviso de Privacidad para trabajadores y clientes?</label>
+        <div class="opciones horizontal">
+          <label class="opcion"><input type="radio" name="aviso_privacidad" value="Sí, completo"/> <span class="opt-text">Sí, completo</span></label>
+          <label class="opcion"><input type="radio" name="aviso_privacidad" value="Sí, parcial"/> <span class="opt-text">Sí, pero incompleto</span></label>
+          <label class="opcion"><input type="radio" name="aviso_privacidad" value="No"/> <span class="opt-text">No</span></label>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label>¿Qué datos personales recopila habitualmente?</label>
+        <div class="opciones">
+          <label class="opcion"><input type="checkbox" name="datos_personales" value="Datos de identificación (nombre, CURP, INE)"/> <span class="opt-text">Datos de identificación (nombre, CURP, INE)</span></label>
+          <label class="opcion"><input type="checkbox" name="datos_personales" value="Datos laborales (historial, referencias)"/> <span class="opt-text">Datos laborales (historial, referencias)</span></label>
+          <label class="opcion"><input type="checkbox" name="datos_personales" value="Datos patrimoniales o financieros"/> <span class="opt-text">Datos patrimoniales o financieros</span></label>
+          <label class="opcion"><input type="checkbox" name="datos_personales" value="Datos sensibles (salud, biometría)"/> <span class="opt-text"><strong>Datos sensibles</strong> (salud, biometría, origen étnico)</span></label>
+          <label class="opcion"><input type="checkbox" name="datos_personales" value="Datos de clientes o terceros"/> <span class="opt-text">Datos de clientes o terceros</span></label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 7. NIVEL DE RIESGO PERCIBIDO -->
+  <div class="seccion">
+    <div class="sec-title">
+      <div class="sec-num">7</div>
+      <div class="sec-label">Percepción de Riesgo</div>
+    </div>
+    <div class="escala-wrap">
+
+      <div class="escala-item">
+        <div class="escala-label">¿Qué probabilidad percibe de enfrentar una demanda laboral en los próximos 12 meses?</div>
+        <div class="escala-btns" id="esc_demanda">
+          <button type="button" class="escala-btn" onclick="setEscala('demanda_laboral',1,this)">1</button>
+          <button type="button" class="escala-btn" onclick="setEscala('demanda_laboral',2,this)">2</button>
+          <button type="button" class="escala-btn" onclick="setEscala('demanda_laboral',3,this)">3</button>
+          <button type="button" class="escala-btn" onclick="setEscala('demanda_laboral',4,this)">4</button>
+          <button type="button" class="escala-btn" onclick="setEscala('demanda_laboral',5,this)">5</button>
+        </div>
+        <div class="escala-nums"><span>Muy baja</span><span>Muy alta</span></div>
+        <input type="hidden" name="demanda_laboral" id="val_demanda_laboral"/>
+      </div>
+
+      <div class="escala-item">
+        <div class="escala-label">¿Qué tan actualizado considera su cumplimiento legal en materia laboral?</div>
+        <div class="escala-btns" id="esc_cumplimiento">
+          <button type="button" class="escala-btn" onclick="setEscala('cumplimiento_laboral',1,this)">1</button>
+          <button type="button" class="escala-btn" onclick="setEscala('cumplimiento_laboral',2,this)">2</button>
+          <button type="button" class="escala-btn" onclick="setEscala('cumplimiento_laboral',3,this)">3</button>
+          <button type="button" class="escala-btn" onclick="setEscala('cumplimiento_laboral',4,this)">4</button>
+          <button type="button" class="escala-btn" onclick="setEscala('cumplimiento_laboral',5,this)">5</button>
+        </div>
+        <div class="escala-nums"><span>Desactualizado</span><span>Totalmente al día</span></div>
+        <input type="hidden" name="cumplimiento_laboral" id="val_cumplimiento_laboral"/>
+      </div>
+
+      <div class="escala-item">
+        <div class="escala-label">¿Qué tan urgente considera atender su cumplimiento en protección de datos?</div>
+        <div class="escala-btns" id="esc_privacidad">
+          <button type="button" class="escala-btn" onclick="setEscala('urgencia_privacidad',1,this)">1</button>
+          <button type="button" class="escala-btn" onclick="setEscala('urgencia_privacidad',2,this)">2</button>
+          <button type="button" class="escala-btn" onclick="setEscala('urgencia_privacidad',3,this)">3</button>
+          <button type="button" class="escala-btn" onclick="setEscala('urgencia_privacidad',4,this)">4</button>
+          <button type="button" class="escala-btn" onclick="setEscala('urgencia_privacidad',5,this)">5</button>
+        </div>
+        <div class="escala-nums"><span>Poco urgente</span><span>Muy urgente</span></div>
+        <input type="hidden" name="urgencia_privacidad" id="val_urgencia_privacidad"/>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 8. ANTECEDENTES Y COMENTARIOS -->
+  <div class="seccion">
+    <div class="sec-title">
+      <div class="sec-num">8</div>
+      <div class="sec-label">Antecedentes y Comentarios</div>
+    </div>
+    <div class="grid grid-1" style="gap:14px">
+
+      <div class="campo">
+        <label>¿Ha tenido demandas laborales o inspecciones de la STPS en los últimos 3 años?</label>
+        <div class="opciones horizontal">
+          <label class="opcion"><input type="radio" name="antecedentes_demandas" value="Sí, demandas"/> <span class="opt-text">Sí, demandas</span></label>
+          <label class="opcion"><input type="radio" name="antecedentes_demandas" value="Sí, inspecciones STPS"/> <span class="opt-text">Sí, inspecciones STPS</span></label>
+          <label class="opcion"><input type="radio" name="antecedentes_demandas" value="Ambas"/> <span class="opt-text">Ambas</span></label>
+          <label class="opcion"><input type="radio" name="antecedentes_demandas" value="No"/> <span class="opt-text">No</span></label>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label>¿Cuál es su principal preocupación o motivo para solicitar esta asesoría?</label>
+        <textarea name="preocupacion_principal" placeholder="Describe brevemente la situación o duda que te motivó a contactarnos..."></textarea>
+      </div>
+
+      <div class="campo">
+        <label>¿Cómo prefiere que nos comuniquemos con usted?</label>
+        <div class="opciones horizontal">
+          <label class="opcion"><input type="radio" name="preferencia_contacto" value="Correo electrónico"/> <span class="opt-text">Correo electrónico</span></label>
+          <label class="opcion"><input type="radio" name="preferencia_contacto" value="WhatsApp"/> <span class="opt-text">WhatsApp</span></label>
+          <label class="opcion"><input type="radio" name="preferencia_contacto" value="Llamada telefónica"/> <span class="opt-text">Llamada telefónica</span></label>
+          <label class="opcion"><input type="radio" name="preferencia_contacto" value="Videollamada"/> <span class="opt-text">Videollamada (Zoom/Meet)</span></label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="display:flex;gap:12px;flex-direction:column">
+    <button type="button" class="btn-submit" onclick="vistaPreviaPDF()"
+      style="background:transparent;border:2px solid var(--blue);color:var(--blue);font-weight:700">
+      &#128438; Generar PDF del diagnóstico
+    </button>
+    <button type="submit" class="btn-submit">Enviar diagnóstico &#8594;</button>
+  </div>
+</form>
+
+<!-- CONFIRMACIÓN -->
+<div id="confirmacion">
+  <div class="check-icon">✓</div>
+  <h2>¡Diagnóstico recibido!</h2>
+  <p>Gracias por completar el formulario. Nuestro equipo revisará su información y se pondrá en contacto en un plazo de 24 horas hábiles.</p>
+  <p style="margin-top:14px;font-size:13px;color:#374151">
+    <strong>Medina &amp; Alatorre Abogados</strong><br/>
+    Cel: 33 1150 6374 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7d1e1213091c1e09123d1c1f121a1c19120e10041c531e1210">[email&#160;protected]</a>
+  </p>
+</div>
+
+<div class="nota-pie">
+  Medina &amp; Alatorre Abogados · Av. Américas 1501, Piso 20-A · Guadalajara, Jalisco<br/>
+  La información proporcionada es confidencial y se utiliza exclusivamente para fines de asesoría jurídica preventiva.
+</div>
+
+</div><!-- /container -->
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── Escalas ──────────────────────────────────────────────
+function setEscala(nombre, valor, btn) {
+  document.getElementById('val_' + nombre).value = valor;
+  var contenedor = btn.parentNode;
+  var btns = contenedor.querySelectorAll('.escala-btn');
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].classList.remove('sel');
+  }
+  btn.classList.add('sel');
+}
+
+// ── Opciones seleccionadas resaltado ─────────────────────
+document.querySelectorAll('.opcion input').forEach(function(inp) {
+  inp.addEventListener('change', function() {
+    var opcion = this.closest('.opcion');
+    if (this.type === 'radio') {
+      var name = this.name;
+      document.querySelectorAll('input[name="' + name + '"]').forEach(function(r) {
+        r.closest('.opcion').classList.remove('selected');
+      });
+    }
+    if (this.checked) {
+      opcion.classList.add('selected');
+    } else {
+      opcion.classList.remove('selected');
+    }
+  });
+});
+
+// ── Progreso ─────────────────────────────────────────────
+function actualizarProgreso() {
+  var requeridos = document.querySelectorAll('[required]');
+  var llenos = 0;
+  requeridos.forEach(function(el) {
+    if (el.value && el.value.trim() !== '') llenos++;
+  });
+  var pct = Math.round((llenos / requeridos.length) * 100);
+  document.getElementById('progreso').style.width = pct + '%';
+}
+document.querySelectorAll('input, select, textarea').forEach(function(el) {
+  el.addEventListener('change', actualizarProgreso);
+  el.addEventListener('input', actualizarProgreso);
+});
+
+// ── Generador PDF ────────────────────────────────────────
+function recopilarRespuestas() {
+  var form = document.getElementById('formDiag');
+  var secciones = [
+    { titulo: 'Datos de la Empresa', campos: [
+      { label: 'Empresa / Razón social', name: 'empresa' },
+      { label: 'Responsable', name: 'responsable' },
+      { label: 'Cargo', name: 'cargo' },
+      { label: 'Correo electrónico', name: 'correo' },
+      { label: 'Teléfono', name: 'telefono' },
+      { label: 'Ciudad / Estado', name: 'ciudad' },
+    ]},
+    { titulo: 'Perfil de la Empresa', campos: [
+      { label: 'Giro / Actividad', name: 'giro' },
+      { label: 'Número de trabajadores', name: 'num_trabajadores' },
+      { label: 'Años de operación', name: 'anos_operacion' },
+      { label: 'Área de RRHH', name: 'area_rrhh' },
+    ]},
+    { titulo: 'Contratos y Relaciones Laborales', campos: [
+      { label: 'Tipos de contrato', name: 'contratos', multiple: true },
+      { label: 'Contratos actualizados (reforma 2021)', name: 'contratos_actualizados' },
+      { label: 'Reglamento Interior de Trabajo', name: 'rit' },
+    ]},
+    { titulo: 'Nómina y Prestaciones', campos: [
+      { label: 'Prestaciones de ley', name: 'prestaciones', multiple: true },
+      { label: 'Jornada reducida o especial', name: 'jornada_reducida' },
+      { label: 'Control de vacaciones', name: 'vacaciones_control' },
+    ]},
+    { titulo: 'Seguridad Social y STPS', campos: [
+      { label: 'Trabajadores en IMSS con salario real', name: 'imss_real' },
+      { label: 'Obligaciones STPS cumplidas', name: 'stps', multiple: true },
+    ]},
+    { titulo: 'Protección de Datos — LFPDPPP', campos: [
+      { label: 'Aviso de Privacidad', name: 'aviso_privacidad' },
+      { label: 'Datos personales que recopila', name: 'datos_personales', multiple: true },
+    ]},
+    { titulo: 'Percepción de Riesgo (escala 1-5)', campos: [
+      { label: 'Probabilidad de demanda laboral (12 meses)', name: 'demanda_laboral' },
+      { label: 'Nivel de cumplimiento laboral', name: 'cumplimiento_laboral' },
+      { label: 'Urgencia en protección de datos', name: 'urgencia_privacidad' },
+    ]},
+    { titulo: 'Antecedentes y Comentarios', campos: [
+      { label: 'Demandas o inspecciones STPS (últimos 3 años)', name: 'antecedentes_demandas' },
+      { label: 'Principal preocupación', name: 'preocupacion_principal' },
+      { label: 'Preferencia de contacto', name: 'preferencia_contacto' },
+    ]},
+  ];
+
+  var resultado = [];
+  secciones.forEach(function(sec) {
+    var filas = [];
+    sec.campos.forEach(function(campo) {
+      var valor = '';
+      if (campo.multiple) {
+        var checks = form.querySelectorAll('input[name="' + campo.name + '"]:checked');
+        var vals = [];
+        checks.forEach(function(ch) { vals.push(ch.value); });
+        valor = vals.length > 0 ? vals.join(', ') : '—';
+      } else {
+        var el = form.querySelector('[name="' + campo.name + '"]');
+        if (!el) {
+          var radio = form.querySelector('input[name="' + campo.name + '"]:checked');
+          valor = radio ? radio.value : '—';
+        } else {
+          valor = el.value || '—';
+        }
+      }
+      filas.push({ label: campo.label, valor: valor });
+    });
+    resultado.push({ titulo: sec.titulo, filas: filas });
+  });
+  return resultado;
+}
+
+function vistaPreviaPDF() {
+  var datos = recopilarRespuestas();
+  var empresa = document.querySelector('[name="empresa"]').value || 'Sin nombre';
+  var fecha = new Date().toLocaleDateString('es-MX', { day: '2-digit', month: 'long', year: 'numeric' });
+
+  var seccionesHTML = datos.map(function(sec) {
+    var filas = sec.filas.map(function(f) {
+      return '<tr>' +
+        '<td style="padding:6px 10px;border-bottom:1px solid #e8edf4;font-size:11px;color:#667587;width:45%;font-family:Raleway,sans-serif;vertical-align:top">' + f.label + '</td>' +
+        '<td style="padding:6px 10px;border-bottom:1px solid #e8edf4;font-size:11px;color:#111;font-family:Raleway,sans-serif;font-weight:600;vertical-align:top">' + f.valor + '</td>' +
+        '</tr>';
+    }).join('');
+    return '<div style="margin-bottom:18px;break-inside:avoid">' +
+      '<div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#004AC7;border-bottom:2px solid #004AC7;padding-bottom:4px;margin-bottom:0;font-family:Raleway,sans-serif">' + sec.titulo + '</div>' +
+      '<table style="width:100%;border-collapse:collapse">' + filas + '</table>' +
+      '</div>';
+  }).join('');
+
+  var html = '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/>' +
+    '<title>Diagnóstico Laboral — ' + empresa + '</title>' +
+    '<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet"/>' +
+    '<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:Raleway,sans-serif;padding:24px;background:#fff;color:#111}' +
+    '@media print{body{padding:12px}.no-print{display:none!important}}' +
+    '</style></head><body>' +
+
+    // Header
+    '<div style="background:linear-gradient(120deg,#051226 0%,#0a2353 55%,#004AC7 100%);padding:18px 22px;border-radius:8px;margin-bottom:22px;-webkit-print-color-adjust:exact;print-color-adjust:exact">' +
+      '<div style="display:flex;justify-content:space-between;align-items:flex-start">' +
+        '<div>' +
+          '<div style="font-family:DM Serif Text,Georgia,serif;font-size:18px;color:#F0F0F0;margin-bottom:3px">Diagnóstico de Cumplimiento Laboral</div>' +
+          '<div style="font-size:10px;color:rgba(240,240,240,0.7);font-family:Raleway,sans-serif">Asesoría Jurídica Preventiva · ' + fecha + '</div>' +
+        '</div>' +
+        '<div style="text-align:right">' +
+          '<div style="font-family:DM Serif Text,Georgia,serif;font-size:13px;color:#F0F0F0">Medina <span style="color:rgba(240,240,240,0.6);font-style:italic">&</span> Alatorre</div>' +
+          '<div style="font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:rgba(240,240,240,0.5);font-family:Raleway,sans-serif;margin-top:2px">Abogados</div>' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+
+    // Empresa destacada
+    '<div style="background:#e8f0fd;border-left:4px solid #004AC7;padding:10px 14px;border-radius:4px;margin-bottom:20px">' +
+      '<div style="font-size:10px;color:#667587;font-family:Raleway,sans-serif">Empresa</div>' +
+      '<div style="font-family:DM Serif Text,Georgia,serif;font-size:16px;color:#051226">' + empresa + '</div>' +
+    '</div>' +
+
+    // Secciones
+    seccionesHTML +
+
+    // Pie
+    '<div style="border-top:1px solid #dce3ed;padding-top:10px;margin-top:20px;font-size:9px;color:#9ca3af;font-family:Raleway,sans-serif;line-height:1.6">' +
+      'Documento generado con fines de referencia y asesoría jurídica preventiva.<br/>' +
+      'Medina &amp; Alatorre Abogados · Av. Américas 1501, Piso 20-A · Guadalajara, Jalisco · Cel: 33 1150 6374 · contacto@abogadosmya.com' +
+    '</div>' +
+
+    // Botón imprimir
+    '<div class="no-print" style="margin-top:20px;display:flex;gap:10px">' +
+      '<button onclick="window.print()" style="background:#004AC7;color:#fff;border:none;border-radius:6px;padding:10px 24px;font-family:Raleway,sans-serif;font-size:13px;font-weight:700;cursor:pointer">&#128438; Descargar / Imprimir PDF</button>' +
+      '<button onclick="window.close()" style="background:transparent;border:1px solid #dce3ed;border-radius:6px;padding:10px 24px;font-family:Raleway,sans-serif;font-size:13px;color:#667587;cursor:pointer">Cerrar</button>' +
+    '</div>' +
+
+    '</body></html>';
+
+  var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  if (isIOS) {
+    var frame = document.createElement('iframe');
+    frame.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;border:none;z-index:99999;background:white';
+    document.body.appendChild(frame);
+    frame.contentDocument.open();
+    frame.contentDocument.write(html);
+    frame.contentDocument.close();
+    var closeBtn = document.createElement('button');
+    closeBtn.innerHTML = '&#10005; Cerrar';
+    closeBtn.style.cssText = 'position:fixed;top:12px;right:12px;z-index:100000;background:#051226;color:#F0F0F0;border:none;border-radius:6px;padding:10px 18px;font-size:14px;font-family:Raleway,sans-serif;font-weight:700;cursor:pointer';
+    closeBtn.onclick = function() { document.body.removeChild(frame); document.body.removeChild(closeBtn); };
+    document.body.appendChild(closeBtn);
+    setTimeout(function() { frame.contentWindow.print(); }, 500);
+  } else {
+    var win = window.open('', '_blank');
+    win.document.write(html);
+    win.document.close();
+    win.focus();
+  }
+}
+
+// ── Envío ─────────────────────────────────────────────────
+function enviarFormulario(e) {
+  e.preventDefault();
+  var form = document.getElementById('formDiag');
+  var data = new FormData(form);
+
+  fetch('/.netlify/functions/send-diagnostico', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  }).then(function() {
+    form.style.display = 'none';
+    documen

@@ -1,0 +1,9 @@
+{
+  "name": "diagnostico-mya",
+  "version": "1.0.0",
+  "description": "Diagnóstico Laboral — Medina & Alatorre Abogados",
+  "dependencies": {
+    "nodemailer": "^6.9.9",
+    "@netlify/blobs": "^8.1.0"
+  }
+}
