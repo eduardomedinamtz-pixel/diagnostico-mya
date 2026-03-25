@@ -16,47 +16,32 @@
   --radius:8px
 }
 body{font-family:var(--font);background:#F8F8F6;color:var(--text);font-size:14px;line-height:1.6;min-height:100vh}
-a{color:var(--mid);text-decoration:none}
-a:hover{text-decoration:underline}
-
-/* HEADER */
 .site-header{background:var(--dark);color:#fff;padding:0}
 .header-inner{max-width:960px;margin:0 auto;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 .header-brand{display:flex;flex-direction:column}
 .header-firm{font-family:var(--sans);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#9CB8D8;margin-bottom:2px}
 .header-title{font-size:20px;font-weight:400;color:#fff}
 .header-sub{font-family:var(--sans);font-size:12px;color:#9CB8D8;margin-top:2px}
-.header-links{display:flex;gap:16px}
-.header-links a{font-family:var(--sans);font-size:12px;color:#9CB8D8;display:flex;align-items:center;gap:5px}
+.header-links a{font-family:var(--sans);font-size:12px;color:#9CB8D8}
 .header-links a:hover{color:#fff;text-decoration:none}
-
-/* MAIN */
 .main{max-width:960px;margin:0 auto;padding:28px 24px 60px}
-
-/* HERO */
 .hero{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px 28px;margin-bottom:24px}
 .hero-title{font-size:22px;font-weight:400;color:var(--dark);margin-bottom:6px}
 .hero-desc{font-size:13px;color:var(--muted);max-width:640px;line-height:1.7;margin-bottom:16px}
-.hero-meta{display:flex;gap:20px;flex-wrap:wrap}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
 .hero-badge{font-family:var(--sans);font-size:11px;padding:4px 12px;border-radius:20px;background:var(--light);color:var(--mid);border:1px solid #C5D9EF}
-
-/* PROGRESS */
 .progress-section{margin-bottom:20px}
 .progress-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
 .progress-label{font-family:var(--sans);font-size:12px;color:var(--muted)}
 .progress-pct{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--dark)}
 .progress-bar{height:6px;background:#E0E0E0;border-radius:3px;overflow:hidden}
 .progress-fill{height:100%;background:var(--dark);border-radius:3px;transition:width .4s ease}
-
-/* STEPPER */
 .stepper{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:24px}
 .step-btn{font-family:var(--sans);font-size:11px;padding:6px 12px;border:1px solid var(--border);border-radius:20px;cursor:pointer;background:#fff;color:var(--muted);transition:all .15s;white-space:nowrap}
 .step-btn:hover{border-color:var(--mid);color:var(--mid)}
 .step-btn.active{background:var(--dark);color:#fff;border-color:var(--dark)}
 .step-btn.done{border-color:var(--dark);color:var(--dark)}
 .step-btn.warn{border-color:var(--red);color:var(--red)}
-
-/* BLOCK CARD */
 .block-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:20px}
 .block-header{padding:16px 24px 14px;border-bottom:1px solid var(--border);background:linear-gradient(to right,var(--light),#fff)}
 .block-num{font-family:var(--sans);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--mid);margin-bottom:3px}
@@ -64,23 +49,16 @@ a:hover{text-decoration:underline}
 .block-desc{font-size:12px;color:var(--muted);font-style:italic}
 .block-prog{height:3px;background:#E0E0E0}
 .block-prog-fill{height:100%;background:var(--mid);transition:width .3s}
-
-/* COLUMN HEADERS */
 .col-heads{display:grid;grid-template-columns:40px 1fr 70px 70px 90px 70px;gap:6px;padding:8px 24px 6px;border-bottom:1px solid #F0F0F0;background:#FAFAFA}
 .col-h{font-family:var(--sans);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:center}
 .col-h:nth-child(2){text-align:left}
-@media(max-width:640px){
-  .col-heads{display:none}
-}
-
-/* QUESTION ROW */
+@media(max-width:640px){.col-heads{display:none}}
 .q-row{padding:14px 24px;border-bottom:1px solid #F5F5F5;transition:background .1s}
 .q-row:last-child{border-bottom:none}
 .q-row:hover{background:#FAFAFA}
+.q-row.skipped{opacity:.45;pointer-events:none;background:#FAFAFA}
 .q-grid{display:grid;grid-template-columns:40px 1fr 70px 70px 90px 70px;gap:6px;align-items:start}
-@media(max-width:640px){
-  .q-grid{grid-template-columns:1fr;gap:8px}
-}
+@media(max-width:640px){.q-grid{grid-template-columns:1fr;gap:8px}}
 .q-id{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--mid);padding-top:2px}
 .q-text{font-size:13px;color:var(--text);line-height:1.55}
 .q-hint{font-size:11px;color:var(--muted);margin-top:4px;font-style:italic}
@@ -95,11 +73,30 @@ a:hover{text-decoration:underline}
 @media(max-width:640px){.q-notes-row{padding-left:0}}
 .q-notes-row textarea{width:100%;font-family:var(--font);font-size:12px;padding:7px 10px;border:1px solid var(--border);border-radius:6px;background:#FAFAFA;color:var(--text);resize:none;line-height:1.5;transition:border .15s}
 .q-notes-row textarea:focus{outline:none;border-color:var(--mid);background:#fff}
-@media(max-width:640px){
-  .q-opt{flex-direction:row;flex-wrap:wrap;justify-content:flex-start}
-  .risk-pill{display:inline-block}
-}
-
+/* ESPECIALES 1.1 y 1.2 */
+.q-special{padding:14px 24px;border-bottom:1px solid #F5F5F5}
+.q-special:hover{background:#FAFAFA}
+.special-grid{display:grid;grid-template-columns:40px 1fr;gap:8px;align-items:start}
+.special-body{display:flex;flex-direction:column;gap:10px}
+.special-label{font-size:13px;color:var(--text);line-height:1.55;font-weight:400}
+.special-hint{font-size:11px;color:var(--muted);font-style:italic}
+.radio-group{display:flex;gap:12px;flex-wrap:wrap;margin-top:4px}
+.radio-group label{font-family:var(--sans);font-size:12px;color:var(--text);cursor:pointer;display:flex;align-items:center;gap:6px;padding:6px 14px;border:1px solid var(--border);border-radius:20px;transition:all .15s}
+.radio-group label:hover{border-color:var(--mid)}
+.radio-group input[type=radio]{accent-color:var(--dark);width:13px;height:13px}
+.radio-group label.selected{border-color:var(--dark);background:var(--light);color:var(--dark);font-weight:600}
+.puestos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-top:6px}
+.puesto-row{display:flex;align-items:center;justify-content:space-between;padding:7px 12px;border:1px solid var(--border);border-radius:6px;background:#FAFAFA;transition:border .15s}
+.puesto-row:focus-within{border-color:var(--mid);background:#fff}
+.puesto-name{font-family:var(--sans);font-size:12px;color:var(--text)}
+.puesto-input{width:52px;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--dark);text-align:center;border:1px solid var(--border);border-radius:4px;padding:3px 6px;background:#fff}
+.puesto-input:focus{outline:none;border-color:var(--dark)}
+.puesto-total{font-family:var(--sans);font-size:11px;color:var(--muted);margin-top:4px}
+/* SKIP BANNER */
+.skip-banner{margin:0 24px 14px;padding:12px 16px;background:#FFF8E1;border:1px solid #F9C922;border-radius:6px;display:flex;align-items:flex-start;gap:10px}
+.skip-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+.skip-text{font-size:12px;color:#7D5A00;line-height:1.5}
+.skip-text strong{font-weight:600}
 /* NAV */
 .nav-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0 0}
 .nav-btn{font-family:var(--sans);font-size:13px;padding:9px 22px;border:1px solid var(--border);border-radius:6px;cursor:pointer;background:#fff;color:var(--text);transition:all .15s}
@@ -108,7 +105,6 @@ a:hover{text-decoration:underline}
 .nav-btn.primary:hover{background:var(--mid)}
 .nav-btn:disabled{opacity:.4;cursor:not-allowed}
 .nav-center{font-family:var(--sans);font-size:12px;color:var(--muted);text-align:center}
-
 /* SUMMARY */
 .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
 @media(max-width:640px){.stat-row{grid-template-columns:repeat(2,1fr)}}
@@ -145,15 +141,10 @@ a:hover{text-decoration:underline}
 .print-btn{font-family:var(--sans);font-size:12px;padding:8px 18px;border:1px solid var(--mid);border-radius:6px;cursor:pointer;background:#fff;color:var(--mid);display:flex;align-items:center;gap:6px}
 .print-btn:hover{background:var(--light)}
 .summary-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px 28px}
-
-/* FOOTER */
 .site-footer{background:var(--dark);color:#9CB8D8;padding:20px 24px;text-align:center;font-family:var(--sans);font-size:11px;margin-top:40px}
-
-/* PRINT */
 @media print{
   .site-header,.stepper,.nav-row,.print-btn,.header-links{display:none!important}
-  .block-card{break-inside:avoid;page-break-inside:avoid;border:1px solid #ccc}
-  .q-notes-row textarea{border:1px solid #ccc;height:40px}
+  .block-card{break-inside:avoid;border:1px solid #ccc}
   body{background:#fff}
   .main{padding:10px}
 }
@@ -181,30 +172,43 @@ a:hover{text-decoration:underline}
 </footer>
 
 <script>
+const PUESTOS=[
+  {id:'hostess',nombre:'Hostess / Recepcionista'},
+  {id:'mesero',nombre:'Mesero / Mesera'},
+  {id:'chef',nombre:'Chef / Jefe de Cocina'},
+  {id:'cocinero',nombre:'Cocinero / Cocinera'},
+  {id:'barman',nombre:'Barman / Bartender'},
+  {id:'cajero',nombre:'Cajero / Cajera'},
+  {id:'limpieza',nombre:'Personal de Limpieza'},
+  {id:'temporada',nombre:'Personal de Temporada'},
+  {id:'gerente',nombre:'Gerente / Encargado'},
+  {id:'otro',nombre:'Otro puesto'},
+];
+
 const BLOCKS=[
 {id:1,title:"Datos generales y estructura operativa",desc:"Caracterización del negocio para dimensionar el diagnóstico",
 qs:[
-{id:"1.1",t:"¿Opera bajo persona moral o persona física con actividad empresarial?",r:"B",h:"Determina obligaciones fiscales y de registro"},
-{id:"1.2",t:"¿Cuántos trabajadores laboran actualmente (fijos, eventuales y de temporada)?",r:"B",h:"Anote el detalle en notas"},
+{id:"1.1",t:"Tipo de persona jurídica del patrón",r:"B",tipo:"persona",h:"Determina obligaciones fiscales y de registro"},
+{id:"1.2",t:"Personal que labora actualmente en el establecimiento",r:"B",tipo:"puestos",h:"Indique el número de personas por puesto"},
 {id:"1.3",t:"¿Tiene registro patronal vigente ante el IMSS?",r:"A"},
 {id:"1.4",t:"¿Cuenta con licencia de funcionamiento y permiso de venta de alcohol vigentes?",r:"A",h:"Su ausencia agrava el riesgo en inspecciones conjuntas STPS/Cofepris"},
 {id:"1.5",t:"¿Existe organigrama o estructura de puestos definida formalmente?",r:"B"},
 {id:"1.6",t:"¿Hay más de un turno de trabajo operando simultáneamente o en forma rotatoria?",r:"B"},
-{id:"1.7",t:"¿Ha recibido visitas de inspección de la STPS, IMSS o Cofepris en los últimos 3 años?",r:"M",h:"Anote resultados y observaciones"},
-{id:"1.8",t:"¿Existe algún juicio o procedimiento laboral activo (demanda, conciliación, amparo)?",r:"A",h:"Anote número de asuntos, instancia y estado procesal"},
+{id:"1.7",t:"¿Ha recibido visitas de inspección de la STPS, IMSS o Cofepris en los últimos 3 años?",r:"M",h:"Anote resultados y observaciones en notas"},
+{id:"1.8",t:"¿Existe algún juicio o procedimiento laboral activo (demanda, conciliación, amparo)?",r:"A",h:"Anote número de asuntos, instancia y estado procesal en notas"},
 ]},
 {id:2,title:"Contratos individuales de trabajo",desc:"Art. 25 LFT — Contenido mínimo obligatorio",
 qs:[
-{id:"2.1",t:"¿Todo el personal activo cuenta con contrato individual de trabajo por escrito?",r:"A",h:"La ausencia genera presunción de las condiciones más favorables al trabajador"},
-{id:"2.2",t:"¿Los contratos especifican el tipo correcto de relación: tiempo indeterminado, temporada o determinado según la función real?",r:"A",h:"Contratos a plazo fijo para funciones permanentes son nulos y revierten a tiempo indeterminado"},
-{id:"2.3",t:"¿Los contratos contienen el contenido mínimo del Art. 25 LFT: datos del trabajador, puesto, jornada, salario, lugar y día de pago?",r:"A"},
-{id:"2.4",t:"¿Los contratos regulan el período de prueba conforme a los Arts. 39-A al 39-F LFT?",r:"M",h:"Verificar plazo, alta IMSS desde primer día y no reiteración"},
-{id:"2.5",t:"¿Los contratos de cocina, barra y piso contienen cláusula de propinas con componente de integración para el SDI ante el IMSS?",r:"A",h:"Sin esta cláusula el SDI puede estar subdeclarado en todos los meseros y bartenders"},
-{id:"2.6",t:"¿Los contratos del chef y personal de confianza incluyen cláusula de confidencialidad con vigencia post-laboral?",r:"A"},
-{id:"2.7",t:"¿Los contratos del cajero incluyen protocolo de responsabilidad por valores y prohibición de descuentos sin soporte documental?",r:"A",h:"Sin esto, cualquier descuento por faltantes es potencialmente ilegal"},
-{id:"2.8",t:"¿Los contratos regulan el uso de herramientas tecnológicas (WhatsApp institucional, POS, plataformas de reservaciones)?",r:"M"},
-{id:"2.9",t:"¿El personal de temporada tiene contratos por temporada debidamente justificados y no contratos a tiempo determinado improcedentes?",r:"A"},
-{id:"2.10",t:"¿Cada trabajador conserva un ejemplar de su contrato y el patrón tiene el acuse de recibo en el expediente?",r:"M"},
+{id:"2.1",t:"¿Todo el personal activo cuenta con contrato individual de trabajo por escrito?",r:"A",h:"La ausencia genera presunción de las condiciones más favorables al trabajador",pivote:true},
+{id:"2.2",t:"¿Los contratos especifican el tipo correcto de relación: tiempo indeterminado, temporada o determinado según la función real?",r:"A",h:"Contratos a plazo fijo para funciones permanentes son nulos y revierten a tiempo indeterminado",depende:"2.1"},
+{id:"2.3",t:"¿Los contratos contienen el contenido mínimo del Art. 25 LFT: datos del trabajador, puesto, jornada, salario, lugar y día de pago?",r:"A",depende:"2.1"},
+{id:"2.4",t:"¿Los contratos regulan el período de prueba conforme a los Arts. 39-A al 39-F LFT?",r:"M",h:"Verificar plazo, alta IMSS desde primer día y no reiteración",depende:"2.1"},
+{id:"2.5",t:"¿Los contratos de cocina, barra y piso contienen cláusula de propinas con componente de integración para el SDI ante el IMSS?",r:"A",h:"Sin esta cláusula el SDI puede estar subdeclarado en todos los meseros y bartenders",depende:"2.1"},
+{id:"2.6",t:"¿Los contratos del chef y personal de confianza incluyen cláusula de confidencialidad con vigencia post-laboral?",r:"A",depende:"2.1"},
+{id:"2.7",t:"¿Los contratos del cajero incluyen protocolo de responsabilidad por valores y prohibición de descuentos sin soporte documental?",r:"A",h:"Sin esto, cualquier descuento por faltantes es potencialmente ilegal",depende:"2.1"},
+{id:"2.8",t:"¿Los contratos regulan el uso de herramientas tecnológicas (WhatsApp institucional, POS, plataformas de reservaciones)?",r:"M",depende:"2.1"},
+{id:"2.9",t:"¿El personal de temporada tiene contratos por temporada debidamente justificados y no contratos a tiempo determinado improcedentes?",r:"A",depende:"2.1"},
+{id:"2.10",t:"¿Cada trabajador conserva un ejemplar de su contrato y el patrón tiene el acuse de recibo en el expediente?",r:"M",depende:"2.1"},
 ]},
 {id:3,title:"Reglamento Interior de Trabajo y comisiones",desc:"Arts. 422-425 y 509-512 LFT · NOM-019 · NOM-035",
 qs:[
@@ -329,50 +333,122 @@ const DOCS=[
 
 // STATE
 let block=0;
-const answers={};
+const answers={};     // { qId: 'si'|'no'|'parcial'|'pm'|'pf' }
+const puestosData={}; // { puestoId: numero }
 const notes={};
 const docChecks={};
 let finalNotes='';
 
-const totalQs=BLOCKS.reduce((s,b)=>s+b.qs.length,0);
-function totalAnswered(){return BLOCKS.reduce((s,b)=>s+b.qs.filter(q=>answers[q.id]).length,0)}
-function blockAnswered(b){return b.qs.filter(q=>answers[q.id]).length}
+const totalQsCount=()=>{
+  // contar solo preguntas visibles (no omitidas)
+  return BLOCKS.reduce((s,b)=>s+b.qs.filter(q=>!isSkipped(q)).length,0);
+};
+function isSkipped(q){
+  if(!q.depende) return false;
+  const pivotVal=answers[q.depende];
+  return pivotVal==='no';
+}
+function totalAnswered(){
+  return BLOCKS.reduce((s,b)=>s+b.qs.filter(q=>!isSkipped(q)&&(answers[q.id]||q.tipo==='persona'&&answers['1.1']||q.tipo==='puestos'&&Object.values(puestosData).some(v=>v>0))).length,0);
+}
+function blockAnswered(b){
+  return b.qs.filter(q=>{
+    if(isSkipped(q))return true; // skipped counts as handled
+    if(q.tipo==='persona') return !!answers['1.1'];
+    if(q.tipo==='puestos') return Object.values(puestosData).some(v=>v>0);
+    return !!answers[q.id];
+  }).length;
+}
 function blockRisk(b){
-  const nos=b.qs.filter(q=>(answers[q.id]==='no'||answers[q.id]==='parcial')&&q.r==='A').length;
-  const meds=b.qs.filter(q=>(answers[q.id]==='no'||answers[q.id]==='parcial')&&q.r==='M').length;
+  const nos=b.qs.filter(q=>!isSkipped(q)&&(answers[q.id]==='no'||answers[q.id]==='parcial')&&q.r==='A').length;
+  const meds=b.qs.filter(q=>!isSkipped(q)&&(answers[q.id]==='no'||answers[q.id]==='parcial')&&q.r==='M').length;
   if(nos>0)return'A';
   if(meds>1)return'M';
   if(!b.qs.some(q=>answers[q.id]))return null;
   return'B';
 }
-function issueCount(){return BLOCKS.reduce((s,b)=>s+b.qs.filter(q=>answers[q.id]==='no'||answers[q.id]==='parcial').length,0)}
-function highRisk(){return BLOCKS.reduce((s,b)=>s+b.qs.filter(q=>(answers[q.id]==='no'||answers[q.id]==='parcial')&&q.r==='A').length,0)}
+function issueCount(){return BLOCKS.reduce((s,b)=>s+b.qs.filter(q=>!isSkipped(q)&&(answers[q.id]==='no'||answers[q.id]==='parcial')).length,0)}
+function highRisk(){return BLOCKS.reduce((s,b)=>s+b.qs.filter(q=>!isSkipped(q)&&(answers[q.id]==='no'||answers[q.id]==='parcial')&&q.r==='A').length,0)}
 const RISK_LABEL={A:'ALTO',M:'MEDIO',B:'BAJO'};
+function totalPuestos(){return Object.values(puestosData).reduce((s,v)=>s+(parseInt(v)||0),0);}
 
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+function renderPersonaQ(q){
+  const v=answers['1.1']||'';
+  return`<div class="q-special">
+    <div class="special-grid">
+      <div class="q-id">${esc(q.id)}</div>
+      <div class="special-body">
+        <div class="special-label">${esc(q.t)}</div>
+        ${q.h?`<div class="special-hint">↳ ${esc(q.h)}</div>`:''}
+        <div class="radio-group">
+          <label class="${v==='pm'?'selected':''}">
+            <input type="radio" name="1.1" value="pm" ${v==='pm'?'checked':''} onchange="setPersona('pm')">
+            Persona Moral
+          </label>
+          <label class="${v==='pf'?'selected':''}">
+            <input type="radio" name="1.1" value="pf" ${v==='pf'?'checked':''} onchange="setPersona('pf')">
+            Persona Física c/Actividad Empresarial
+          </label>
+        </div>
+        <div class="q-notes-row" style="padding-left:0;margin-top:4px">
+          <textarea rows="1" placeholder="RFC, régimen fiscal, nombre del representante legal..." onchange="setNote('1.1',this.value)" oninput="autoResize(this)">${esc(notes['1.1']||'')}</textarea>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderPuestosQ(q){
+  const total=totalPuestos();
+  let rows='';
+  PUESTOS.forEach(p=>{
+    const val=puestosData[p.id]||0;
+    rows+=`<div class="puesto-row">
+      <span class="puesto-name">${esc(p.nombre)}</span>
+      <input class="puesto-input" type="number" min="0" max="99" value="${val}"
+        onchange="setPuesto('${p.id}',this.value)" oninput="setPuesto('${p.id}',this.value)">
+    </div>`;
+  });
+  return`<div class="q-special">
+    <div class="special-grid">
+      <div class="q-id">${esc(q.id)}</div>
+      <div class="special-body">
+        <div class="special-label">${esc(q.t)}</div>
+        ${q.h?`<div class="special-hint">↳ ${esc(q.h)}</div>`:''}
+        <div class="puestos-grid">${rows}</div>
+        <div class="puesto-total" id="puesto-total">Total: <strong>${total}</strong> persona${total!==1?'s':''}</div>
+        <div class="q-notes-row" style="padding-left:0;margin-top:4px">
+          <textarea rows="1" placeholder="Observaciones sobre la plantilla..." onchange="setNote('1.2',this.value)" oninput="autoResize(this)">${esc(notes['1.2']||'')}</textarea>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
 
 function render(){
   const isSummary=block===BLOCKS.length;
   const ta=totalAnswered();
-  const pct=Math.round((ta/totalQs)*100);
+  const tq=totalQsCount();
+  const pct=tq>0?Math.round((ta/tq)*100):0;
 
   let html=`
   <div class="hero">
     <div class="hero-title">Diagnóstico de cumplimiento normativo laboral</div>
-    <div class="hero-desc">Evaluación inicial para restaurante-bar. Responda Sí, No o Parcial en cada pregunta. El sistema genera automáticamente el semáforo de riesgo y la paquetería necesaria.</div>
+    <div class="hero-desc">Evaluación inicial para restaurante-bar. Responda cada pregunta. El sistema genera automáticamente el semáforo de riesgo y la paquetería necesaria.</div>
     <div class="hero-meta">
       <span class="hero-badge">11 bloques temáticos</span>
-      <span class="hero-badge">${totalQs} preguntas</span>
       <span class="hero-badge">Mapa de riesgo automático</span>
       <span class="hero-badge">Uso exclusivo del despacho</span>
     </div>
   </div>
   <div class="progress-section">
     <div class="progress-top">
-      <span class="progress-label">${ta} de ${totalQs} preguntas respondidas</span>
-      <span class="progress-pct">${pct}%</span>
+      <span class="progress-label" id="prog-label">${ta} de ${tq} preguntas atendidas</span>
+      <span class="progress-pct" id="prog-pct">${pct}%</span>
     </div>
-    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+    <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:${pct}%"></div></div>
   </div>
   <div class="stepper">`;
 
@@ -389,49 +465,73 @@ function render(){
   if(!isSummary){
     const b=BLOCKS[block];
     const bPct=Math.round((blockAnswered(b)/b.qs.length)*100);
+    // detectar si pivote de B2 está en 'no'
+    const b2skip=b.id===2&&answers['2.1']==='no';
+    const skippedCount=b2skip?b.qs.filter(q=>q.depende==='2.1').length:0;
+
     html+=`<div class="block-card">
       <div class="block-header">
         <div class="block-num">Bloque ${b.id} de ${BLOCKS.length}</div>
         <div class="block-title">${esc(b.title)}</div>
         <div class="block-desc">${esc(b.desc)}</div>
       </div>
-      <div class="block-prog"><div class="block-prog-fill" style="width:${bPct}%"></div></div>
-      <div class="col-heads">
+      <div class="block-prog"><div class="block-prog-fill" style="width:${bPct}%"></div></div>`;
+
+    // Mostrar banner de omisión si aplica
+    if(b2skip){
+      html+=`<div class="skip-banner">
+        <div class="skip-icon">⚠</div>
+        <div class="skip-text"><strong>Las preguntas 2.2 a 2.10 se omiten</strong> porque no existe contrato individual por escrito. Esto constituye por sí solo una contingencia de riesgo ALTO que genera la necesidad de elaborar contratos para todos los puestos activos.</div>
+      </div>`;
+    }
+
+    // encabezados de columna solo si hay preguntas normales
+    const hasNormalQs=b.qs.some(q=>!q.tipo&&!isSkipped(q));
+    if(hasNormalQs){
+      html+=`<div class="col-heads">
         <div class="col-h">#</div><div class="col-h">Pregunta</div>
         <div class="col-h">Sí</div><div class="col-h">No</div>
         <div class="col-h">Parcial</div><div class="col-h">Riesgo</div>
       </div>`;
+    }
 
     b.qs.forEach(q=>{
+      if(q.tipo==='persona'){html+=renderPersonaQ(q);return;}
+      if(q.tipo==='puestos'){html+=renderPuestosQ(q);return;}
+
+      const skipped=isSkipped(q);
       const v=answers[q.id]||'';
-      html+=`<div class="q-row">
+      html+=`<div class="q-row${skipped?' skipped':''}">
         <div class="q-grid">
           <div class="q-id">${esc(q.id)}</div>
           <div>
             <div class="q-text">${esc(q.t)}</div>
             ${q.h?`<div class="q-hint">↳ ${esc(q.h)}</div>`:''}
+            ${skipped?`<div class="q-hint" style="color:var(--amber-txt)">↳ Omitida — sin contratos escritos</div>`:''}
           </div>
           ${['si','no','parcial'].map(opt=>`
           <div class="q-opt">
-            <label><input type="radio" name="${q.id}" value="${opt}" ${v===opt?'checked':''} onchange="setAnswer('${q.id}','${opt}')">
+            <label><input type="radio" name="${q.id}" value="${opt}" ${v===opt?'checked':''} ${skipped?'disabled':''} onchange="setAnswer('${q.id}','${opt}')">
             ${opt.charAt(0).toUpperCase()+opt.slice(1)}</label>
           </div>`).join('')}
           <div class="risk-pill risk-${q.r}">${RISK_LABEL[q.r]}</div>
         </div>
-        <div class="q-notes-row">
+        ${!skipped?`<div class="q-notes-row">
           <textarea rows="1" placeholder="Notas / detalle..." onchange="setNote('${q.id}',this.value)" oninput="autoResize(this)">${esc(notes[q.id]||'')}</textarea>
-        </div>
+        </div>`:''}
       </div>`;
     });
     html+=`</div>`;
   } else {
     // SUMMARY
-    const all=BLOCKS.flatMap(b=>b.qs);
+    const all=BLOCKS.flatMap(b=>b.qs).filter(q=>!isSkipped(q));
     const issues=all.filter(q=>answers[q.id]==='no'||answers[q.id]==='parcial');
     const highIssues=issues.filter(q=>q.r==='A');
     const midIssues=issues.filter(q=>q.r==='M');
     const ic=issueCount();
     const hr=highRisk();
+    // añadir aviso de contratos si se omitió B2
+    const sinContratos=answers['2.1']==='no';
 
     html+=`<div class="summary-card">
       <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px">
@@ -439,22 +539,29 @@ function render(){
         <button class="print-btn" onclick="window.print()">Imprimir / Guardar PDF</button>
       </div>
       <div class="stat-row">
-        <div class="stat-card"><div class="stat-label">Preguntas respondidas</div><div class="stat-val">${ta}/${totalQs}</div></div>
+        <div class="stat-card"><div class="stat-label">Preguntas atendidas</div><div class="stat-val">${ta}/${tq}</div></div>
         <div class="stat-card"><div class="stat-label">Incumplimientos totales</div><div class="stat-val red">${ic}</div></div>
         <div class="stat-card"><div class="stat-label">Riesgo ALTO</div><div class="stat-val red">${hr}</div></div>
         <div class="stat-card"><div class="stat-label">Riesgo MEDIO</div><div class="stat-val amber">${midIssues.length}</div></div>
-      </div>
+      </div>`;
 
-      <div class="sum-section-title">Semáforo por bloque</div>
+    if(sinContratos){
+      html+=`<div class="skip-banner" style="margin:0 0 16px">
+        <div class="skip-icon">⚠</div>
+        <div class="skip-text"><strong>Personal sin contrato escrito (2.1 = No).</strong> Las preguntas 2.2–2.10 fueron omitidas. La elaboración de contratos individuales para todos los puestos es la acción de mayor prioridad del plan de trabajo.</div>
+      </div>`;
+    }
+
+    html+=`<div class="sum-section-title">Semáforo por bloque</div>
       <table class="semaforo-table">
         <thead><tr><th>Bloque</th><th style="text-align:center;width:60px">Preguntas</th><th style="text-align:center;width:80px">No / Parcial</th><th style="width:100px">Nivel de riesgo</th></tr></thead>
         <tbody>`;
     BLOCKS.forEach(b=>{
       const r=blockRisk(b);
-      const bi=b.qs.filter(q=>answers[q.id]==='no'||answers[q.id]==='parcial').length;
+      const bi=b.qs.filter(q=>!isSkipped(q)&&(answers[q.id]==='no'||answers[q.id]==='parcial')).length;
       html+=`<tr>
         <td>${b.id}. ${esc(b.title)}</td>
-        <td style="text-align:center">${b.qs.length}</td>
+        <td style="text-align:center">${b.qs.filter(q=>!isSkipped(q)).length}</td>
         <td style="text-align:center;color:${bi>0?'var(--red-txt)':'var(--muted)'}">${bi}</td>
         <td><span class="badge-risk ${r?'badge-'+r:'badge-none'}">${r?RISK_LABEL[r]:'Sin responder'}</span></td>
       </tr>`;
@@ -499,7 +606,7 @@ function render(){
 
   html+=`<div class="nav-row">
     <button class="nav-btn" onclick="goBlock(${Math.max(0,block-1)})" ${block===0?'disabled':''}>← Anterior</button>
-    <div class="nav-center">${isSummary?'Diagnóstico final':`Bloque ${BLOCKS[block].id} · ${Math.round((blockAnswered(BLOCKS[block])/BLOCKS[block].qs.length)*100)}% respondido`}</div>
+    <div class="nav-center" id="nav-center">${isSummary?'Diagnóstico final':`Bloque ${BLOCKS[block].id} · ${Math.round((blockAnswered(BLOCKS[block])/BLOCKS[block].qs.length)*100)}% respondido`}</div>
     ${!isSummary
       ?`<button class="nav-btn primary" onclick="goBlock(${block+1})">Siguiente →</button>`
       :`<button class="nav-btn primary" onclick="goBlock(0)">Reiniciar diagnóstico</button>`
@@ -507,38 +614,59 @@ function render(){
   </div>`;
 
   document.getElementById('app').innerHTML=html;
-  document.querySelectorAll('.q-notes-row textarea').forEach(ta=>{
-    ta.style.height='auto';
-    ta.style.height=(ta.scrollHeight)+'px';
-  });
+  document.querySelectorAll('textarea').forEach(ta=>{ta.style.height='auto';ta.style.height=ta.scrollHeight+'px';});
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function goBlock(i){block=i;render()}
-function setAnswer(id,val){answers[id]=val;renderLight()}
-function setNote(id,val){notes[id]=val}
-function setDoc(i,val){docChecks[i]=val}
-function autoResize(el){el.style.height='auto';el.style.height=(el.scrollHeight)+'px'}
-
-function renderLight(){
-  // Update only progress bar and stepper without full re-render
+function updateProgress(){
   const ta=totalAnswered();
-  const pct=Math.round((ta/totalQs)*100);
-  const fill=document.querySelector('.progress-fill');
-  const label=document.querySelector('.progress-label');
-  const pctEl=document.querySelector('.progress-pct');
-  if(fill)fill.style.width=pct+'%';
-  if(label)label.textContent=`${ta} de ${totalQs} preguntas respondidas`;
-  if(pctEl)pctEl.textContent=pct+'%';
-  const b=BLOCKS[block];
-  if(b){
-    const bPct=Math.round((blockAnswered(b)/b.qs.length)*100);
-    const bf=document.querySelector('.block-prog-fill');
-    if(bf)bf.style.width=bPct+'%';
-    const nc=document.querySelector('.nav-center');
-    if(nc)nc.textContent=`Bloque ${b.id} · ${bPct}% respondido`;
+  const tq=totalQsCount();
+  const pct=tq>0?Math.round((ta/tq)*100):0;
+  const fl=document.getElementById('prog-fill');
+  const ll=document.getElementById('prog-label');
+  const pl=document.getElementById('prog-pct');
+  if(fl)fl.style.width=pct+'%';
+  if(ll)ll.textContent=`${ta} de ${tq} preguntas atendidas`;
+  if(pl)pl.textContent=pct+'%';
+  if(!document.getElementById('app').querySelector('.summary-card')){
+    const b=BLOCKS[block];
+    if(b){
+      const bf=document.querySelector('.block-prog-fill');
+      if(bf)bf.style.width=Math.round((blockAnswered(b)/b.qs.length)*100)+'%';
+      const nc=document.getElementById('nav-center');
+      if(nc)nc.textContent=`Bloque ${b.id} · ${Math.round((blockAnswered(b)/b.qs.length)*100)}% respondido`;
+    }
   }
 }
+
+function goBlock(i){block=i;render()}
+
+function setPersona(val){
+  answers['1.1']=val;
+  // actualizar clases de las etiquetas
+  document.querySelectorAll('.radio-group label').forEach(lbl=>{
+    lbl.classList.toggle('selected',lbl.querySelector('input').value===val);
+  });
+  updateProgress();
+}
+
+function setPuesto(id,val){
+  puestosData[id]=parseInt(val)||0;
+  const tot=totalPuestos();
+  const el=document.getElementById('puesto-total');
+  if(el)el.innerHTML=`Total: <strong>${tot}</strong> persona${tot!==1?'s':''}`;
+  updateProgress();
+}
+
+function setAnswer(id,val){
+  answers[id]=val;
+  // si es pivote 2.1 y cambia a 'no', re-render para mostrar/ocultar skip
+  if(id==='2.1'){render();return;}
+  updateProgress();
+}
+function setNote(id,val){notes[id]=val}
+function setDoc(i,val){docChecks[i]=val}
+function autoResize(el){el.style.height='auto';el.style.height=el.scrollHeight+'px'}
 
 render();
 </script>
