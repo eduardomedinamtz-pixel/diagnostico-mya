@@ -203,6 +203,14 @@ body{font-family:var(--sans);background:#F7F8FA;color:var(--text);min-height:100
   .main{padding:10px}
   .q-card{break-inside:avoid;page-break-inside:avoid}
 }
+.persona-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+@media(max-width:500px){.persona-fields{grid-template-columns:1fr}}
+.pf-group{display:flex;flex-direction:column;gap:5px}
+.pf-group.full{grid-column:1/-1}
+.pf-label{font-size:11px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.06em}
+.pf-input{font-family:var(--sans);font-size:13px;padding:9px 13px;border:1.5px solid var(--border);border-radius:8px;background:#fff;color:var(--text);transition:border .15s,box-shadow .15s;width:100%}
+.pf-input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(46,95,163,.08)}
+.pf-input::placeholder{color:#B0B7C3}
 </style>
 </head>
 <body>
@@ -401,6 +409,7 @@ const ans = {};          // { qId: 'si'|'no'|'parcial' }
 const notes = {};
 const puestos = {};      // { puestoId: numero }
 let personaTipo = '';
+let personaData = {nombre:'', rfc:'', regimen:''};  // campos estructurados 1.1
 let docChecks = {};
 let finalNotes = '';
 
@@ -529,7 +538,6 @@ function render(){
   }
   // resize textareas
   main.querySelectorAll('textarea').forEach(ta=>{ta.style.height='auto';ta.style.height=ta.scrollHeight+'px';});
-  window.scrollTo({top:0,behavior:'smooth'});
 }
 
 function renderBlock(b){
@@ -624,11 +632,36 @@ function renderPersonaQ(q){
         <div class="persona-sub">Con Actividad Empresarial</div>
       </div>
     </div>
-    <div style="margin-top:12px">
-      <div class="q-notes-label">Notas (RFC, representante legal, régimen fiscal)</div>
-      <textarea style="width:100%;font-family:var(--sans);font-size:13px;padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--gray-lt);resize:none;min-height:48px;line-height:1.5;transition:border .15s;color:var(--text)"
-        placeholder="RFC, nombre del representante legal, régimen fiscal..."
-        onchange="setNote('1.1',this.value)" oninput="autoResize(this)">${esc(notes['1.1']||'')}</textarea>
+    <div class="persona-fields">
+      <div class="pf-group full">
+        <label class="pf-label">${pm?'Denominación o razón social':'Nombre completo del patrón'}</label>
+        <input class="pf-input" type="text"
+          placeholder="${pm?'Ej. Restaurantes del Centro SA de CV':'Ej. Juan Pérez García'}"
+          value="${esc(personaData.nombre)}"
+          oninput="setPersonaField('nombre',this.value)">
+      </div>
+      <div class="pf-group">
+        <label class="pf-label">RFC</label>
+        <input class="pf-input" type="text"
+          placeholder="${pm?'Ej. RCE850301ABC':'Ej. PEGJ850301XYZ'}"
+          value="${esc(personaData.rfc)}"
+          style="text-transform:uppercase;letter-spacing:.05em"
+          oninput="setPersonaField('rfc',this.value.toUpperCase())">
+      </div>
+      <div class="pf-group">
+        <label class="pf-label">Régimen fiscal (SAT)</label>
+        <input class="pf-input" type="text"
+          placeholder="Ej. General de Ley, RESICO, RIF..."
+          value="${esc(personaData.regimen)}"
+          oninput="setPersonaField('regimen',this.value)">
+      </div>
+      ${pm?`<div class="pf-group full">
+        <label class="pf-label">Representante legal</label>
+        <input class="pf-input" type="text"
+          placeholder="Nombre completo del apoderado o representante"
+          value="${esc(personaData.representante||'')}"
+          oninput="setPersonaField('representante',this.value)">
+      </div>`:''}
     </div>
   </div>`;
 }
@@ -781,12 +814,21 @@ function renderSummary(){
 function goBlock(i){
   curBlock=Math.max(0,Math.min(BLOCKS.length,i));
   render();
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
 function setAns(id,val){
   ans[id]=val;
-  // Si cambia el pivote 2.1, re-render completo para mostrar/ocultar skip
-  if(id==='2.1'){render();return;}
+  // Si cambia el pivote 2.1, re-render del bloque SIN scroll
+  if(id==='2.1'){
+    renderBlockNav();
+    updateNav();
+    updateTopbar();
+    const main=document.getElementById('main');
+    main.innerHTML=renderBlock(BLOCKS[curBlock]);
+    main.querySelectorAll('textarea').forEach(ta=>{ta.style.height='auto';ta.style.height=ta.scrollHeight+'px';});
+    return;
+  }
   // Actualizar solo la tarjeta y las notas
   const card=document.getElementById('qcard-'+id);
   if(card){
@@ -824,10 +866,20 @@ function setDoc(i,val){
   if(allDocs[i]) allDocs[i].classList.toggle('checked',val);
 }
 
+function setPersonaField(field,val){
+  personaData[field]=val;
+  updateTopbar();
+  renderBlockNav();
+}
+
 function setPersona(tipo){
   personaTipo=tipo;
-  const cards=document.querySelectorAll('.persona-card');
-  cards.forEach((c,i)=>c.classList.toggle('selected',(i===0&&tipo==='pm')||(i===1&&tipo==='pf')));
+  // Re-render solo la tarjeta 1.1 para actualizar labels sin scroll
+  const card=document.getElementById('qcard-1.1');
+  if(card){
+    const q=BLOCKS[0].qs.find(q=>q.id==='1.1');
+    card.outerHTML=renderPersonaQ(q);
+  }
   updateTopbar();
   renderBlockNav();
 }
