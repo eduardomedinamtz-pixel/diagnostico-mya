@@ -210,7 +210,9 @@ body{font-family:var(--sans);background:#F7F8FA;color:var(--text);min-height:100
 .pf-label{font-size:11px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.06em}
 .pf-input{font-family:var(--sans);font-size:13px;padding:9px 13px;border:1.5px solid var(--border);border-radius:8px;background:#fff;color:var(--text);transition:border .15s,box-shadow .15s;width:100%}
 .pf-input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(46,95,163,.08)}
-.pf-input::placeholder{color:#B0B7C3}
+.st-num-input{width:44px;text-align:center;font-family:var(--sans);font-size:14px;font-weight:700;color:var(--navy);border:1.5px solid var(--border);border-radius:6px;padding:3px 4px;background:#fff;-moz-appearance:textfield}
+.st-num-input::-webkit-inner-spin-button,.st-num-input::-webkit-outer-spin-button{-webkit-appearance:none}
+.st-num-input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 2px rgba(46,95,163,.1)}
 </style>
 </head>
 <body>
@@ -674,7 +676,8 @@ function renderPuestosQ(q){
       <span class="puesto-label">${esc(p.n)}</span>
       <div class="puesto-stepper">
         <button class="st-btn" onclick="adjPuesto('${p.id}',-1)" type="button">−</button>
-        <span class="st-val" id="pv-${p.id}">${v}</span>
+        <input class="st-num-input" type="number" id="pv-${p.id}" min="0" max="99" value="${v}"
+          oninput="setPuestoVal('${p.id}',this.value)">
         <button class="st-btn" onclick="adjPuesto('${p.id}',1)" type="button">+</button>
       </div>
     </div>`;
@@ -811,61 +814,65 @@ function renderSummary(){
 }
 
 // ── ACCIONES ──────────────────────────────────────────────────────────────
+
 function goBlock(i){
   curBlock=Math.max(0,Math.min(BLOCKS.length,i));
   render();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
+// Respuesta Sí/No/Parcial — manipulación quirúrgica, SIN re-render del bloque
 function setAns(id,val){
   ans[id]=val;
-  // Si cambia el pivote 2.1, re-render del bloque SIN scroll
+
   if(id==='2.1'){
+    // Solo para el pivote necesitamos actualizar el contenido del bloque
+    // (aparece/desaparece el banner y las preguntas dependientes)
+    // Guardamos posición de scroll y la restauramos
+    const sy=window.scrollY;
     renderBlockNav();
     updateNav();
     updateTopbar();
     const main=document.getElementById('main');
     main.innerHTML=renderBlock(BLOCKS[curBlock]);
     main.querySelectorAll('textarea').forEach(ta=>{ta.style.height='auto';ta.style.height=ta.scrollHeight+'px';});
+    window.scrollTo({top:sy});
     return;
   }
-  // Actualizar solo la tarjeta y las notas
+
+  // Para todas las demás preguntas: solo tocamos la tarjeta afectada
   const card=document.getElementById('qcard-'+id);
-  if(card){
-    // Actualizar clase de tarjeta
-    card.className='q-card answered-'+val;
-    // Actualizar botones
-    ['si','no','parcial'].forEach(opt=>{
-      const btns=card.querySelectorAll('.ans-btn');
-      btns.forEach(btn=>{
-        const isOpt=btn.textContent.trim().toLowerCase().includes(opt==='si'?'sí':opt);
-        const icons={si:'✓',no:'✗',parcial:'~'};
-        const labels={si:'Sí',no:'No',parcial:'Parcial'};
-        // comparar por contenido
-      });
-    });
-    // Re-render solo este card es complejo; mejor re-render del bloque
-    const b=BLOCKS[curBlock];
-    const main=document.getElementById('main');
-    if(b){
-      main.innerHTML=renderBlock(b);
-      main.querySelectorAll('textarea').forEach(ta=>{ta.style.height='auto';ta.style.height=ta.scrollHeight+'px';});
-    }
+  if(!card) return;
+
+  // 1. Color de fondo de la tarjeta
+  card.className='q-card answered-'+val;
+
+  // 2. Estado de los botones de respuesta
+  const btnMap={si:0,no:1,parcial:2};
+  card.querySelectorAll('.ans-btn').forEach((btn,i)=>{
+    btn.className='ans-btn'+(i===btnMap[val]?' sel-'+val:'');
+  });
+
+  // 3. Mostrar u ocultar el área de notas
+  const notesDiv=document.getElementById('qnotes-'+id);
+  if(notesDiv){
+    if(val==='no'||val==='parcial') notesDiv.classList.add('visible');
+    else notesDiv.classList.remove('visible');
   }
+
   updateTopbar();
   renderBlockNav();
-  updateNav();
 }
 
 function setNote(id,val){notes[id]=val;}
+
 function setDoc(i,val){
   docChecks[i]=val;
-  const lbl=document.querySelector(`label.doc-item:nth-child(${i+1})`);
-  // toggle class en el elemento más cercano
   const allDocs=document.querySelectorAll('.doc-item');
   if(allDocs[i]) allDocs[i].classList.toggle('checked',val);
 }
 
+// Persona jurídica — solo actualiza la tarjeta 1.1 in-place
 function setPersonaField(field,val){
   personaData[field]=val;
   updateTopbar();
@@ -874,23 +881,37 @@ function setPersonaField(field,val){
 
 function setPersona(tipo){
   personaTipo=tipo;
-  // Re-render solo la tarjeta 1.1 para actualizar labels sin scroll
   const card=document.getElementById('qcard-1.1');
   if(card){
     const q=BLOCKS[0].qs.find(q=>q.id==='1.1');
-    card.outerHTML=renderPersonaQ(q);
+    const tmp=document.createElement('div');
+    tmp.innerHTML=renderPersonaQ(q);
+    card.replaceWith(tmp.firstElementChild);
   }
   updateTopbar();
   renderBlockNav();
 }
 
+// Steppers de puestos — botones +/- y escritura directa, sin re-render
 function adjPuesto(id,delta){
-  puestos[id]=Math.max(0,(puestos[id]||0)+delta);
+  puestos[id]=Math.max(0,(parseInt(document.getElementById('pv-'+id).value)||0)+delta);
+  document.getElementById('pv-'+id).value=puestos[id];
+  _updatePuestosTotal();
+}
+
+function setPuestoVal(id,val){
+  const n=Math.max(0,parseInt(val)||0);
+  puestos[id]=n;
+  // corregir el input si el usuario escribe algo inválido
   const el=document.getElementById('pv-'+id);
-  if(el) el.textContent=puestos[id];
+  if(el&&el.value!==String(n)) el.value=n;
+  _updatePuestosTotal();
+}
+
+function _updatePuestosTotal(){
   const tot=totalPuestos();
-  const totEl=document.getElementById('puestos-total-num');
-  if(totEl) totEl.textContent=`${tot} persona${tot!==1?'s':''}`;
+  const el=document.getElementById('puestos-total-num');
+  if(el) el.textContent=`${tot} persona${tot!==1?'s':''}`;
   updateTopbar();
   renderBlockNav();
 }
