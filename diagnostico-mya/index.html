@@ -1,877 +1,546 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Diagnóstico Laboral — Medina & Alatorre Abogados</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico Laboral — Abogados MYA</title>
 <style>
-:root {
-  --dark:    #051226;
-  --blue:    #004AC7;
-  --gray:    #667587;
-  --off:     #F0F0F0;
-  --light:   #f4f7fb;
-  --border:  #dce3ed;
-  --accent:  #e8f0fd;
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --dark:#1B3A6B;--mid:#2E5FA3;--light:#EAF1FB;
+  --red:#C0392B;--red-lt:#FCEBEB;--red-txt:#A32D2D;
+  --amber:#D68910;--amber-lt:#FAEEDA;--amber-txt:#854F0B;
+  --green:#1E8449;--green-lt:#D5F5E3;--green-txt:#1A5C32;
+  --gray:#F4F4F4;--border:#D8D8D8;--text:#1A1A1A;--muted:#666;
+  --font:'Georgia',serif;--sans:'Helvetica Neue',Arial,sans-serif;
+  --radius:8px
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body{font-family:var(--font);background:#F8F8F6;color:var(--text);font-size:14px;line-height:1.6;min-height:100vh}
+a{color:var(--mid);text-decoration:none}
+a:hover{text-decoration:underline}
 
-body {
-  font-family: 'Raleway', system-ui, sans-serif;
-  background: var(--light);
-  color: #111;
-  min-height: 100vh;
-}
+/* HEADER */
+.site-header{background:var(--dark);color:#fff;padding:0}
+.header-inner{max-width:960px;margin:0 auto;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.header-brand{display:flex;flex-direction:column}
+.header-firm{font-family:var(--sans);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#9CB8D8;margin-bottom:2px}
+.header-title{font-size:20px;font-weight:400;color:#fff}
+.header-sub{font-family:var(--sans);font-size:12px;color:#9CB8D8;margin-top:2px}
+.header-links{display:flex;gap:16px}
+.header-links a{font-family:var(--sans);font-size:12px;color:#9CB8D8;display:flex;align-items:center;gap:5px}
+.header-links a:hover{color:#fff;text-decoration:none}
 
-/* ── HEADER ── */
-.header {
-  background: linear-gradient(120deg, #051226 0%, #0a2353 55%, #004AC7 100%);
-  padding: 0;
-  position: relative;
-  overflow: hidden;
-}
-.header::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(to right, #004AC7, #051226);
-}
-.header-inner {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 32px 24px 28px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-}
-.header-left h1 {
-  font-family: 'DM Serif Text', Georgia, serif;
-  font-size: 26px;
-  font-weight: 400;
-  color: var(--off);
-  line-height: 1.2;
-  margin-bottom: 6px;
-}
-.header-left h1 em { color: var(--blue); font-style: italic; }
-.header-left .sub {
-  font-size: 12px;
-  color: rgba(240,240,240,0.7);
-  line-height: 1.5;
-  max-width: 420px;
-}
-.header-right {
-  text-align: right;
-  flex-shrink: 0;
-}
-.brand-name {
-  font-family: 'DM Serif Text', Georgia, serif;
-  font-size: 15px;
-  color: var(--off);
-  letter-spacing: .02em;
-}
-.brand-name em { color: rgba(240,240,240,0.6); font-style: italic; }
-.brand-tag {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: rgba(240,240,240,0.5);
-  margin-top: 3px;
+/* MAIN */
+.main{max-width:960px;margin:0 auto;padding:28px 24px 60px}
+
+/* HERO */
+.hero{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px 28px;margin-bottom:24px}
+.hero-title{font-size:22px;font-weight:400;color:var(--dark);margin-bottom:6px}
+.hero-desc{font-size:13px;color:var(--muted);max-width:640px;line-height:1.7;margin-bottom:16px}
+.hero-meta{display:flex;gap:20px;flex-wrap:wrap}
+.hero-badge{font-family:var(--sans);font-size:11px;padding:4px 12px;border-radius:20px;background:var(--light);color:var(--mid);border:1px solid #C5D9EF}
+
+/* PROGRESS */
+.progress-section{margin-bottom:20px}
+.progress-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.progress-label{font-family:var(--sans);font-size:12px;color:var(--muted)}
+.progress-pct{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--dark)}
+.progress-bar{height:6px;background:#E0E0E0;border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:var(--dark);border-radius:3px;transition:width .4s ease}
+
+/* STEPPER */
+.stepper{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.step-btn{font-family:var(--sans);font-size:11px;padding:6px 12px;border:1px solid var(--border);border-radius:20px;cursor:pointer;background:#fff;color:var(--muted);transition:all .15s;white-space:nowrap}
+.step-btn:hover{border-color:var(--mid);color:var(--mid)}
+.step-btn.active{background:var(--dark);color:#fff;border-color:var(--dark)}
+.step-btn.done{border-color:var(--dark);color:var(--dark)}
+.step-btn.warn{border-color:var(--red);color:var(--red)}
+
+/* BLOCK CARD */
+.block-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:20px}
+.block-header{padding:16px 24px 14px;border-bottom:1px solid var(--border);background:linear-gradient(to right,var(--light),#fff)}
+.block-num{font-family:var(--sans);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--mid);margin-bottom:3px}
+.block-title{font-size:17px;font-weight:400;color:var(--dark);margin-bottom:2px}
+.block-desc{font-size:12px;color:var(--muted);font-style:italic}
+.block-prog{height:3px;background:#E0E0E0}
+.block-prog-fill{height:100%;background:var(--mid);transition:width .3s}
+
+/* COLUMN HEADERS */
+.col-heads{display:grid;grid-template-columns:40px 1fr 70px 70px 90px 70px;gap:6px;padding:8px 24px 6px;border-bottom:1px solid #F0F0F0;background:#FAFAFA}
+.col-h{font-family:var(--sans);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:center}
+.col-h:nth-child(2){text-align:left}
+@media(max-width:640px){
+  .col-heads{display:none}
 }
 
-/* ── PROGRESO ── */
-.progress-bar {
-  height: 4px;
-  background: rgba(255,255,255,0.1);
-  position: relative;
+/* QUESTION ROW */
+.q-row{padding:14px 24px;border-bottom:1px solid #F5F5F5;transition:background .1s}
+.q-row:last-child{border-bottom:none}
+.q-row:hover{background:#FAFAFA}
+.q-grid{display:grid;grid-template-columns:40px 1fr 70px 70px 90px 70px;gap:6px;align-items:start}
+@media(max-width:640px){
+  .q-grid{grid-template-columns:1fr;gap:8px}
 }
-.progress-fill {
-  height: 100%;
-  background: var(--blue);
-  transition: width .4s ease;
-  width: 0%;
-}
-
-/* ── LAYOUT ── */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 28px 20px 60px;
-}
-
-/* ── SECCIONES ── */
-.seccion {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 24px 26px;
-  margin-bottom: 18px;
-  box-shadow: 0 1px 4px rgba(5,18,38,.05);
-  animation: fadeIn .3s ease;
-}
-@keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
-
-.sec-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 18px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--blue);
-}
-.sec-num {
-  background: var(--dark);
-  color: #e2c97e;
-  font-weight: 700;
-  font-size: 11px;
-  width: 24px; height: 24px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.sec-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--dark);
-  text-transform: uppercase;
-  letter-spacing: .1em;
+.q-id{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--mid);padding-top:2px}
+.q-text{font-size:13px;color:var(--text);line-height:1.55}
+.q-hint{font-size:11px;color:var(--muted);margin-top:4px;font-style:italic}
+.q-opt{display:flex;flex-direction:column;align-items:center;gap:3px}
+.q-opt label{font-family:var(--sans);font-size:11px;color:var(--muted);cursor:pointer;display:flex;align-items:center;gap:4px;white-space:nowrap}
+.q-opt input[type=radio]{accent-color:var(--dark);cursor:pointer;width:13px;height:13px}
+.risk-pill{text-align:center;align-self:center;padding:3px 8px;border-radius:12px;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.04em}
+.risk-A{background:var(--red-lt);color:var(--red-txt)}
+.risk-M{background:var(--amber-lt);color:var(--amber-txt)}
+.risk-B{background:var(--green-lt);color:var(--green-txt)}
+.q-notes-row{margin-top:8px;padding-left:46px}
+@media(max-width:640px){.q-notes-row{padding-left:0}}
+.q-notes-row textarea{width:100%;font-family:var(--font);font-size:12px;padding:7px 10px;border:1px solid var(--border);border-radius:6px;background:#FAFAFA;color:var(--text);resize:none;line-height:1.5;transition:border .15s}
+.q-notes-row textarea:focus{outline:none;border-color:var(--mid);background:#fff}
+@media(max-width:640px){
+  .q-opt{flex-direction:row;flex-wrap:wrap;justify-content:flex-start}
+  .risk-pill{display:inline-block}
 }
 
-/* ── CAMPOS ── */
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
-.grid-1 { grid-template-columns: 1fr; }
-.grid-3 { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+/* NAV */
+.nav-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0 0}
+.nav-btn{font-family:var(--sans);font-size:13px;padding:9px 22px;border:1px solid var(--border);border-radius:6px;cursor:pointer;background:#fff;color:var(--text);transition:all .15s}
+.nav-btn:hover{background:var(--gray)}
+.nav-btn.primary{background:var(--dark);color:#fff;border-color:var(--dark)}
+.nav-btn.primary:hover{background:var(--mid)}
+.nav-btn:disabled{opacity:.4;cursor:not-allowed}
+.nav-center{font-family:var(--sans);font-size:12px;color:var(--muted);text-align:center}
 
-.campo { display: flex; flex-direction: column; gap: 5px; }
-.campo label {
-  font-size: 11px;
-  font-weight: 600;
-  color: #4b5563;
-  letter-spacing: .02em;
-}
-.campo label .req { color: var(--blue); margin-left: 2px; }
-.campo input,
-.campo select,
-.campo textarea {
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 8px 12px;
-  font-size: 13px;
-  font-family: 'Raleway', sans-serif;
-  color: #111;
-  background: #fafbfc;
-  outline: none;
-  transition: border-color .15s, box-shadow .15s;
-  width: 100%;
-}
-.campo input:focus,
-.campo select:focus,
-.campo textarea:focus {
-  border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(0,74,199,.08);
-  background: white;
-}
-.campo textarea { resize: vertical; min-height: 90px; line-height: 1.5; }
-.campo select { cursor: pointer; }
-.campo .hint { font-size: 10px; color: #9ca3af; line-height: 1.4; }
+/* SUMMARY */
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+@media(max-width:640px){.stat-row{grid-template-columns:repeat(2,1fr)}}
+.stat-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;text-align:center}
+.stat-label{font-family:var(--sans);font-size:11px;color:var(--muted);margin-bottom:4px}
+.stat-val{font-size:26px;font-weight:400;color:var(--dark)}
+.stat-val.red{color:var(--red-txt)}
+.stat-val.amber{color:var(--amber-txt)}
+.semaforo-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:20px}
+.semaforo-table th{font-family:var(--sans);font-size:11px;text-align:left;padding:8px 14px;background:var(--dark);color:#fff;font-weight:500}
+.semaforo-table td{padding:9px 14px;border-bottom:1px solid #F0F0F0;vertical-align:middle}
+.semaforo-table tr:last-child td{border-bottom:none}
+.semaforo-table tr:hover td{background:#FAFAFA}
+.badge-risk{display:inline-block;padding:3px 10px;border-radius:12px;font-family:var(--sans);font-size:10px;font-weight:600}
+.badge-A{background:var(--red-lt);color:var(--red-txt)}
+.badge-M{background:var(--amber-lt);color:var(--amber-txt)}
+.badge-B{background:var(--green-lt);color:var(--green-txt)}
+.badge-none{background:var(--gray);color:var(--muted)}
+.issue-item{padding:10px 14px;margin-bottom:6px;border-left:3px solid;border-radius:0 6px 6px 0}
+.issue-A{border-color:var(--red);background:var(--red-lt)}
+.issue-M{border-color:var(--amber);background:var(--amber-lt)}
+.issue-num{font-family:var(--sans);font-size:11px;font-weight:600;margin-bottom:2px}
+.issue-A .issue-num{color:var(--red-txt)}
+.issue-M .issue-num{color:var(--amber-txt)}
+.issue-txt{font-size:13px;color:var(--text)}
+.issue-note{font-size:11px;color:var(--muted);margin-top:3px;font-style:italic}
+.doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px}
+@media(max-width:500px){.doc-grid{grid-template-columns:1fr}}
+.doc-row{display:flex;align-items:center;gap:10px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;font-size:12px;background:#fff}
+.doc-row.check input{accent-color:var(--dark)}
+.sum-section-title{font-family:var(--sans);font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--mid);margin:20px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.notes-final{width:100%;font-family:var(--font);font-size:13px;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius);background:#FAFAFA;color:var(--text);min-height:100px;resize:vertical;line-height:1.6}
+.notes-final:focus{outline:none;border-color:var(--mid);background:#fff}
+.print-btn{font-family:var(--sans);font-size:12px;padding:8px 18px;border:1px solid var(--mid);border-radius:6px;cursor:pointer;background:#fff;color:var(--mid);display:flex;align-items:center;gap:6px}
+.print-btn:hover{background:var(--light)}
+.summary-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px 28px}
 
-/* ── RADIO / CHECKBOX GROUPS ── */
-.opciones { display: flex; flex-direction: column; gap: 8px; }
-.opciones.horizontal { flex-direction: row; flex-wrap: wrap; gap: 8px; }
-.opcion {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 10px 14px;
-  border: 1px solid var(--border);
-  border-radius: 7px;
-  cursor: pointer;
-  transition: border-color .15s, background .15s;
-  background: #fafbfc;
-}
-.opcion:hover { border-color: var(--blue); background: var(--accent); }
-.opcion input { margin-top: 2px; accent-color: var(--blue); flex-shrink: 0; width: 15px; height: 15px; cursor: pointer; }
-.opcion .opt-text { font-size: 12px; color: #374151; line-height: 1.4; }
-.opcion .opt-text strong { display: block; font-size: 13px; color: #111; margin-bottom: 1px; }
-.opcion.selected { border-color: var(--blue); background: var(--accent); }
+/* FOOTER */
+.site-footer{background:var(--dark);color:#9CB8D8;padding:20px 24px;text-align:center;font-family:var(--sans);font-size:11px;margin-top:40px}
 
-/* ── ESCALA ── */
-.escala-wrap { display: flex; flex-direction: column; gap: 12px; }
-.escala-item { display: flex; flex-direction: column; gap: 6px; }
-.escala-label { font-size: 12px; font-weight: 600; color: #374151; }
-.escala-btns { display: flex; gap: 6px; }
-.escala-btn {
-  flex: 1;
-  padding: 8px 4px;
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  background: #fafbfc;
-  font-size: 11px;
-  font-weight: 600;
-  font-family: 'Raleway', sans-serif;
-  cursor: pointer;
-  text-align: center;
-  transition: all .15s;
-  color: var(--gray);
-}
-.escala-btn:hover { border-color: var(--blue); color: var(--blue); }
-.escala-btn.sel { background: var(--blue); border-color: var(--blue); color: white; }
-.escala-nums { display: flex; justify-content: space-between; font-size: 9px; color: #9ca3af; padding: 0 2px; }
-
-/* ── BOTÓN ENVIAR ── */
-.btn-submit {
-  width: 100%;
-  padding: 16px;
-  background: var(--blue);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-family: 'Raleway', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  cursor: pointer;
-  transition: background .15s, transform .1s;
-  margin-top: 8px;
-}
-.btn-submit:hover { background: #0040b0; }
-.btn-submit:active { transform: scale(.99); }
-
-/* ── CONFIRMACIÓN ── */
-#confirmacion {
-  display: none;
-  text-align: center;
-  padding: 60px 24px;
-}
-#confirmacion .check-icon {
-  width: 70px; height: 70px;
-  background: linear-gradient(135deg, var(--dark), var(--blue));
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 24px;
-  font-size: 32px;
-}
-#confirmacion h2 {
-  font-family: 'DM Serif Text', Georgia, serif;
-  font-size: 24px;
-  color: var(--dark);
-  margin-bottom: 10px;
-}
-#confirmacion p {
-  font-size: 14px;
-  color: var(--gray);
-  line-height: 1.6;
-  max-width: 400px;
-  margin: 0 auto 6px;
-}
-
-/* ── NOTA PIE ── */
-.nota-pie {
-  text-align: center;
-  font-size: 10px;
-  color: #9ca3af;
-  line-height: 1.6;
-  margin-top: 28px;
-}
-
-@media (max-width: 600px) {
-  .header-inner { flex-direction: column; gap: 12px; }
-  .header-right { text-align: left; }
-  .escala-btns { gap: 3px; }
-  .escala-btn { font-size: 10px; padding: 7px 2px; }
+/* PRINT */
+@media print{
+  .site-header,.stepper,.nav-row,.print-btn,.header-links{display:none!important}
+  .block-card{break-inside:avoid;page-break-inside:avoid;border:1px solid #ccc}
+  .q-notes-row textarea{border:1px solid #ccc;height:40px}
+  body{background:#fff}
+  .main{padding:10px}
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<div class="header">
+<header class="site-header">
   <div class="header-inner">
-    <div class="header-left">
-      <h1>Diagnóstico <em>/</em> Asesoría Preventiva<br/>en Materia Laboral</h1>
-      <p class="sub">Este cuestionario nos permite identificar los principales riesgos de cumplimiento en su empresa y diseñar una estrategia de protección jurídica preventiva.</p>
+    <div class="header-brand">
+      <div class="header-firm">Abogados MYA</div>
+      <div class="header-title">Diagnóstico de Cumplimiento Laboral</div>
+      <div class="header-sub">Evaluación inicial · Restaurante-Bar · Guadalajara, Jalisco</div>
     </div>
-    <div class="header-right">
-      <div class="brand-name">Medina <em>&</em> Alatorre</div>
-      <div class="brand-tag">Abogados</div>
-    </div>
-  </div>
-  <div class="progress-bar"><div class="progress-fill" id="progreso"></div></div>
-</div>
-
-<!-- FORMULARIO PRINCIPAL -->
-<div class="container">
-<form name="diagnostico-laboral" method="POST" id="formDiag" onsubmit="return enviarFormulario(event)">
-  <input type="hidden" name="form-name" value="diagnostico-laboral"/>
-  <input type="hidden" name="bot-field" style="display:none"/>
-
-  <!-- 1. DATOS DE LA EMPRESA -->
-  <div class="seccion">
-    <div class="sec-title">
-      <div class="sec-num">1</div>
-      <div class="sec-label">Datos de la Empresa</div>
-    </div>
-    <div class="grid" style="gap:14px">
-      <div class="campo">
-        <label>Nombre o razón social <span class="req">*</span></label>
-        <input type="text" name="empresa" placeholder="Ej. Empresa S.A. de C.V." required/>
-      </div>
-      <div class="campo">
-        <label>Nombre del responsable <span class="req">*</span></label>
-        <input type="text" name="responsable" placeholder="Nombre completo" required/>
-      </div>
-      <div class="campo">
-        <label>Cargo / Puesto</label>
-        <input type="text" name="cargo" placeholder="Ej. Director General, RRHH"/>
-      </div>
-      <div class="campo">
-        <label>Correo electrónico <span class="req">*</span></label>
-        <input type="email" name="correo" placeholder="correo@empresa.com" required/>
-      </div>
-      <div class="campo">
-        <label>Teléfono / WhatsApp <span class="req">*</span></label>
-        <input type="tel" name="telefono" placeholder="33 1234 5678" required/>
-      </div>
-      <div class="campo">
-        <label>Ciudad / Estado</label>
-        <input type="text" name="ciudad" placeholder="Ej. Guadalajara, Jalisco"/>
-      </div>
+    <div class="header-links">
+      <a href="https://finiquito-laboral.netlify.app">← Calculadora de Finiquito</a>
     </div>
   </div>
+</header>
 
-  <!-- 2. PERFIL DE LA EMPRESA -->
-  <div class="seccion">
-    <div class="sec-title">
-      <div class="sec-num">2</div>
-      <div class="sec-label">Perfil de la Empresa</div>
-    </div>
-    <div class="grid" style="gap:14px">
-      <div class="campo">
-        <label>Giro o actividad principal <span class="req">*</span></label>
-        <select name="giro" required>
-          <option value="">Selecciona...</option>
-          <option>Manufactura / Industria</option>
-          <option>Comercio / Retail</option>
-          <option>Servicios profesionales</option>
-          <option>Tecnología</option>
-          <option>Construcción</option>
-          <option>Salud / Farmacéutico</option>
-          <option>Alimentos y bebidas</option>
-          <option>Transporte y logística</option>
-          <option>Educación</option>
-          <option>Otro</option>
-        </select>
-      </div>
-      <div class="campo">
-        <label>Número de trabajadores <span class="req">*</span></label>
-        <select name="num_trabajadores" required>
-          <option value="">Selecciona...</option>
-          <option>1 a 10</option>
-          <option>11 a 50</option>
-          <option>51 a 100</option>
-          <option>101 a 500</option>
-          <option>Más de 500</option>
-        </select>
-      </div>
-      <div class="campo">
-        <label>Años de operación</label>
-        <select name="anos_operacion">
-          <option value="">Selecciona...</option>
-          <option>Menos de 1 año</option>
-          <option>1 a 3 años</option>
-          <option>4 a 10 años</option>
-          <option>Más de 10 años</option>
-        </select>
-      </div>
-      <div class="campo">
-        <label>¿Cuenta con área de RRHH o nómina interna?</label>
-        <select name="area_rrhh">
-          <option value="">Selecciona...</option>
-          <option>Sí, área interna</option>
-          <option>No, servicio externo (outsourcing)</option>
-          <option>No, lo maneja la dirección</option>
-        </select>
-      </div>
-    </div>
-  </div>
+<main class="main" id="app"></main>
 
-  <!-- 3. CONTRATOS Y RELACIONES LABORALES -->
-  <div class="seccion">
-    <div class="sec-title">
-      <div class="sec-num">3</div>
-      <div class="sec-label">Contratos y Relaciones Laborales</div>
-    </div>
-    <div class="grid grid-1" style="gap:12px">
+<footer class="site-footer">
+  Abogados MYA · Av. Américas 1501, Piso 20-A · Guadalajara, Jalisco · contacto@abogadosmya.com
+</footer>
 
-      <div class="campo">
-        <label>¿Qué tipos de contrato utiliza actualmente?</label>
-        <div class="opciones">
-          <label class="opcion"><input type="checkbox" name="contratos" value="Tiempo indeterminado"/> <span class="opt-text">Tiempo indeterminado</span></label>
-          <label class="opcion"><input type="checkbox" name="contratos" value="Tiempo determinado"/> <span class="opt-text">Tiempo determinado</span></label>
-          <label class="opcion"><input type="checkbox" name="contratos" value="Obra determinada"/> <span class="opt-text">Obra o servicio determinado</span></label>
-          <label class="opcion"><input type="checkbox" name="contratos" value="Honorarios/prestador servicios"/> <span class="opt-text">Honorarios / Prestador de servicios independiente</span></label>
-          <label class="opcion"><input type="checkbox" name="contratos" value="Outsourcing/Insourcing"/> <span class="opt-text">Outsourcing / Insourcing (régimen de subcontratación)</span></label>
-          <label class="opcion"><input type="checkbox" name="contratos" value="Sin contrato escrito"/> <span class="opt-text"><strong>Sin contrato escrito</strong></span></label>
-        </div>
-      </div>
+<script>
+const BLOCKS=[
+{id:1,title:"Datos generales y estructura operativa",desc:"Caracterización del negocio para dimensionar el diagnóstico",
+qs:[
+{id:"1.1",t:"¿Opera bajo persona moral o persona física con actividad empresarial?",r:"B",h:"Determina obligaciones fiscales y de registro"},
+{id:"1.2",t:"¿Cuántos trabajadores laboran actualmente (fijos, eventuales y de temporada)?",r:"B",h:"Anote el detalle en notas"},
+{id:"1.3",t:"¿Tiene registro patronal vigente ante el IMSS?",r:"A"},
+{id:"1.4",t:"¿Cuenta con licencia de funcionamiento y permiso de venta de alcohol vigentes?",r:"A",h:"Su ausencia agrava el riesgo en inspecciones conjuntas STPS/Cofepris"},
+{id:"1.5",t:"¿Existe organigrama o estructura de puestos definida formalmente?",r:"B"},
+{id:"1.6",t:"¿Hay más de un turno de trabajo operando simultáneamente o en forma rotatoria?",r:"B"},
+{id:"1.7",t:"¿Ha recibido visitas de inspección de la STPS, IMSS o Cofepris en los últimos 3 años?",r:"M",h:"Anote resultados y observaciones"},
+{id:"1.8",t:"¿Existe algún juicio o procedimiento laboral activo (demanda, conciliación, amparo)?",r:"A",h:"Anote número de asuntos, instancia y estado procesal"},
+]},
+{id:2,title:"Contratos individuales de trabajo",desc:"Art. 25 LFT — Contenido mínimo obligatorio",
+qs:[
+{id:"2.1",t:"¿Todo el personal activo cuenta con contrato individual de trabajo por escrito?",r:"A",h:"La ausencia genera presunción de las condiciones más favorables al trabajador"},
+{id:"2.2",t:"¿Los contratos especifican el tipo correcto de relación: tiempo indeterminado, temporada o determinado según la función real?",r:"A",h:"Contratos a plazo fijo para funciones permanentes son nulos y revierten a tiempo indeterminado"},
+{id:"2.3",t:"¿Los contratos contienen el contenido mínimo del Art. 25 LFT: datos del trabajador, puesto, jornada, salario, lugar y día de pago?",r:"A"},
+{id:"2.4",t:"¿Los contratos regulan el período de prueba conforme a los Arts. 39-A al 39-F LFT?",r:"M",h:"Verificar plazo, alta IMSS desde primer día y no reiteración"},
+{id:"2.5",t:"¿Los contratos de cocina, barra y piso contienen cláusula de propinas con componente de integración para el SDI ante el IMSS?",r:"A",h:"Sin esta cláusula el SDI puede estar subdeclarado en todos los meseros y bartenders"},
+{id:"2.6",t:"¿Los contratos del chef y personal de confianza incluyen cláusula de confidencialidad con vigencia post-laboral?",r:"A"},
+{id:"2.7",t:"¿Los contratos del cajero incluyen protocolo de responsabilidad por valores y prohibición de descuentos sin soporte documental?",r:"A",h:"Sin esto, cualquier descuento por faltantes es potencialmente ilegal"},
+{id:"2.8",t:"¿Los contratos regulan el uso de herramientas tecnológicas (WhatsApp institucional, POS, plataformas de reservaciones)?",r:"M"},
+{id:"2.9",t:"¿El personal de temporada tiene contratos por temporada debidamente justificados y no contratos a tiempo determinado improcedentes?",r:"A"},
+{id:"2.10",t:"¿Cada trabajador conserva un ejemplar de su contrato y el patrón tiene el acuse de recibo en el expediente?",r:"M"},
+]},
+{id:3,title:"Reglamento Interior de Trabajo y comisiones",desc:"Arts. 422-425 y 509-512 LFT · NOM-019 · NOM-035",
+qs:[
+{id:"3.1",t:"¿Cuenta con Reglamento Interior de Trabajo elaborado por Comisión Mixta?",r:"A",h:"Sin RIT el patrón carece de base para aplicar medidas disciplinarias válidamente"},
+{id:"3.2",t:"¿El RIT fue depositado ante el CFCRL y se conserva el acuse de depósito?",r:"A",h:"El RIT no depositado no es oponible al trabajador ni a la autoridad"},
+{id:"3.3",t:"¿El RIT está fijado en lugares visibles del establecimiento con constancia de fijación?",r:"A"},
+{id:"3.4",t:"¿Se entregó un ejemplar del RIT a cada trabajador con acuse de recibo en su expediente?",r:"M"},
+{id:"3.5",t:"¿El RIT cubre las materias mínimas del Art. 423 LFT: jornada, descansos, faltas, sanciones, higiene, exámenes médicos, uso de asientos?",r:"A"},
+{id:"3.6",t:"¿El RIT contiene disposiciones específicas por área operativa (cocina, barra, caja, limpieza, piso)?",r:"M"},
+{id:"3.7",t:"¿Existe Comisión de Seguridad e Higiene constituida con acta formal y registrada ante la STPS?",r:"A"},
+{id:"3.8",t:"¿Existe Comisión Mixta de Capacitación, Adiestramiento y Productividad constituida con acta formal?",r:"A"},
+{id:"3.9",t:"¿Existe responsable o comisión designada para la NOM-035-STPS-2018 con acta formal?",r:"A"},
+{id:"3.10",t:"¿El RIT o sus anexos contienen protocolo de actuación frente a hostigamiento y acoso sexual (Art. 132, fr. XXXI LFT)?",r:"A"},
+]},
+{id:4,title:"Jornada, horario y registro de asistencia",desc:"Arts. 58-68 LFT — Base para cálculo de horas extra y rescisiones",
+qs:[
+{id:"4.1",t:"¿Los horarios de cada turno están definidos por escrito y son congruentes con el tipo de jornada pactado en los contratos?",r:"A"},
+{id:"4.2",t:"¿Existe sistema de registro de asistencia (checador, huella, app) que genere evidencia documental?",r:"A",h:"Sin registro de asistencia es imposible acreditar faltas injustificadas en una rescisión"},
+{id:"4.3",t:"¿Los registros de asistencia se conservan por al menos un año?",r:"M"},
+{id:"4.4",t:"¿El tiempo extraordinario se autoriza por escrito antes de trabajarse y se registra en bitácora?",r:"A",h:"El tiempo extra no autorizado es igualmente pagable; la falta de registro agrava la contingencia"},
+{id:"4.5",t:"¿El rol de turnos se publica con anticipación suficiente y existe evidencia de su comunicación al personal?",r:"M"},
+{id:"4.6",t:"¿Existe procedimiento escrito para reportar ausencias y justificarlas con documento?",r:"M"},
+{id:"4.7",t:"¿El personal descansa efectivamente un día por cada seis de trabajo o recibe el pago doble correspondiente?",r:"A"},
+{id:"4.8",t:"¿El trabajo en días de descanso obligatorio (Art. 74 LFT) se retribuye con el pago triple que corresponde?",r:"A"},
+]},
+{id:5,title:"Salario, nómina, IMSS e INFONAVIT",desc:"Arts. 82-116 LFT · LSS · Ley INFONAVIT — Principal fuente de contingencia económica",
+qs:[
+{id:"5.1",t:"¿El salario de todos los trabajadores es igual o superior al salario mínimo general vigente?",r:"A"},
+{id:"5.2",t:"¿El SDI declarado ante el IMSS incluye correctamente todas las prestaciones ordinarias: prima vacacional, aguinaldo proporcional, propinas y comisiones?",r:"A",h:"La subdeclaración del SDI genera multas IMSS, diferencias de cuotas y contingencia en indemnizaciones"},
+{id:"5.3",t:"¿Todo el personal está dado de alta ante el IMSS desde el primer día de labores?",r:"A"},
+{id:"5.4",t:"¿Las cuotas obrero-patronales al IMSS se pagan puntualmente y sin adeudos?",r:"A"},
+{id:"5.5",t:"¿Las aportaciones al INFONAVIT y AFORE están al corriente?",r:"A"},
+{id:"5.6",t:"¿Se emite CFDI de nómina en cada período de pago y se entrega al trabajador?",r:"A",h:"La omisión es infracción al CFF con multa independiente de la laboral"},
+{id:"5.7",t:"¿El aguinaldo se paga antes del 20 de diciembre de cada año?",r:"A"},
+{id:"5.8",t:"¿Las vacaciones y prima vacacional se otorgan conforme a la reforma de 2023 (mínimo 12 días al primer año)?",r:"A",h:"Verificar si se actualizaron contratos y política de vacaciones tras la reforma"},
+{id:"5.9",t:"¿Existe política documentada para descuentos en nómina (anticipos, préstamos, faltantes de caja)?",r:"A",h:"Los descuentos sin soporte firmado son ilegales y generan contingencia de pago doble"},
+{id:"5.10",t:"¿Los recibos de nómina o CFDI se conservan en el expediente por al menos 5 años?",r:"M"},
+]},
+{id:6,title:"Propinas — Régimen e integración salarial",desc:"Arts. 346-349 LFT — Área de mayor subdeclaración en el giro",
+qs:[
+{id:"6.1",t:"¿El establecimiento tiene política de propinas definida por escrito (pool, individual, por puntos u otro sistema)?",r:"M"},
+{id:"6.2",t:"¿El patrón se abstiene de retener, apropiarse o interferir en la distribución de propinas?",r:"A",h:"La retención de propinas es causa de rescisión imputable al patrón"},
+{id:"6.3",t:"¿Se ha acordado con el personal un componente de propinas para la integración del SDI ante el IMSS?",r:"A",h:"Sin este acuerdo el SDI está subdeclarado para todos los meseros y bartenders"},
+{id:"6.4",t:"¿Existe bitácora o registro de propinas distribuidas que permita acreditarlo ante el IMSS o autoridad laboral?",r:"M"},
+{id:"6.5",t:"¿El personal de barman tiene comisiones sobre ventas documentadas en contrato o anexo y se incluyen en el SDI?",r:"M"},
+]},
+{id:7,title:"Seguridad e higiene",desc:"NOM-019 · NOM-002 · NOM-017 · NOM-251-SSA1 · Arts. 509-512 LFT",
+qs:[
+{id:"7.1",t:"¿Existe Programa Anual de Seguridad e Higiene vigente elaborado por la Comisión?",r:"A"},
+{id:"7.2",t:"¿Se realizan recorridos de verificación periódicos con acta levantada y conservada?",r:"A",h:"Las actas de recorrido son la evidencia principal en una inspección de la STPS"},
+{id:"7.3",t:"¿Los extintores están vigentes (carga y fecha), accesibles y el personal sabe usarlos?",r:"A"},
+{id:"7.4",t:"¿Las salidas de emergencia están señalizadas, libres de obstáculos y el personal las conoce?",r:"A"},
+{id:"7.5",t:"¿Se realizan simulacros de evacuación con la frecuencia requerida y se levantan actas?",r:"M"},
+{id:"7.6",t:"¿El EPP asignado a cada puesto es el correcto conforme al análisis de riesgos y se usa efectivamente?",r:"A"},
+{id:"7.7",t:"¿Existe procedimiento escrito para el manejo seguro de gas y equipos de cocina?",r:"A"},
+{id:"7.8",t:"¿Existe lista de químicos autorizados con hojas de seguridad (FDS) disponibles para el personal?",r:"M"},
+{id:"7.9",t:"¿Se llevan bitácoras de control de temperaturas de conservación y cocción en cocina?",r:"M"},
+{id:"7.10",t:"¿Los accidentes de trabajo se han reportado al IMSS mediante ST-7 en tiempo y forma?",r:"A",h:"La omisión puede hacer que el IMSS desconozca su carácter laboral y generar responsabilidad patronal"},
+{id:"7.11",t:"¿El personal de cocina cuenta con certificado de manipulador de alimentos vigente?",r:"M"},
+{id:"7.12",t:"¿Existe botiquín de primeros auxilios completo, accesible y con inventario actualizado?",r:"M"},
+]},
+{id:8,title:"Capacitación y adiestramiento",desc:"Arts. 153-A a 153-F LFT — Obligación registrada ante la STPS",
+qs:[
+{id:"8.1",t:"¿Existe Plan y Programa de Capacitación (DC-1/DC-2) registrado ante la STPS para el ejercicio en curso?",r:"A"},
+{id:"8.2",t:"¿Se expiden Constancias de Habilidades Laborales (DC-3) dentro de los 60 días de concluir cada curso?",r:"A"},
+{id:"8.3",t:"¿Los cursos cubren los temas prioritarios: manejo de alimentos, seguridad, servicio responsable de alcohol, NOM-035 y protección de datos?",r:"M"},
+{id:"8.4",t:"¿Existe lista de asistencia firmada de cada sesión de capacitación conservada en el expediente?",r:"M"},
+{id:"8.5",t:"¿La Comisión Mixta de Capacitación sesiona periódicamente y levanta actas de sus reuniones?",r:"M"},
+]},
+{id:9,title:"NOM-035 y prevención de violencia laboral",desc:"Riesgo psicosocial, hostigamiento y acoso — Obligación vigente desde 2019",
+qs:[
+{id:"9.1",t:"¿El establecimiento tiene adoptada y difundida formalmente la Política de Prevención de Factores de Riesgo Psicosocial?",r:"A"},
+{id:"9.2",t:"¿Se ha realizado la evaluación de factores de riesgo psicosocial con la guía de referencia que corresponde al número de trabajadores?",r:"A",h:"Hasta 15 trabajadores: guía I. De 16 a 50: guía II. Más de 50: guía III con comisión formal"},
+{id:"9.3",t:"¿Existe canal de denuncia de violencia laboral, hostigamiento y acoso, conocido por todo el personal?",r:"A"},
+{id:"9.4",t:"¿Existe protocolo de actuación frente a hostigamiento y acoso sexual documentado y difundido?",r:"A"},
+{id:"9.5",t:"¿Ha habido denuncias de hostigamiento, acoso o violencia en el establecimiento en el último año?",r:"A",h:"Anote si se investigaron, documentaron y cuál fue la resolución"},
+{id:"9.6",t:"¿El personal ha recibido capacitación en prevención de violencia laboral y NOM-035 en el último año?",r:"M"},
+{id:"9.7",t:"¿Se conserva la evidencia documental del cumplimiento de la NOM-035 por al menos 5 años?",r:"M"},
+]},
+{id:10,title:"Protección de datos personales",desc:"LFPDPPP — Clientes y personal del establecimiento",
+qs:[
+{id:"10.1",t:"¿El establecimiento cuenta con Aviso de Privacidad para datos personales de clientes (reservaciones, facturación)?",r:"M"},
+{id:"10.2",t:"¿Existe Aviso de Privacidad para el personal del establecimiento, entregado al inicio de la relación laboral?",r:"M"},
+{id:"10.3",t:"¿Los contratos individuales contienen autorización del trabajador para el tratamiento de sus datos personales?",r:"M"},
+{id:"10.4",t:"¿El sistema de reservaciones y bases de datos de clientes tienen medidas de seguridad básicas?",r:"M"},
+{id:"10.5",t:"¿El personal que accede a datos de clientes ha sido instruido sobre la prohibición de uso personal?",r:"M"},
+{id:"10.6",t:"¿El establecimiento tiene cámaras de seguridad? ¿El personal y los clientes son informados de su existencia?",r:"B"},
+]},
+{id:11,title:"Situación disciplinaria y litigiosa",desc:"Diagnóstico de contingencias abiertas y prácticas de gestión de personal",
+qs:[
+{id:"11.1",t:"¿Existen demandas laborales activas contra el establecimiento?",r:"A",h:"Anote número, instancia y pretensiones aproximadas"},
+{id:"11.2",t:"¿Ha habido rescisiones en el último año? ¿Se documentaron con acta y aviso escrito?",r:"A"},
+{id:"11.3",t:"¿Ha habido renuncias voluntarias en el último año? ¿Se elaboraron finiquitos firmados con testigos?",r:"M"},
+{id:"11.4",t:"¿Existe expediente personal completo para cada trabajador (contrato, recibos, actas, acuses de RIT)?",r:"A"},
+{id:"11.5",t:"¿Se han levantado actas de amonestación o suspensión en el último año con procedimiento correcto (audiencia, testigos, negativa documentada)?",r:"A"},
+{id:"11.6",t:"¿Hay trabajadores bajo honorarios o servicios independientes que en la práctica tienen características de relación subordinada?",r:"A",h:"La simulación de relaciones laborales es una de las contingencias más frecuentes y costosas"},
+{id:"11.7",t:"¿El personal de confianza tiene claramente diferenciadas sus funciones en el contrato?",r:"M"},
+{id:"11.8",t:"¿Existe procedimiento definido para atender inspecciones de trabajo?",r:"M"},
+]},
+];
 
-      <div class="campo">
-        <label>¿Sus contratos están actualizados con la reforma laboral 2021 (subcontratación)?</label>
-        <div class="opciones horizontal">
-          <label class="opcion"><input type="radio" name="contratos_actualizados" value="Sí"/> <span class="opt-text">Sí</span></label>
-          <label class="opcion"><input type="radio" name="contratos_actualizados" value="No"/> <span class="opt-text">No</span></label>
-          <label class="opcion"><input type="radio" name="contratos_actualizados" value="No sé"/> <span class="opt-text">No sé</span></label>
-        </div>
-      </div>
+const DOCS=[
+"Contratos individuales — todos los puestos",
+"Expedientes personales completos",
+"Reglamento Interior de Trabajo",
+"Actas de constitución de comisiones (5 actas)",
+"Depósito del RIT ante el CFCRL",
+"Acuses de recibo del RIT por trabajador",
+"Programa Anual de Seguridad e Higiene",
+"Formatos de recorrido de verificación",
+"Plan y Programa de Capacitación (DC-1/DC-2)",
+"Constancias de habilidades laborales (DC-3)",
+"Política NOM-035 difundida con acuse",
+"Protocolo anti-hostigamiento y acoso sexual",
+"Formato de reporte de violencia y acoso",
+"Avisos de Privacidad (clientes y personal)",
+"Formatos disciplinarios (amonestación, suspensión, acta de hechos)",
+"Aviso de rescisión — modelo base",
+"Reporte de accidente de trabajo",
+"Finiquito / liquidación — modelo base por puesto",
+];
 
-      <div class="campo">
-        <label>¿Cuenta con Reglamento Interior de Trabajo registrado ante la STPS?</label>
-        <div class="opciones horizontal">
-          <label class="opcion"><input type="radio" name="rit" value="Sí, registrado"/> <span class="opt-text">Sí, registrado</span></label>
-          <label class="opcion"><input type="radio" name="rit" value="Sí, sin registrar"/> <span class="opt-text">Sí, sin registrar</span></label>
-          <label class="opcion"><input type="radio" name="rit" value="No"/> <span class="opt-text">No</span></label>
-        </div>
-      </div>
-    </div>
-  </div>
+// STATE
+let block=0;
+const answers={};
+const notes={};
+const docChecks={};
+let finalNotes='';
 
-  <!-- 4. NÓMINA Y PRESTACIONES -->
-  <div class="seccion">
-    <div class="sec-title">
-      <div class="sec-num">4</div>
-      <div class="sec-label">Nómina y Prestaciones</div>
-    </div>
-    <div class="grid grid-1" style="gap:12px">
-
-      <div class="campo">
-        <label>¿Cómo se pagan las prestaciones de ley?</label>
-        <div class="opciones">
-          <label class="opcion"><input type="checkbox" name="prestaciones" value="Integradas en el salario (salario integrado)"/> <span class="opt-text">Integradas en el salario (salario integrado)</span></label>
-          <label class="opcion"><input type="checkbox" name="prestaciones" value="Separadas del salario base"/> <span class="opt-text">Separadas del salario base</span></label>
-          <label class="opcion"><input type="checkbox" name="prestaciones" value="Solo las mínimas de ley"/> <span class="opt-text">Solo las mínimas de ley</span></label>
-          <label class="opcion"><input type="checkbox" name="prestaciones" value="Superiores a la ley"/> <span class="opt-text">Superiores a las de ley</span></label>
-          <label class="opcion"><input type="checkbox" name="prestaciones" value="No tengo claridad"/> <span class="opt-text">No tengo claridad sobre cómo se calculan</span></label>
-        </div>
-      </div>
-
-      <div class="campo">
-        <label>¿Tiene trabajadores con jornada reducida o especial?</label>
-        <div class="opciones horizontal">
-          <label class="opcion"><input type="radio" name="jornada_reducida" value="Sí"/> <span class="opt-text">Sí</span></label>
-          <label class="opcion"><input type="radio" name="jornada_reducida" value="No"/> <span class="opt-text">No</span></label>
-        </div>
-      </div>
-
-      <div class="campo">
-        <label>¿Cómo registra las vacaciones y prima vacacional?</label>
-        <div class="opciones horizontal">
-          <label class="opcion"><input type="radio" name="vacaciones_control" value="Sistema/software"/> <span class="opt-text">Sistema o software</span></label>
-          <label class="opcion"><input type="radio" name="vacaciones_control" value="Hoja de cálculo"/> <span class="opt-text">Hoja de cálculo</span></label>
-          <label class="opcion"><input type="radio" name="vacaciones_control" value="Sin control formal"/> <span class="opt-text">Sin control formal</span></label>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- 5. SEGURIDAD SOCIAL Y STPS -->
-  <div class="seccion">
-    <div class="sec-title">
-      <div class="sec-num">5</div>
-      <div class="sec-label">Seguridad Social y Obligaciones STPS</div>
-    </div>
-    <div class="grid grid-1" style="gap:12px">
-
-      <div class="campo">
-        <label>¿Todos sus trabajadores están inscritos en el IMSS con el salario real?</label>
-        <div class="opciones horizontal">
-          <label class="opcion"><input type="radio" name="imss_real" value="Sí, todos"/> <span class="opt-text">Sí, todos</span></label>
-          <label class="opcion"><input type="radio" name="imss_real" value="Solo algunos"/> <span class="opt-text">Solo algunos</span></label>
-          <label class="opcion"><input type="radio" name="imss_real" value="No"/> <span class="opt-text">No</span></label>
-          <label class="opcion"><input type="radio" name="imss_real" value="No sé"/> <span class="opt-text">No sé</span></label>
-        </div>
-      </div>
-
-      <div class="campo">
-        <label>¿Con qué obligaciones de la STPS cumple actualmente?</label>
-        <div class="opciones">
-          <label class="opcion"><input type="checkbox" name="stps" value="Comisión de Seguridad e Higiene"/> <span class="opt-text">Comisión de Seguridad e Higiene</span></label>
-          <label class="opcion"><input type="checkbox" name="stps" value="IMSS SUA actualizado"/> <span class="opt-text">SUA / Determinación de cuotas IMSS actualizada</span></label>
-          <label class="opcion"><input type="checkbox" name="stps" value="NOM-035 (riesgos psicosociales)"/> <span class="opt-text">NOM-035 (factores de riesgo psicosocial)</span></label>
-          <label class="opcion"><input type="checkbox" name="stps" value="NOM-030 (servicios preventivos)"/> <span class="opt-text">NOM-030 (servicios preventivos de seguridad)</span></label>
-          <label class="opcion"><input type="checkbox" name="stps" value="Ninguna de las anteriores"/> <span class="opt-text">Ninguna de las anteriores</span></label>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- 6. PROTECCIÓN DE DATOS (LFPDPPP) -->
-  <div class="seccion">
-    <div class="sec-title">
-      <div class="sec-num">6</div>
-      <div class="sec-label">Protección de Datos Personales — LFPDPPP</div>
-    </div>
-    <div class="grid grid-1" style="gap:12px">
-
-      <div class="campo">
-        <label>¿Cuenta con Aviso de Privacidad para trabajadores y clientes?</label>
-        <div class="opciones horizontal">
-          <label class="opcion"><input type="radio" name="aviso_privacidad" value="Sí, completo"/> <span class="opt-text">Sí, completo</span></label>
-          <label class="opcion"><input type="radio" name="aviso_privacidad" value="Sí, parcial"/> <span class="opt-text">Sí, pero incompleto</span></label>
-          <label class="opcion"><input type="radio" name="aviso_privacidad" value="No"/> <span class="opt-text">No</span></label>
-        </div>
-      </div>
-
-      <div class="campo">
-        <label>¿Qué datos personales recopila habitualmente?</label>
-        <div class="opciones">
-          <label class="opcion"><input type="checkbox" name="datos_personales" value="Datos de identificación (nombre, CURP, INE)"/> <span class="opt-text">Datos de identificación (nombre, CURP, INE)</span></label>
-          <label class="opcion"><input type="checkbox" name="datos_personales" value="Datos laborales (historial, referencias)"/> <span class="opt-text">Datos laborales (historial, referencias)</span></label>
-          <label class="opcion"><input type="checkbox" name="datos_personales" value="Datos patrimoniales o financieros"/> <span class="opt-text">Datos patrimoniales o financieros</span></label>
-          <label class="opcion"><input type="checkbox" name="datos_personales" value="Datos sensibles (salud, biometría)"/> <span class="opt-text"><strong>Datos sensibles</strong> (salud, biometría, origen étnico)</span></label>
-          <label class="opcion"><input type="checkbox" name="datos_personales" value="Datos de clientes o terceros"/> <span class="opt-text">Datos de clientes o terceros</span></label>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- 7. NIVEL DE RIESGO PERCIBIDO -->
-  <div class="seccion">
-    <div class="sec-title">
-      <div class="sec-num">7</div>
-      <div class="sec-label">Percepción de Riesgo</div>
-    </div>
-    <div class="escala-wrap">
-
-      <div class="escala-item">
-        <div class="escala-label">¿Qué probabilidad percibe de enfrentar una demanda laboral en los próximos 12 meses?</div>
-        <div class="escala-btns" id="esc_demanda">
-          <button type="button" class="escala-btn" onclick="setEscala('demanda_laboral',1,this)">1</button>
-          <button type="button" class="escala-btn" onclick="setEscala('demanda_laboral',2,this)">2</button>
-          <button type="button" class="escala-btn" onclick="setEscala('demanda_laboral',3,this)">3</button>
-          <button type="button" class="escala-btn" onclick="setEscala('demanda_laboral',4,this)">4</button>
-          <button type="button" class="escala-btn" onclick="setEscala('demanda_laboral',5,this)">5</button>
-        </div>
-        <div class="escala-nums"><span>Muy baja</span><span>Muy alta</span></div>
-        <input type="hidden" name="demanda_laboral" id="val_demanda_laboral"/>
-      </div>
-
-      <div class="escala-item">
-        <div class="escala-label">¿Qué tan actualizado considera su cumplimiento legal en materia laboral?</div>
-        <div class="escala-btns" id="esc_cumplimiento">
-          <button type="button" class="escala-btn" onclick="setEscala('cumplimiento_laboral',1,this)">1</button>
-          <button type="button" class="escala-btn" onclick="setEscala('cumplimiento_laboral',2,this)">2</button>
-          <button type="button" class="escala-btn" onclick="setEscala('cumplimiento_laboral',3,this)">3</button>
-          <button type="button" class="escala-btn" onclick="setEscala('cumplimiento_laboral',4,this)">4</button>
-          <button type="button" class="escala-btn" onclick="setEscala('cumplimiento_laboral',5,this)">5</button>
-        </div>
-        <div class="escala-nums"><span>Desactualizado</span><span>Totalmente al día</span></div>
-        <input type="hidden" name="cumplimiento_laboral" id="val_cumplimiento_laboral"/>
-      </div>
-
-      <div class="escala-item">
-        <div class="escala-label">¿Qué tan urgente considera atender su cumplimiento en protección de datos?</div>
-        <div class="escala-btns" id="esc_privacidad">
-          <button type="button" class="escala-btn" onclick="setEscala('urgencia_privacidad',1,this)">1</button>
-          <button type="button" class="escala-btn" onclick="setEscala('urgencia_privacidad',2,this)">2</button>
-          <button type="button" class="escala-btn" onclick="setEscala('urgencia_privacidad',3,this)">3</button>
-          <button type="button" class="escala-btn" onclick="setEscala('urgencia_privacidad',4,this)">4</button>
-          <button type="button" class="escala-btn" onclick="setEscala('urgencia_privacidad',5,this)">5</button>
-        </div>
-        <div class="escala-nums"><span>Poco urgente</span><span>Muy urgente</span></div>
-        <input type="hidden" name="urgencia_privacidad" id="val_urgencia_privacidad"/>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- 8. ANTECEDENTES Y COMENTARIOS -->
-  <div class="seccion">
-    <div class="sec-title">
-      <div class="sec-num">8</div>
-      <div class="sec-label">Antecedentes y Comentarios</div>
-    </div>
-    <div class="grid grid-1" style="gap:14px">
-
-      <div class="campo">
-        <label>¿Ha tenido demandas laborales o inspecciones de la STPS en los últimos 3 años?</label>
-        <div class="opciones horizontal">
-          <label class="opcion"><input type="radio" name="antecedentes_demandas" value="Sí, demandas"/> <span class="opt-text">Sí, demandas</span></label>
-          <label class="opcion"><input type="radio" name="antecedentes_demandas" value="Sí, inspecciones STPS"/> <span class="opt-text">Sí, inspecciones STPS</span></label>
-          <label class="opcion"><input type="radio" name="antecedentes_demandas" value="Ambas"/> <span class="opt-text">Ambas</span></label>
-          <label class="opcion"><input type="radio" name="antecedentes_demandas" value="No"/> <span class="opt-text">No</span></label>
-        </div>
-      </div>
-
-      <div class="campo">
-        <label>¿Cuál es su principal preocupación o motivo para solicitar esta asesoría?</label>
-        <textarea name="preocupacion_principal" placeholder="Describe brevemente la situación o duda que te motivó a contactarnos..."></textarea>
-      </div>
-
-      <div class="campo">
-        <label>¿Cómo prefiere que nos comuniquemos con usted?</label>
-        <div class="opciones horizontal">
-          <label class="opcion"><input type="radio" name="preferencia_contacto" value="Correo electrónico"/> <span class="opt-text">Correo electrónico</span></label>
-          <label class="opcion"><input type="radio" name="preferencia_contacto" value="WhatsApp"/> <span class="opt-text">WhatsApp</span></label>
-          <label class="opcion"><input type="radio" name="preferencia_contacto" value="Llamada telefónica"/> <span class="opt-text">Llamada telefónica</span></label>
-          <label class="opcion"><input type="radio" name="preferencia_contacto" value="Videollamada"/> <span class="opt-text">Videollamada (Zoom/Meet)</span></label>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div style="display:flex;gap:12px;flex-direction:column">
-    <button type="button" class="btn-submit" onclick="vistaPreviaPDF()"
-      style="background:transparent;border:2px solid var(--blue);color:var(--blue);font-weight:700">
-      &#128438; Generar PDF del diagnóstico
-    </button>
-    <button type="submit" class="btn-submit">Enviar diagnóstico &#8594;</button>
-  </div>
-</form>
-
-<!-- CONFIRMACIÓN -->
-<div id="confirmacion">
-  <div class="check-icon">✓</div>
-  <h2>¡Diagnóstico recibido!</h2>
-  <p>Gracias por completar el formulario. Nuestro equipo revisará su información y se pondrá en contacto en un plazo de 24 horas hábiles.</p>
-  <p style="margin-top:14px;font-size:13px;color:#374151">
-    <strong>Medina &amp; Alatorre Abogados</strong><br/>
-    Cel: 33 1150 6374 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7d1e1213091c1e09123d1c1f121a1c19120e10041c531e1210">[email&#160;protected]</a>
-  </p>
-</div>
-
-<div class="nota-pie">
-  Medina &amp; Alatorre Abogados · Av. Américas 1501, Piso 20-A · Guadalajara, Jalisco<br/>
-  La información proporcionada es confidencial y se utiliza exclusivamente para fines de asesoría jurídica preventiva.
-</div>
-
-</div><!-- /container -->
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ── Escalas ──────────────────────────────────────────────
-function setEscala(nombre, valor, btn) {
-  document.getElementById('val_' + nombre).value = valor;
-  var contenedor = btn.parentNode;
-  var btns = contenedor.querySelectorAll('.escala-btn');
-  for (var i = 0; i < btns.length; i++) {
-    btns[i].classList.remove('sel');
-  }
-  btn.classList.add('sel');
+const totalQs=BLOCKS.reduce((s,b)=>s+b.qs.length,0);
+function totalAnswered(){return BLOCKS.reduce((s,b)=>s+b.qs.filter(q=>answers[q.id]).length,0)}
+function blockAnswered(b){return b.qs.filter(q=>answers[q.id]).length}
+function blockRisk(b){
+  const nos=b.qs.filter(q=>(answers[q.id]==='no'||answers[q.id]==='parcial')&&q.r==='A').length;
+  const meds=b.qs.filter(q=>(answers[q.id]==='no'||answers[q.id]==='parcial')&&q.r==='M').length;
+  if(nos>0)return'A';
+  if(meds>1)return'M';
+  if(!b.qs.some(q=>answers[q.id]))return null;
+  return'B';
 }
+function issueCount(){return BLOCKS.reduce((s,b)=>s+b.qs.filter(q=>answers[q.id]==='no'||answers[q.id]==='parcial').length,0)}
+function highRisk(){return BLOCKS.reduce((s,b)=>s+b.qs.filter(q=>(answers[q.id]==='no'||answers[q.id]==='parcial')&&q.r==='A').length,0)}
+const RISK_LABEL={A:'ALTO',M:'MEDIO',B:'BAJO'};
 
-// ── Opciones seleccionadas resaltado ─────────────────────
-document.querySelectorAll('.opcion input').forEach(function(inp) {
-  inp.addEventListener('change', function() {
-    var opcion = this.closest('.opcion');
-    if (this.type === 'radio') {
-      var name = this.name;
-      document.querySelectorAll('input[name="' + name + '"]').forEach(function(r) {
-        r.closest('.opcion').classList.remove('selected');
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+function render(){
+  const isSummary=block===BLOCKS.length;
+  const ta=totalAnswered();
+  const pct=Math.round((ta/totalQs)*100);
+
+  let html=`
+  <div class="hero">
+    <div class="hero-title">Diagnóstico de cumplimiento normativo laboral</div>
+    <div class="hero-desc">Evaluación inicial para restaurante-bar. Responda Sí, No o Parcial en cada pregunta. El sistema genera automáticamente el semáforo de riesgo y la paquetería necesaria.</div>
+    <div class="hero-meta">
+      <span class="hero-badge">11 bloques temáticos</span>
+      <span class="hero-badge">${totalQs} preguntas</span>
+      <span class="hero-badge">Mapa de riesgo automático</span>
+      <span class="hero-badge">Uso exclusivo del despacho</span>
+    </div>
+  </div>
+  <div class="progress-section">
+    <div class="progress-top">
+      <span class="progress-label">${ta} de ${totalQs} preguntas respondidas</span>
+      <span class="progress-pct">${pct}%</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+  </div>
+  <div class="stepper">`;
+
+  BLOCKS.forEach((b,i)=>{
+    const r=blockRisk(b);
+    let cls='step-btn';
+    if(block===i)cls+=' active';
+    else if(r==='A')cls+=' warn';
+    else if(blockAnswered(b)===b.qs.length)cls+=' done';
+    html+=`<button class="${cls}" onclick="goBlock(${i})">${b.id}. ${b.title.split(' ').slice(0,3).join(' ')}</button>`;
+  });
+  html+=`<button class="step-btn${isSummary?' active':''}" onclick="goBlock(${BLOCKS.length})">Diagnóstico final</button></div>`;
+
+  if(!isSummary){
+    const b=BLOCKS[block];
+    const bPct=Math.round((blockAnswered(b)/b.qs.length)*100);
+    html+=`<div class="block-card">
+      <div class="block-header">
+        <div class="block-num">Bloque ${b.id} de ${BLOCKS.length}</div>
+        <div class="block-title">${esc(b.title)}</div>
+        <div class="block-desc">${esc(b.desc)}</div>
+      </div>
+      <div class="block-prog"><div class="block-prog-fill" style="width:${bPct}%"></div></div>
+      <div class="col-heads">
+        <div class="col-h">#</div><div class="col-h">Pregunta</div>
+        <div class="col-h">Sí</div><div class="col-h">No</div>
+        <div class="col-h">Parcial</div><div class="col-h">Riesgo</div>
+      </div>`;
+
+    b.qs.forEach(q=>{
+      const v=answers[q.id]||'';
+      html+=`<div class="q-row">
+        <div class="q-grid">
+          <div class="q-id">${esc(q.id)}</div>
+          <div>
+            <div class="q-text">${esc(q.t)}</div>
+            ${q.h?`<div class="q-hint">↳ ${esc(q.h)}</div>`:''}
+          </div>
+          ${['si','no','parcial'].map(opt=>`
+          <div class="q-opt">
+            <label><input type="radio" name="${q.id}" value="${opt}" ${v===opt?'checked':''} onchange="setAnswer('${q.id}','${opt}')">
+            ${opt.charAt(0).toUpperCase()+opt.slice(1)}</label>
+          </div>`).join('')}
+          <div class="risk-pill risk-${q.r}">${RISK_LABEL[q.r]}</div>
+        </div>
+        <div class="q-notes-row">
+          <textarea rows="1" placeholder="Notas / detalle..." onchange="setNote('${q.id}',this.value)" oninput="autoResize(this)">${esc(notes[q.id]||'')}</textarea>
+        </div>
+      </div>`;
+    });
+    html+=`</div>`;
+  } else {
+    // SUMMARY
+    const all=BLOCKS.flatMap(b=>b.qs);
+    const issues=all.filter(q=>answers[q.id]==='no'||answers[q.id]==='parcial');
+    const highIssues=issues.filter(q=>q.r==='A');
+    const midIssues=issues.filter(q=>q.r==='M');
+    const ic=issueCount();
+    const hr=highRisk();
+
+    html+=`<div class="summary-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px">
+        <div style="font-size:17px;font-weight:400;color:var(--dark)">Resumen del diagnóstico</div>
+        <button class="print-btn" onclick="window.print()">Imprimir / Guardar PDF</button>
+      </div>
+      <div class="stat-row">
+        <div class="stat-card"><div class="stat-label">Preguntas respondidas</div><div class="stat-val">${ta}/${totalQs}</div></div>
+        <div class="stat-card"><div class="stat-label">Incumplimientos totales</div><div class="stat-val red">${ic}</div></div>
+        <div class="stat-card"><div class="stat-label">Riesgo ALTO</div><div class="stat-val red">${hr}</div></div>
+        <div class="stat-card"><div class="stat-label">Riesgo MEDIO</div><div class="stat-val amber">${midIssues.length}</div></div>
+      </div>
+
+      <div class="sum-section-title">Semáforo por bloque</div>
+      <table class="semaforo-table">
+        <thead><tr><th>Bloque</th><th style="text-align:center;width:60px">Preguntas</th><th style="text-align:center;width:80px">No / Parcial</th><th style="width:100px">Nivel de riesgo</th></tr></thead>
+        <tbody>`;
+    BLOCKS.forEach(b=>{
+      const r=blockRisk(b);
+      const bi=b.qs.filter(q=>answers[q.id]==='no'||answers[q.id]==='parcial').length;
+      html+=`<tr>
+        <td>${b.id}. ${esc(b.title)}</td>
+        <td style="text-align:center">${b.qs.length}</td>
+        <td style="text-align:center;color:${bi>0?'var(--red-txt)':'var(--muted)'}">${bi}</td>
+        <td><span class="badge-risk ${r?'badge-'+r:'badge-none'}">${r?RISK_LABEL[r]:'Sin responder'}</span></td>
+      </tr>`;
+    });
+    html+=`</tbody></table>`;
+
+    if(highIssues.length>0){
+      html+=`<div class="sum-section-title" style="color:var(--red-txt)">Contingencias de atención inmediata — Riesgo ALTO</div>`;
+      highIssues.forEach(q=>{
+        html+=`<div class="issue-item issue-A">
+          <div class="issue-num">${esc(q.id)}</div>
+          <div class="issue-txt">${esc(q.t)}</div>
+          ${notes[q.id]?`<div class="issue-note">↳ ${esc(notes[q.id])}</div>`:''}
+        </div>`;
       });
     }
-    if (this.checked) {
-      opcion.classList.add('selected');
-    } else {
-      opcion.classList.remove('selected');
+    if(midIssues.length>0){
+      html+=`<div class="sum-section-title" style="color:var(--amber-txt)">Contingencias de seguimiento — Riesgo MEDIO</div>`;
+      midIssues.forEach(q=>{
+        html+=`<div class="issue-item issue-M">
+          <div class="issue-num">${esc(q.id)}</div>
+          <div class="issue-txt">${esc(q.t)}</div>
+          ${notes[q.id]?`<div class="issue-note">↳ ${esc(notes[q.id])}</div>`:''}
+        </div>`;
+      });
     }
-  });
-});
 
-// ── Progreso ─────────────────────────────────────────────
-function actualizarProgreso() {
-  var requeridos = document.querySelectorAll('[required]');
-  var llenos = 0;
-  requeridos.forEach(function(el) {
-    if (el.value && el.value.trim() !== '') llenos++;
-  });
-  var pct = Math.round((llenos / requeridos.length) * 100);
-  document.getElementById('progreso').style.width = pct + '%';
-}
-document.querySelectorAll('input, select, textarea').forEach(function(el) {
-  el.addEventListener('change', actualizarProgreso);
-  el.addEventListener('input', actualizarProgreso);
-});
-
-// ── Generador PDF ────────────────────────────────────────
-function recopilarRespuestas() {
-  var form = document.getElementById('formDiag');
-  var secciones = [
-    { titulo: 'Datos de la Empresa', campos: [
-      { label: 'Empresa / Razón social', name: 'empresa' },
-      { label: 'Responsable', name: 'responsable' },
-      { label: 'Cargo', name: 'cargo' },
-      { label: 'Correo electrónico', name: 'correo' },
-      { label: 'Teléfono', name: 'telefono' },
-      { label: 'Ciudad / Estado', name: 'ciudad' },
-    ]},
-    { titulo: 'Perfil de la Empresa', campos: [
-      { label: 'Giro / Actividad', name: 'giro' },
-      { label: 'Número de trabajadores', name: 'num_trabajadores' },
-      { label: 'Años de operación', name: 'anos_operacion' },
-      { label: 'Área de RRHH', name: 'area_rrhh' },
-    ]},
-    { titulo: 'Contratos y Relaciones Laborales', campos: [
-      { label: 'Tipos de contrato', name: 'contratos', multiple: true },
-      { label: 'Contratos actualizados (reforma 2021)', name: 'contratos_actualizados' },
-      { label: 'Reglamento Interior de Trabajo', name: 'rit' },
-    ]},
-    { titulo: 'Nómina y Prestaciones', campos: [
-      { label: 'Prestaciones de ley', name: 'prestaciones', multiple: true },
-      { label: 'Jornada reducida o especial', name: 'jornada_reducida' },
-      { label: 'Control de vacaciones', name: 'vacaciones_control' },
-    ]},
-    { titulo: 'Seguridad Social y STPS', campos: [
-      { label: 'Trabajadores en IMSS con salario real', name: 'imss_real' },
-      { label: 'Obligaciones STPS cumplidas', name: 'stps', multiple: true },
-    ]},
-    { titulo: 'Protección de Datos — LFPDPPP', campos: [
-      { label: 'Aviso de Privacidad', name: 'aviso_privacidad' },
-      { label: 'Datos personales que recopila', name: 'datos_personales', multiple: true },
-    ]},
-    { titulo: 'Percepción de Riesgo (escala 1-5)', campos: [
-      { label: 'Probabilidad de demanda laboral (12 meses)', name: 'demanda_laboral' },
-      { label: 'Nivel de cumplimiento laboral', name: 'cumplimiento_laboral' },
-      { label: 'Urgencia en protección de datos', name: 'urgencia_privacidad' },
-    ]},
-    { titulo: 'Antecedentes y Comentarios', campos: [
-      { label: 'Demandas o inspecciones STPS (últimos 3 años)', name: 'antecedentes_demandas' },
-      { label: 'Principal preocupación', name: 'preocupacion_principal' },
-      { label: 'Preferencia de contacto', name: 'preferencia_contacto' },
-    ]},
-  ];
-
-  var resultado = [];
-  secciones.forEach(function(sec) {
-    var filas = [];
-    sec.campos.forEach(function(campo) {
-      var valor = '';
-      if (campo.multiple) {
-        var checks = form.querySelectorAll('input[name="' + campo.name + '"]:checked');
-        var vals = [];
-        checks.forEach(function(ch) { vals.push(ch.value); });
-        valor = vals.length > 0 ? vals.join(', ') : '—';
-      } else {
-        var el = form.querySelector('[name="' + campo.name + '"]');
-        if (!el) {
-          var radio = form.querySelector('input[name="' + campo.name + '"]:checked');
-          valor = radio ? radio.value : '—';
-        } else {
-          valor = el.value || '—';
-        }
-      }
-      filas.push({ label: campo.label, valor: valor });
+    html+=`<div class="sum-section-title">Paquetería necesaria</div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Marque los documentos que aplican al caso específico.</p>
+      <div class="doc-grid">`;
+    DOCS.forEach((d,i)=>{
+      html+=`<div class="doc-row check">
+        <input type="checkbox" id="doc${i}" ${docChecks[i]?'checked':''} onchange="setDoc(${i},this.checked)">
+        <label for="doc${i}" style="cursor:pointer">${esc(d)}</label>
+      </div>`;
     });
-    resultado.push({ titulo: sec.titulo, filas: filas });
+    html+=`</div>
+      <div class="sum-section-title">Observaciones finales del abogado</div>
+      <textarea class="notes-final" placeholder="Contingencia más urgente, estrategia de atención, honorarios estimados, fecha de inicio de trabajos..." onchange="finalNotes=this.value">${esc(finalNotes)}</textarea>
+    </div>`;
+  }
+
+  html+=`<div class="nav-row">
+    <button class="nav-btn" onclick="goBlock(${Math.max(0,block-1)})" ${block===0?'disabled':''}>← Anterior</button>
+    <div class="nav-center">${isSummary?'Diagnóstico final':`Bloque ${BLOCKS[block].id} · ${Math.round((blockAnswered(BLOCKS[block])/BLOCKS[block].qs.length)*100)}% respondido`}</div>
+    ${!isSummary
+      ?`<button class="nav-btn primary" onclick="goBlock(${block+1})">Siguiente →</button>`
+      :`<button class="nav-btn primary" onclick="goBlock(0)">Reiniciar diagnóstico</button>`
+    }
+  </div>`;
+
+  document.getElementById('app').innerHTML=html;
+  document.querySelectorAll('.q-notes-row textarea').forEach(ta=>{
+    ta.style.height='auto';
+    ta.style.height=(ta.scrollHeight)+'px';
   });
-  return resultado;
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function vistaPreviaPDF() {
-  var datos = recopilarRespuestas();
-  var empresa = document.querySelector('[name="empresa"]').value || 'Sin nombre';
-  var fecha = new Date().toLocaleDateString('es-MX', { day: '2-digit', month: 'long', year: 'numeric' });
+function goBlock(i){block=i;render()}
+function setAnswer(id,val){answers[id]=val;renderLight()}
+function setNote(id,val){notes[id]=val}
+function setDoc(i,val){docChecks[i]=val}
+function autoResize(el){el.style.height='auto';el.style.height=(el.scrollHeight)+'px'}
 
-  var seccionesHTML = datos.map(function(sec) {
-    var filas = sec.filas.map(function(f) {
-      return '<tr>' +
-        '<td style="padding:6px 10px;border-bottom:1px solid #e8edf4;font-size:11px;color:#667587;width:45%;font-family:Raleway,sans-serif;vertical-align:top">' + f.label + '</td>' +
-        '<td style="padding:6px 10px;border-bottom:1px solid #e8edf4;font-size:11px;color:#111;font-family:Raleway,sans-serif;font-weight:600;vertical-align:top">' + f.valor + '</td>' +
-        '</tr>';
-    }).join('');
-    return '<div style="margin-bottom:18px;break-inside:avoid">' +
-      '<div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#004AC7;border-bottom:2px solid #004AC7;padding-bottom:4px;margin-bottom:0;font-family:Raleway,sans-serif">' + sec.titulo + '</div>' +
-      '<table style="width:100%;border-collapse:collapse">' + filas + '</table>' +
-      '</div>';
-  }).join('');
-
-  var html = '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/>' +
-    '<title>Diagnóstico Laboral — ' + empresa + '</title>' +
-    '<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet"/>' +
-    '<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:Raleway,sans-serif;padding:24px;background:#fff;color:#111}' +
-    '@media print{body{padding:12px}.no-print{display:none!important}}' +
-    '</style></head><body>' +
-
-    // Header
-    '<div style="background:linear-gradient(120deg,#051226 0%,#0a2353 55%,#004AC7 100%);padding:18px 22px;border-radius:8px;margin-bottom:22px;-webkit-print-color-adjust:exact;print-color-adjust:exact">' +
-      '<div style="display:flex;justify-content:space-between;align-items:flex-start">' +
-        '<div>' +
-          '<div style="font-family:DM Serif Text,Georgia,serif;font-size:18px;color:#F0F0F0;margin-bottom:3px">Diagnóstico de Cumplimiento Laboral</div>' +
-          '<div style="font-size:10px;color:rgba(240,240,240,0.7);font-family:Raleway,sans-serif">Asesoría Jurídica Preventiva · ' + fecha + '</div>' +
-        '</div>' +
-        '<div style="text-align:right">' +
-          '<div style="font-family:DM Serif Text,Georgia,serif;font-size:13px;color:#F0F0F0">Medina <span style="color:rgba(240,240,240,0.6);font-style:italic">&</span> Alatorre</div>' +
-          '<div style="font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:rgba(240,240,240,0.5);font-family:Raleway,sans-serif;margin-top:2px">Abogados</div>' +
-        '</div>' +
-      '</div>' +
-    '</div>' +
-
-    // Empresa destacada
-    '<div style="background:#e8f0fd;border-left:4px solid #004AC7;padding:10px 14px;border-radius:4px;margin-bottom:20px">' +
-      '<div style="font-size:10px;color:#667587;font-family:Raleway,sans-serif">Empresa</div>' +
-      '<div style="font-family:DM Serif Text,Georgia,serif;font-size:16px;color:#051226">' + empresa + '</div>' +
-    '</div>' +
-
-    // Secciones
-    seccionesHTML +
-
-    // Pie
-    '<div style="border-top:1px solid #dce3ed;padding-top:10px;margin-top:20px;font-size:9px;color:#9ca3af;font-family:Raleway,sans-serif;line-height:1.6">' +
-      'Documento generado con fines de referencia y asesoría jurídica preventiva.<br/>' +
-      'Medina &amp; Alatorre Abogados · Av. Américas 1501, Piso 20-A · Guadalajara, Jalisco · Cel: 33 1150 6374 · contacto@abogadosmya.com' +
-    '</div>' +
-
-    // Botón imprimir
-    '<div class="no-print" style="margin-top:20px;display:flex;gap:10px">' +
-      '<button onclick="window.print()" style="background:#004AC7;color:#fff;border:none;border-radius:6px;padding:10px 24px;font-family:Raleway,sans-serif;font-size:13px;font-weight:700;cursor:pointer">&#128438; Descargar / Imprimir PDF</button>' +
-      '<button onclick="window.close()" style="background:transparent;border:1px solid #dce3ed;border-radius:6px;padding:10px 24px;font-family:Raleway,sans-serif;font-size:13px;color:#667587;cursor:pointer">Cerrar</button>' +
-    '</div>' +
-
-    '</body></html>';
-
-  var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
-  if (isIOS) {
-    var frame = document.createElement('iframe');
-    frame.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;border:none;z-index:99999;background:white';
-    document.body.appendChild(frame);
-    frame.contentDocument.open();
-    frame.contentDocument.write(html);
-    frame.contentDocument.close();
-    var closeBtn = document.createElement('button');
-    closeBtn.innerHTML = '&#10005; Cerrar';
-    closeBtn.style.cssText = 'position:fixed;top:12px;right:12px;z-index:100000;background:#051226;color:#F0F0F0;border:none;border-radius:6px;padding:10px 18px;font-size:14px;font-family:Raleway,sans-serif;font-weight:700;cursor:pointer';
-    closeBtn.onclick = function() { document.body.removeChild(frame); document.body.removeChild(closeBtn); };
-    document.body.appendChild(closeBtn);
-    setTimeout(function() { frame.contentWindow.print(); }, 500);
-  } else {
-    var win = window.open('', '_blank');
-    win.document.write(html);
-    win.document.close();
-    win.focus();
+function renderLight(){
+  // Update only progress bar and stepper without full re-render
+  const ta=totalAnswered();
+  const pct=Math.round((ta/totalQs)*100);
+  const fill=document.querySelector('.progress-fill');
+  const label=document.querySelector('.progress-label');
+  const pctEl=document.querySelector('.progress-pct');
+  if(fill)fill.style.width=pct+'%';
+  if(label)label.textContent=`${ta} de ${totalQs} preguntas respondidas`;
+  if(pctEl)pctEl.textContent=pct+'%';
+  const b=BLOCKS[block];
+  if(b){
+    const bPct=Math.round((blockAnswered(b)/b.qs.length)*100);
+    const bf=document.querySelector('.block-prog-fill');
+    if(bf)bf.style.width=bPct+'%';
+    const nc=document.querySelector('.nav-center');
+    if(nc)nc.textContent=`Bloque ${b.id} · ${bPct}% respondido`;
   }
 }
 
-// ── Envío ─────────────────────────────────────────────────
-function enviarFormulario(e) {
-  e.preventDefault();
-  var form = document.getElementById('formDiag');
-  var data = new FormData(form);
-
-  fetch('/.netlify/functions/send-diagnostico', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams(data).toString()
-  }).then(function() {
-    form.style.display = 'none';
-    documen
+render();
+</script>
+</body>
+</html>
