@@ -14,243 +14,205 @@
   --gray:#6B7280;--gray-lt:#F3F4F6;--border:#E2E4E9;
   --text:#111827;--sub:#6B7280;
   --sans:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
-  --serif:'Georgia',serif;
-  --radius:12px;--shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.04)
+  --radius:12px
 }
 body{font-family:var(--sans);background:#F7F8FA;color:var(--text);min-height:100vh;font-size:15px;line-height:1.5}
-
-/* ── TOPBAR ── */
-.topbar{background:var(--navy);padding:0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.2)}
-.topbar-inner{max-width:780px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.topbar-brand{display:flex;flex-direction:column}
-.topbar-name{font-size:13px;font-weight:600;color:#fff;letter-spacing:.01em}
+/* TOPBAR */
+.topbar{background:var(--navy);position:sticky;top:0;z-index:100}
+.topbar-inner{max-width:780px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center}
+.topbar-name{font-size:13px;font-weight:600;color:#fff}
 .topbar-sub{font-size:11px;color:#9CB8D8;margin-top:1px}
-.topbar-link{font-size:11px;color:#9CB8D8;text-decoration:none;display:flex;align-items:center;gap:4px;white-space:nowrap}
+.topbar-link{font-size:11px;color:#9CB8D8;text-decoration:none}
 .topbar-link:hover{color:#fff}
-
-/* ── PROGRESO GLOBAL ── */
-.global-progress{background:var(--navy);border-top:1px solid rgba(255,255,255,.1);padding:0 20px 10px}
-.gp-inner{max-width:780px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.gp-wrap{max-width:780px;margin:0 auto;padding:0 20px 8px;display:flex;align-items:center;gap:10px}
 .gp-bar{flex:1;height:4px;background:rgba(255,255,255,.2);border-radius:2px;overflow:hidden}
-.gp-fill{height:100%;background:#5B9CF6;border-radius:2px;transition:width .5s ease}
-.gp-pct{font-size:11px;color:#9CB8D8;white-space:nowrap;min-width:32px;text-align:right}
-
-/* ── BLOQUE NAV (tabs) ── */
-.block-nav-wrap{background:#fff;border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
-.block-nav-wrap::-webkit-scrollbar{display:none}
-.block-nav{max-width:780px;margin:0 auto;padding:0 20px;display:flex;gap:0}
-.bnav-btn{font-size:12px;font-weight:500;padding:12px 14px;border:none;background:transparent;color:var(--gray);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .15s;display:flex;align-items:center;gap:6px}
-.bnav-btn:hover{color:var(--text)}
-.bnav-btn.active{color:var(--navy);border-bottom-color:var(--navy)}
-.bnav-btn.done{color:var(--green)}
-.bnav-btn.warn{color:var(--red)}
-.bnav-dot{width:7px;height:7px;border-radius:50%;background:currentColor;flex-shrink:0}
-
-/* ── MAIN LAYOUT ── */
-.main{max-width:780px;margin:0 auto;padding:24px 20px 80px}
-
-/* ── BLOCK HEADER ── */
-.block-hd{margin-bottom:24px}
-.block-hd-top{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
-.block-badge{font-size:11px;font-weight:600;color:var(--blue);background:var(--blue-lt);padding:3px 10px;border-radius:20px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
-.block-title{font-size:22px;font-weight:600;color:var(--navy)}
-.block-desc{font-size:13px;color:var(--sub)}
-.block-prog-row{display:flex;align-items:center;gap:10px;margin-top:10px}
-.block-prog-bar{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
-.block-prog-fill{height:100%;background:var(--blue);border-radius:3px;transition:width .4s}
-.block-prog-label{font-size:11px;color:var(--sub);white-space:nowrap}
-
-/* ── QUESTION CARD ── */
-.q-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
-.q-card:focus-within{border-color:var(--blue);box-shadow:0 0 0 3px rgba(46,95,163,.08)}
-.q-card.answered-si{border-color:var(--green-bd);background:var(--green-lt)}
-.q-card.answered-no{border-color:var(--red-bd);background:var(--red-lt)}
-.q-card.answered-parcial{border-color:var(--amber-bd);background:var(--amber-lt)}
+.gp-fill{height:100%;background:#5B9CF6;border-radius:2px;transition:width .4s}
+.gp-pct{font-size:11px;color:#9CB8D8;min-width:28px;text-align:right}
+/* BLOCK TABS */
+.tabs-wrap{background:#fff;border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
+.tabs-wrap::-webkit-scrollbar{display:none}
+.tabs{max-width:780px;margin:0 auto;padding:0 20px;display:flex}
+.tab{font-size:12px;font-weight:500;padding:12px 13px;border:none;background:transparent;color:var(--gray);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .15s;display:flex;align-items:center;gap:5px}
+.tab:hover{color:var(--text)}
+.tab.active{color:var(--navy);border-bottom-color:var(--navy)}
+.tab.done{color:var(--green)}
+.tab.warn{color:var(--red)}
+.tab-dot{width:6px;height:6px;border-radius:50%;background:transparent}
+/* MAIN */
+.main{max-width:780px;margin:0 auto;padding:24px 20px 90px}
+/* BLOCK PANEL — oculto por defecto */
+.block-panel{display:none}
+.block-panel.active{display:block}
+/* BLOCK HEADER */
+.blk-hd{margin-bottom:22px}
+.blk-badge{font-size:11px;font-weight:600;color:var(--blue);background:var(--blue-lt);padding:3px 10px;border-radius:20px;letter-spacing:.04em;text-transform:uppercase}
+.blk-title{font-size:21px;font-weight:600;color:var(--navy);margin:6px 0 3px}
+.blk-desc{font-size:13px;color:var(--sub);margin-bottom:10px}
+.blk-prog-row{display:flex;align-items:center;gap:10px}
+.blk-prog-bar{flex:1;height:4px;background:var(--border);border-radius:2px;overflow:hidden}
+.blk-prog-fill{height:100%;background:var(--blue);border-radius:2px;transition:width .4s}
+.blk-prog-lbl{font-size:11px;color:var(--sub);white-space:nowrap}
+/* QUESTION CARD */
+.q-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);margin-bottom:10px;transition:border-color .2s}
+.q-card.si{border-color:var(--green-bd);background:var(--green-lt)}
+.q-card.no{border-color:var(--red-bd);background:var(--red-lt)}
+.q-card.parcial{border-color:var(--amber-bd);background:var(--amber-lt)}
 .q-card.skipped{opacity:.4;pointer-events:none}
-
-.q-card-body{padding:16px 20px 14px}
-.q-header{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
-.q-num{font-size:11px;font-weight:700;color:var(--blue);background:var(--blue-lt);padding:3px 8px;border-radius:6px;white-space:nowrap;margin-top:2px;letter-spacing:.03em}
-.q-text{font-size:14px;font-weight:500;color:var(--text);line-height:1.55;flex:1}
-.risk-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:6px}
-.risk-dot-A{background:var(--red)}
-.risk-dot-M{background:var(--amber)}
-.risk-dot-B{background:#A0AEC0}
-.q-hint{font-size:12px;color:var(--sub);margin:0 0 12px 0;padding:8px 12px;background:rgba(0,0,0,.03);border-radius:6px;border-left:2px solid var(--border)}
-
-/* Botones de respuesta */
-.q-answers{display:flex;gap:8px;flex-wrap:wrap}
-.ans-btn{display:flex;align-items:center;gap:7px;padding:9px 18px;border:1.5px solid var(--border);border-radius:30px;cursor:pointer;font-size:13px;font-weight:500;color:var(--gray);background:#fff;transition:all .15s;-webkit-tap-highlight-color:transparent}
-.ans-btn:hover{border-color:var(--blue);color:var(--navy);background:var(--blue-lt)}
-.ans-btn.sel-si{background:var(--green-lt);border-color:var(--green);color:var(--green);font-weight:600}
-.ans-btn.sel-no{background:var(--red-lt);border-color:var(--red);color:var(--red);font-weight:600}
-.ans-btn.sel-parcial{background:var(--amber-lt);border-color:var(--amber);color:var(--amber);font-weight:600}
-.ans-icon{font-size:15px;line-height:1}
-
-/* Notas — solo aparecen si respuesta es No o Parcial */
-.q-notes{padding:0 20px 14px;display:none}
-.q-notes.visible{display:block}
-.q-notes textarea{width:100%;font-family:var(--sans);font-size:13px;padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--text);resize:none;line-height:1.5;transition:border .15s;min-height:60px}
-.q-notes textarea:focus{outline:none;border-color:var(--blue)}
-.q-notes-label{font-size:11px;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
-
-/* ── PREGUNTA ESPECIAL 1.1 — Persona ── */
-.q-special{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);margin-bottom:12px;padding:16px 20px}
-.q-special-header{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
-.persona-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.persona-card{padding:16px;border:2px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;text-align:center;background:#fff}
-.persona-card:hover{border-color:var(--blue);background:var(--blue-lt)}
-.persona-card.selected{border-color:var(--navy);background:var(--blue-lt)}
-.persona-icon{font-size:28px;margin-bottom:8px;line-height:1}
-.persona-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:3px}
-.persona-sub{font-size:11px;color:var(--sub)}
-.persona-card.selected .persona-title{color:var(--navy)}
-
-/* ── PREGUNTA ESPECIAL 1.2 — Puestos ── */
-.puestos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;margin-top:4px}
-.puesto-card{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:#fff;transition:border .15s}
-.puesto-card:focus-within{border-color:var(--blue)}
-.puesto-label{font-size:12px;font-weight:500;color:var(--text)}
-.puesto-stepper{display:flex;align-items:center;gap:6px}
-.st-btn{width:26px;height:26px;border:1px solid var(--border);border-radius:6px;background:#fff;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;color:var(--gray);line-height:1;transition:all .15s;padding:0}
-.st-btn:hover{background:var(--blue-lt);border-color:var(--blue);color:var(--navy)}
-.st-val{font-size:14px;font-weight:700;color:var(--navy);min-width:20px;text-align:center}
-.puestos-total{margin-top:12px;padding:10px 14px;background:var(--blue-lt);border-radius:8px;font-size:13px;color:var(--blue);font-weight:600;display:flex;justify-content:space-between}
-
-/* ── SKIP NOTICE ── */
-.skip-notice{background:#FFFBEB;border:1px solid #F5CE7A;border-radius:8px;padding:12px 16px;margin-bottom:12px;display:flex;gap:10px;align-items:flex-start}
-.skip-notice-icon{font-size:16px;flex-shrink:0;margin-top:1px}
-.skip-notice-text{font-size:12px;color:#92600A;line-height:1.5}
-.skip-notice-text strong{font-weight:700}
-
-/* ── NAVEGACIÓN ── */
-.nav-footer{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);padding:12px 20px;z-index:50}
-.nav-inner{max-width:780px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.nav-btn{font-size:14px;font-weight:500;padding:10px 22px;border-radius:8px;cursor:pointer;transition:all .15s;border:1.5px solid}
-.nav-btn-sec{background:#fff;border-color:var(--border);color:var(--text)}
-.nav-btn-sec:hover{background:var(--gray-lt)}
-.nav-btn-sec:disabled{opacity:.3;cursor:not-allowed}
-.nav-btn-pri{background:var(--navy);border-color:var(--navy);color:#fff}
-.nav-btn-pri:hover{background:var(--blue)}
-.nav-status{font-size:12px;color:var(--sub);text-align:center;line-height:1.4}
-.nav-status strong{color:var(--text)}
-
-/* ── RESUMEN ── */
-.summary-wrap{display:flex;flex-direction:column;gap:16px}
-.sum-hero{background:var(--navy);border-radius:var(--radius);padding:24px;color:#fff}
-.sum-hero-title{font-size:18px;font-weight:600;margin-bottom:16px;color:#fff}
-.sum-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-@media(max-width:540px){.sum-stats{grid-template-columns:repeat(2,1fr)}}
-.sum-stat{background:rgba(255,255,255,.1);border-radius:8px;padding:12px;text-align:center}
-.sum-stat-val{font-size:28px;font-weight:600;color:#fff;line-height:1}
-.sum-stat-val.red{color:#FCA5A5}
-.sum-stat-val.amber{color:#FCD34D}
-.sum-stat-val.green{color:#6EE7B7}
-.sum-stat-label{font-size:11px;color:rgba(255,255,255,.6);margin-top:4px}
-.sum-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
-.sum-card-hd{padding:14px 20px;border-bottom:1px solid var(--border);font-size:13px;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.07em;display:flex;justify-content:space-between;align-items:center}
-.semaforo-list{padding:0}
-.sem-row{display:flex;align-items:center;gap:12px;padding:12px 20px;border-bottom:1px solid #F5F5F5;cursor:pointer;transition:background .1s}
+.q-body{padding:15px 18px 13px}
+.q-hdr{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
+.q-num{font-size:11px;font-weight:700;color:var(--blue);background:var(--blue-lt);padding:2px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.q-txt{font-size:14px;font-weight:500;color:var(--text);line-height:1.5;flex:1}
+.risk{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.risk-A{background:var(--red)}.risk-M{background:var(--amber)}.risk-B{background:#A0AEC0}
+.q-hint{font-size:12px;color:var(--sub);padding:7px 11px;background:rgba(0,0,0,.03);border-left:2px solid var(--border);border-radius:4px;margin-bottom:11px}
+.q-hint.skip-hint{border-left-color:var(--amber-bd);background:var(--amber-lt);color:var(--amber)}
+/* ANSWER BUTTONS */
+.ans-row{display:flex;gap:7px;flex-wrap:wrap}
+.ans{border:1.5px solid var(--border);border-radius:30px;padding:8px 16px;font-size:13px;font-weight:500;color:var(--gray);background:#fff;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .15s}
+.ans:hover{border-color:var(--blue);color:var(--navy);background:var(--blue-lt)}
+.ans.si{background:var(--green-lt);border-color:var(--green);color:var(--green);font-weight:600}
+.ans.no{background:var(--red-lt);border-color:var(--red);color:var(--red);font-weight:600}
+.ans.parcial{background:var(--amber-lt);border-color:var(--amber);color:var(--amber);font-weight:600}
+/* NOTES */
+.q-notes{padding:0 18px 13px;display:none}
+.q-notes.show{display:block}
+.notes-lbl{font-size:10px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
+.notes-lbl+textarea{width:100%;font-family:var(--sans);font-size:12px;padding:8px 12px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--text);resize:none;line-height:1.5;min-height:54px;transition:border .15s}
+.notes-lbl+textarea:focus{outline:none;border-color:var(--blue)}
+/* SKIP NOTICE */
+.skip-notice{background:#FFFBEB;border:1px solid #F5CE7A;border-radius:8px;padding:11px 15px;margin-bottom:10px;font-size:12px;color:#92600A;line-height:1.5}
+.skip-notice strong{font-weight:700}
+/* SPECIAL 1.1 PERSONA */
+.persona-wrap{padding:15px 18px}
+.persona-q-hdr{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px}
+.persona-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+@media(max-width:420px){.persona-opts{grid-template-columns:1fr}}
+.p-card{padding:14px;border:2px solid var(--border);border-radius:10px;cursor:pointer;text-align:center;background:#fff;transition:all .15s;user-select:none}
+.p-card:hover{border-color:var(--blue);background:var(--blue-lt)}
+.p-card.sel{border-color:var(--navy);background:var(--blue-lt)}
+.p-icon{font-size:24px;margin-bottom:6px}
+.p-title{font-size:13px;font-weight:700;color:var(--navy)}
+.p-sub{font-size:11px;color:var(--sub);margin-top:2px}
+.persona-fields{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+@media(max-width:480px){.persona-fields{grid-template-columns:1fr}}
+.pf-grp{display:flex;flex-direction:column;gap:4px}
+.pf-grp.full{grid-column:1/-1}
+.pf-lbl{font-size:10px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.07em}
+.pf-in{font-family:var(--sans);font-size:13px;padding:8px 12px;border:1.5px solid var(--border);border-radius:7px;background:#fff;color:var(--text);transition:border .15s;width:100%}
+.pf-in:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(46,95,163,.08)}
+.pf-in::placeholder{color:#B0B7C3}
+/* SPECIAL 1.2 PUESTOS */
+.puestos-q-hdr{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.puestos-hint{font-size:12px;color:var(--sub);padding:7px 11px;background:rgba(0,0,0,.03);border-left:2px solid var(--border);border-radius:4px;margin-bottom:12px}
+.puestos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:7px}
+.pt-row{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border:1px solid var(--border);border-radius:8px;background:#fff}
+.pt-lbl{font-size:12px;font-weight:500;color:var(--text)}
+.pt-ctrl{display:flex;align-items:center;gap:5px}
+.pt-btn{width:26px;height:26px;border:1px solid var(--border);border-radius:6px;background:#fff;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;color:var(--gray);transition:all .15s;flex-shrink:0;padding:0;line-height:1}
+.pt-btn:hover{background:var(--blue-lt);border-color:var(--blue);color:var(--navy)}
+.pt-num{width:40px;text-align:center;font-family:var(--sans);font-size:14px;font-weight:700;color:var(--navy);border:1.5px solid var(--border);border-radius:6px;padding:2px 4px;background:#fff;-moz-appearance:textfield}
+.pt-num::-webkit-inner-spin-button,.pt-num::-webkit-outer-spin-button{-webkit-appearance:none}
+.pt-num:focus{outline:none;border-color:var(--blue)}
+.pt-total{margin-top:10px;padding:9px 13px;background:var(--blue-lt);border-radius:8px;font-size:13px;color:var(--blue);font-weight:600;display:flex;justify-content:space-between}
+/* SUMMARY */
+.sum-hero{background:var(--navy);border-radius:var(--radius);padding:22px;color:#fff;margin-bottom:14px}
+.sum-hero h2{font-size:17px;font-weight:600;margin-bottom:14px}
+.sum-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:500px){.sum-stats{grid-template-columns:repeat(2,1fr)}}
+.sum-stat{background:rgba(255,255,255,.1);border-radius:8px;padding:11px;text-align:center}
+.sum-stat-v{font-size:26px;font-weight:600;color:#fff;line-height:1}
+.sum-stat-v.r{color:#FCA5A5}.sum-stat-v.a{color:#FCD34D}
+.sum-stat-l{font-size:11px;color:rgba(255,255,255,.6);margin-top:3px}
+.sum-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:12px}
+.sum-card-hd{padding:12px 18px;border-bottom:1px solid var(--border);font-size:11px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.07em}
+.sem-row{display:flex;align-items:center;gap:10px;padding:11px 18px;border-bottom:1px solid #F5F5F5;cursor:pointer;transition:background .1s}
 .sem-row:last-child{border-bottom:none}
 .sem-row:hover{background:var(--gray-lt)}
-.sem-blk{flex:1;font-size:13px;color:var(--text)}
-.sem-blk-num{font-size:11px;color:var(--sub);margin-bottom:1px}
-.sem-count{font-size:12px;font-weight:600;color:var(--sub);white-space:nowrap}
-.sem-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;white-space:nowrap;letter-spacing:.04em}
-.sem-badge-A{background:var(--red-lt);color:var(--red)}
-.sem-badge-M{background:var(--amber-lt);color:var(--amber)}
-.sem-badge-B{background:var(--green-lt);color:var(--green)}
-.sem-badge-none{background:var(--gray-lt);color:var(--gray)}
-.issue-list{padding:0}
-.issue-row{padding:12px 20px;border-bottom:1px solid #F5F5F5;display:flex;gap:12px;align-items:flex-start}
+.sem-blk{flex:1}
+.sem-blk-n{font-size:10px;color:var(--sub);margin-bottom:1px}
+.sem-blk-t{font-size:13px;color:var(--text)}
+.sem-cnt{font-size:12px;font-weight:600;color:var(--sub);white-space:nowrap}
+.sbadge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:12px;white-space:nowrap}
+.sbadge-A{background:var(--red-lt);color:var(--red)}
+.sbadge-M{background:var(--amber-lt);color:var(--amber)}
+.sbadge-B{background:var(--green-lt);color:var(--green)}
+.sbadge-n{background:var(--gray-lt);color:var(--gray)}
+.issue-row{padding:11px 18px;border-bottom:1px solid #F5F5F5;display:flex;gap:10px;align-items:flex-start}
 .issue-row:last-child{border-bottom:none}
-.issue-badge-A{font-size:10px;font-weight:700;color:var(--red);background:var(--red-lt);padding:2px 8px;border-radius:6px;white-space:nowrap;margin-top:2px}
-.issue-badge-M{font-size:10px;font-weight:700;color:var(--amber);background:var(--amber-lt);padding:2px 8px;border-radius:6px;white-space:nowrap;margin-top:2px}
-.issue-body{flex:1}
-.issue-id{font-size:11px;font-weight:700;color:var(--sub);margin-bottom:2px}
-.issue-txt{font-size:13px;color:var(--text);line-height:1.45}
-.issue-note-txt{font-size:11px;color:var(--sub);margin-top:3px;font-style:italic}
-.doc-list{padding:12px 20px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
-@media(max-width:500px){.doc-list{grid-template-columns:1fr}}
-.doc-item{display:flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:12px;cursor:pointer;transition:border .15s;background:#fff}
+.ibadge-A{font-size:9px;font-weight:700;color:var(--red);background:var(--red-lt);padding:2px 7px;border-radius:5px;white-space:nowrap;margin-top:2px;flex-shrink:0}
+.ibadge-M{font-size:9px;font-weight:700;color:var(--amber);background:var(--amber-lt);padding:2px 7px;border-radius:5px;white-space:nowrap;margin-top:2px;flex-shrink:0}
+.issue-id{font-size:10px;font-weight:700;color:var(--sub);margin-bottom:2px}
+.issue-t{font-size:13px;color:var(--text);line-height:1.45}
+.issue-note{font-size:11px;color:var(--sub);margin-top:3px;font-style:italic}
+.doc-grid{padding:12px 18px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+@media(max-width:480px){.doc-grid{grid-template-columns:1fr}}
+.doc-item{display:flex;align-items:center;gap:8px;padding:8px 11px;border:1px solid var(--border);border-radius:7px;font-size:12px;background:#fff;transition:border .15s;cursor:pointer}
 .doc-item:hover{border-color:var(--blue)}
-.doc-item.checked{border-color:var(--green-bd);background:var(--green-lt)}
-.doc-item input{accent-color:var(--green);cursor:pointer;width:14px;height:14px;flex-shrink:0}
-.doc-label{cursor:pointer;line-height:1.3}
-.sum-notes-area{padding:16px 20px}
-.sum-notes-area textarea{width:100%;font-family:var(--sans);font-size:13px;padding:12px 14px;border:1px solid var(--border);border-radius:8px;background:var(--gray-lt);color:var(--text);resize:vertical;min-height:100px;line-height:1.6;transition:border .15s}
-.sum-notes-area textarea:focus{outline:none;border-color:var(--blue);background:#fff}
-.sum-actions{display:flex;gap:10px;padding:0 20px 16px;flex-wrap:wrap}
-.sum-action-btn{font-size:13px;font-weight:500;padding:9px 18px;border-radius:8px;cursor:pointer;border:1.5px solid;transition:all .15s}
-.sum-action-print{background:#fff;border-color:var(--border);color:var(--text)}
-.sum-action-print:hover{background:var(--gray-lt)}
-.sum-action-restart{background:var(--navy);border-color:var(--navy);color:#fff}
-.sum-action-restart:hover{background:var(--blue)}
-
-/* sin contratos banner */
-.no-contracts-banner{background:#FEF3C7;border:1px solid #F5CE7A;border-radius:8px;padding:14px 18px;display:flex;gap:12px}
-.ncb-icon{font-size:22px;flex-shrink:0}
-.ncb-body h4{font-size:14px;font-weight:700;color:#92600A;margin-bottom:3px}
-.ncb-body p{font-size:13px;color:#92600A;line-height:1.5}
-
-@media(max-width:600px){
-  .persona-opts{grid-template-columns:1fr}
-  .bnav-btn span.bnav-label{display:none}
-}
-@media print{
-  .topbar,.block-nav-wrap,.nav-footer,.sum-actions{display:none!important}
-  body{background:#fff}
-  .main{padding:10px}
-  .q-card{break-inside:avoid;page-break-inside:avoid}
-}
-.persona-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-@media(max-width:500px){.persona-fields{grid-template-columns:1fr}}
-.pf-group{display:flex;flex-direction:column;gap:5px}
-.pf-group.full{grid-column:1/-1}
-.pf-label{font-size:11px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.06em}
-.pf-input{font-family:var(--sans);font-size:13px;padding:9px 13px;border:1.5px solid var(--border);border-radius:8px;background:#fff;color:var(--text);transition:border .15s,box-shadow .15s;width:100%}
-.pf-input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(46,95,163,.08)}
-.st-num-input{width:44px;text-align:center;font-family:var(--sans);font-size:14px;font-weight:700;color:var(--navy);border:1.5px solid var(--border);border-radius:6px;padding:3px 4px;background:#fff;-moz-appearance:textfield}
-.st-num-input::-webkit-inner-spin-button,.st-num-input::-webkit-outer-spin-button{-webkit-appearance:none}
-.st-num-input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 2px rgba(46,95,163,.1)}
+.doc-item.chk{border-color:var(--green-bd);background:var(--green-lt)}
+.doc-item input{accent-color:var(--green);cursor:pointer;width:13px;height:13px;flex-shrink:0}
+.sum-notes{padding:14px 18px}
+.sum-notes textarea{width:100%;font-family:var(--sans);font-size:13px;padding:10px 13px;border:1px solid var(--border);border-radius:8px;background:var(--gray-lt);color:var(--text);resize:vertical;min-height:90px;line-height:1.6;transition:border .15s}
+.sum-notes textarea:focus{outline:none;border-color:var(--blue);background:#fff}
+.sum-actions{padding:0 18px 14px;display:flex;gap:9px;flex-wrap:wrap}
+.s-btn{font-size:13px;font-weight:500;padding:9px 17px;border-radius:8px;cursor:pointer;border:1.5px solid;transition:all .15s}
+.s-btn-sec{background:#fff;border-color:var(--border);color:var(--text)}
+.s-btn-sec:hover{background:var(--gray-lt)}
+.s-btn-pri{background:var(--navy);border-color:var(--navy);color:#fff}
+.s-btn-pri:hover{background:var(--blue)}
+.ncb{background:#FFFBEB;border:1px solid #F5CE7A;border-radius:8px;padding:13px 16px;display:flex;gap:11px;margin-bottom:12px}
+.ncb-icon{font-size:20px;flex-shrink:0}
+.ncb h4{font-size:13px;font-weight:700;color:#92600A;margin-bottom:3px}
+.ncb p{font-size:12px;color:#92600A;line-height:1.5}
+/* NAV FOOTER */
+.nav-ft{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);padding:11px 20px;z-index:50}
+.nav-ft-inner{max-width:780px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.nav-btn{font-size:13px;font-weight:500;padding:9px 20px;border-radius:8px;cursor:pointer;border:1.5px solid;transition:all .15s}
+.nav-btn-s{background:#fff;border-color:var(--border);color:var(--text)}
+.nav-btn-s:hover{background:var(--gray-lt)}
+.nav-btn-s:disabled{opacity:.35;cursor:not-allowed}
+.nav-btn-p{background:var(--navy);border-color:var(--navy);color:#fff}
+.nav-btn-p:hover{background:var(--blue)}
+.nav-lbl{font-size:12px;color:var(--sub);text-align:center}
+.nav-lbl strong{color:var(--text)}
+@media print{.topbar,.tabs-wrap,.nav-ft,.sum-actions{display:none!important}body{background:#fff}.main{padding:10px}}
 </style>
 </head>
 <body>
 
+<!-- TOPBAR -->
 <div class="topbar">
   <div class="topbar-inner">
-    <div class="topbar-brand">
+    <div>
       <div class="topbar-name">Abogados MYA</div>
       <div class="topbar-sub">Diagnóstico Laboral · Restaurante-Bar</div>
     </div>
-    <a class="topbar-link" href="https://finiquito-laboral.netlify.app">
-      ← Calculadora de Finiquito
-    </a>
+    <a class="topbar-link" href="https://finiquito-laboral.netlify.app">← Calculadora de Finiquito</a>
   </div>
-  <div class="global-progress">
-    <div class="gp-inner">
-      <div class="gp-bar"><div class="gp-fill" id="gp-fill" style="width:0%"></div></div>
-      <div class="gp-pct" id="gp-pct">0%</div>
-    </div>
+  <div class="gp-wrap">
+    <div class="gp-bar"><div class="gp-fill" id="gp"></div></div>
+    <div class="gp-pct" id="gpct">0%</div>
   </div>
 </div>
 
-<div class="block-nav-wrap">
-  <div class="block-nav" id="block-nav"></div>
-</div>
+<!-- TABS -->
+<div class="tabs-wrap"><div class="tabs" id="tabs"></div></div>
 
-<main class="main" id="main"></main>
+<!-- MAIN -->
+<div class="main" id="main"></div>
 
-<div class="nav-footer">
-  <div class="nav-inner">
-    <button type="button" class="nav-btn nav-btn-sec" id="btn-prev" onclick="goBlock(curBlock-1)">← Anterior</button>
-    <div class="nav-status" id="nav-status"></div>
-    <button type="button" class="nav-btn nav-btn-pri" id="btn-next" onclick="navNext()">Siguiente →</button>
+<!-- NAV FOOTER -->
+<div class="nav-ft">
+  <div class="nav-ft-inner">
+    <button type="button" class="nav-btn nav-btn-s" id="btnPrev" onclick="go(cur-1)">← Anterior</button>
+    <div class="nav-lbl" id="navLbl"></div>
+    <button type="button" class="nav-btn nav-btn-p" id="btnNext" onclick="go(cur+1)">Siguiente →</button>
   </div>
 </div>
 
 <script>
-// ── DATOS ─────────────────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════
+// DATOS
+// ═══════════════════════════════════════════════════════════
 const PUESTOS=[
   {id:'hostess',n:'Hostess / Recepcionista'},
   {id:'mesero',n:'Mesero / Mesera'},
@@ -265,669 +227,558 @@ const PUESTOS=[
 ];
 
 const BLOCKS=[
-{id:1,title:"Datos generales",desc:"Información básica del negocio y su estructura de personal",
+{id:1,title:'Datos generales',desc:'Información básica del negocio y estructura de personal',
 qs:[
-{id:"1.1",t:"¿Bajo qué figura jurídica opera el patrón?",tipo:"persona",r:"B"},
-{id:"1.2",t:"¿Cuántas personas trabajan actualmente en el establecimiento?",tipo:"puestos",r:"B",h:"Indique el número por puesto. Esto dimensiona las obligaciones y la paquetería necesaria."},
-{id:"1.3",t:"¿Cuenta con registro patronal vigente ante el IMSS?",r:"A",h:"Sin registro patronal no existe base para cumplir las obligaciones de seguridad social."},
-{id:"1.4",t:"¿Tiene licencia de funcionamiento y permiso de venta de alcohol vigentes?",r:"A",h:"Su ausencia agrava el riesgo en inspecciones conjuntas de la STPS y la Cofepris."},
-{id:"1.5",t:"¿Tiene definida formalmente la estructura de puestos del establecimiento?",r:"B"},
-{id:"1.6",t:"¿Hay más de un turno de trabajo operando simultáneamente o de forma rotatoria?",r:"B"},
-{id:"1.7",t:"¿Ha recibido visitas de inspección de la STPS, IMSS o Cofepris en los últimos 3 años?",r:"M",h:"Anote los resultados y las observaciones que le hayan dejado."},
-{id:"1.8",t:"¿Existe algún juicio o procedimiento laboral activo en este momento?",r:"A",h:"Incluye demandas, procedimientos de conciliación y amparos laborales."},
+{id:'1.1',tipo:'persona',r:'B'},
+{id:'1.2',tipo:'puestos',r:'B'},
+{id:'1.3',t:'¿Cuenta con registro patronal vigente ante el IMSS?',r:'A',h:'Sin registro patronal no hay base para cumplir las obligaciones de seguridad social.'},
+{id:'1.4',t:'¿Tiene licencia de funcionamiento y permiso de venta de alcohol vigentes?',r:'A',h:'Su ausencia agrava el riesgo en inspecciones conjuntas de la STPS y la Cofepris.'},
+{id:'1.5',t:'¿Tiene definida formalmente la estructura de puestos del establecimiento?',r:'B'},
+{id:'1.6',t:'¿Hay más de un turno de trabajo operando simultáneamente o de forma rotatoria?',r:'B'},
+{id:'1.7',t:'¿Ha recibido visitas de inspección de la STPS, IMSS o Cofepris en los últimos 3 años?',r:'M',h:'Anote los resultados y observaciones que le hayan dejado.'},
+{id:'1.8',t:'¿Existe algún juicio o procedimiento laboral activo en este momento?',r:'A',h:'Incluye demandas, procedimientos de conciliación y amparos laborales.'},
 ]},
-{id:2,title:"Contratos de trabajo",desc:"Existencia, tipo y contenido de los contratos individuales — Art. 25 LFT",
+{id:2,title:'Contratos de trabajo',desc:'Existencia, tipo y contenido de los contratos individuales — Art. 25 LFT',
 qs:[
-{id:"2.1",t:"¿Todo el personal activo tiene contrato individual de trabajo por escrito?",r:"A",h:"Sin contrato escrito la ley presume las condiciones más favorables al trabajador. Es la contingencia más frecuente.",pivote:true},
-{id:"2.2",t:"¿Los contratos establecen el tipo correcto de relación: tiempo indeterminado, temporada o determinado, según la función real del puesto?",r:"A",h:"Un contrato a plazo fijo para una función permanente es nulo y revierte automáticamente a tiempo indeterminado.",depende:"2.1"},
-{id:"2.3",t:"¿Los contratos contienen todos los datos mínimos del Art. 25 LFT: nombre, CURP, RFC, NSS, puesto, jornada, salario, lugar y día de pago?",r:"A",depende:"2.1"},
-{id:"2.4",t:"¿Los contratos de meseros, barman y hostess incluyen cláusula de propinas con el componente de integración para el SDI ante el IMSS?",r:"A",h:"Sin esta cláusula el salario diario integrado está subdeclarado ante el IMSS en todos esos puestos.",depende:"2.1"},
-{id:"2.5",t:"¿Los contratos del chef y del personal de confianza incluyen cláusula de confidencialidad con vigencia posterior al término de la relación laboral?",r:"A",depende:"2.1"},
-{id:"2.6",t:"¿El contrato del cajero regula expresamente la responsabilidad por valores y prohíbe descuentos sin soporte documental?",r:"A",h:"Sin esta cláusula cualquier descuento por faltantes es potencialmente ilegal.",depende:"2.1"},
-{id:"2.7",t:"¿Los contratos regulan el uso de herramientas tecnológicas del establecimiento: WhatsApp institucional, POS, plataformas de reservaciones?",r:"M",depende:"2.1"},
-{id:"2.8",t:"¿Los contratos del personal de temporada están tipificados como contratos por temporada (discontinuos) y no como contratos a tiempo determinado?",r:"A",depende:"2.1"},
-{id:"2.9",t:"¿Cada trabajador tiene un ejemplar firmado de su contrato, y el patrón conserva el acuse de recibo en el expediente?",r:"M",depende:"2.1"},
-{id:"2.10",t:"¿Los contratos regulan el período de prueba conforme a los Arts. 39-A a 39-F LFT: plazo máximo, alta IMSS desde el primer día, sin reiteración?",r:"M",depende:"2.1"},
+{id:'2.1',t:'¿Todo el personal activo tiene contrato individual de trabajo por escrito?',r:'A',h:'Sin contrato escrito la ley presume las condiciones más favorables al trabajador.',pivote:true},
+{id:'2.2',t:'¿Los contratos establecen el tipo correcto de relación: tiempo indeterminado, temporada o determinado según la función real?',r:'A',h:'Un contrato a plazo fijo para función permanente es nulo y revierte a tiempo indeterminado.',dep:'2.1'},
+{id:'2.3',t:'¿Los contratos contienen todos los datos mínimos del Art. 25 LFT: nombre, CURP, RFC, NSS, puesto, jornada, salario, lugar y día de pago?',r:'A',dep:'2.1'},
+{id:'2.4',t:'¿Los contratos de meseros, barman y hostess incluyen cláusula de propinas con componente de integración para el SDI ante el IMSS?',r:'A',h:'Sin esta cláusula el SDI está subdeclarado ante el IMSS en todos esos puestos.',dep:'2.1'},
+{id:'2.5',t:'¿Los contratos del chef y personal de confianza incluyen cláusula de confidencialidad con vigencia posterior al término de la relación?',r:'A',dep:'2.1'},
+{id:'2.6',t:'¿El contrato del cajero regula la responsabilidad por valores y prohíbe descuentos sin soporte documental?',r:'A',h:'Sin esta cláusula cualquier descuento por faltantes es potencialmente ilegal.',dep:'2.1'},
+{id:'2.7',t:'¿Los contratos regulan el uso de herramientas tecnológicas: WhatsApp institucional, POS, plataformas de reservaciones?',r:'M',dep:'2.1'},
+{id:'2.8',t:'¿Los contratos del personal de temporada están tipificados como contratos por temporada (discontinuos)?',r:'A',dep:'2.1'},
+{id:'2.9',t:'¿Cada trabajador tiene un ejemplar firmado de su contrato y el patrón conserva el acuse en el expediente?',r:'M',dep:'2.1'},
+{id:'2.10',t:'¿Los contratos regulan el período de prueba conforme a los Arts. 39-A a 39-F LFT?',r:'M',dep:'2.1'},
 ]},
-{id:3,title:"Reglamento y comisiones",desc:"Reglamento Interior de Trabajo y cinco comisiones obligatorias — Arts. 422-425 y 509-512 LFT",
+{id:3,title:'Reglamento y comisiones',desc:'RIT y cinco comisiones obligatorias — Arts. 422-425 y 509-512 LFT',
 qs:[
-{id:"3.1",t:"¿Cuenta con Reglamento Interior de Trabajo elaborado por Comisión Mixta?",r:"A",h:"Sin RIT el patrón no tiene base formal para aplicar medidas disciplinarias. Es el documento más importante después de los contratos."},
-{id:"3.2",t:"¿El RIT fue depositado ante el Centro Federal de Conciliación y Registro Laboral y se conserva el acuse?",r:"A",h:"Un RIT no depositado no es oponible al trabajador ni a ninguna autoridad."},
-{id:"3.3",t:"¿El RIT está fijado permanentemente en los lugares más visibles del establecimiento?",r:"A"},
-{id:"3.4",t:"¿Se entregó un ejemplar del RIT a cada trabajador con acuse de recibo integrado a su expediente personal?",r:"M"},
-{id:"3.5",t:"¿El RIT cubre todas las materias del Art. 423 LFT: jornada, descansos, sanciones, higiene, uso de asientos, exámenes médicos y disposiciones por área operativa?",r:"A"},
-{id:"3.6",t:"¿Existe Comisión de Seguridad e Higiene constituida con acta formal y registrada ante la STPS?",r:"A"},
-{id:"3.7",t:"¿Existe Comisión Mixta de Capacitación, Adiestramiento y Productividad con acta formal?",r:"A"},
-{id:"3.8",t:"¿Se ha designado un responsable o constituido una comisión para la NOM-035-STPS-2018 con acta formal?",r:"A"},
-{id:"3.9",t:"¿El RIT o sus anexos contienen el protocolo de actuación frente a hostigamiento y acoso sexual exigido por el Art. 132, fracción XXXI LFT?",r:"A"},
+{id:'3.1',t:'¿Cuenta con Reglamento Interior de Trabajo elaborado por Comisión Mixta?',r:'A',h:'Sin RIT el patrón no tiene base formal para aplicar medidas disciplinarias.'},
+{id:'3.2',t:'¿El RIT fue depositado ante el CFCRL y se conserva el acuse?',r:'A',h:'Un RIT no depositado no es oponible al trabajador ni a ninguna autoridad.'},
+{id:'3.3',t:'¿El RIT está fijado permanentemente en los lugares más visibles del establecimiento?',r:'A'},
+{id:'3.4',t:'¿Se entregó un ejemplar del RIT a cada trabajador con acuse de recibo en su expediente?',r:'M'},
+{id:'3.5',t:'¿El RIT cubre todas las materias del Art. 423 LFT: jornada, descansos, sanciones, higiene, uso de asientos y exámenes médicos?',r:'A'},
+{id:'3.6',t:'¿Existe Comisión de Seguridad e Higiene constituida con acta formal y registrada ante la STPS?',r:'A'},
+{id:'3.7',t:'¿Existe Comisión Mixta de Capacitación, Adiestramiento y Productividad con acta formal?',r:'A'},
+{id:'3.8',t:'¿Se ha designado responsable o constituido comisión para la NOM-035-STPS-2018 con acta formal?',r:'A'},
+{id:'3.9',t:'¿El RIT o sus anexos contienen el protocolo frente a hostigamiento y acoso sexual exigido por el Art. 132, fr. XXXI LFT?',r:'A'},
 ]},
-{id:4,title:"Jornada y asistencia",desc:"Horarios, registro de asistencia y tiempo extraordinario — Arts. 58-68 LFT",
+{id:4,title:'Jornada y asistencia',desc:'Horarios, registro y tiempo extraordinario — Arts. 58-68 LFT',
 qs:[
-{id:"4.1",t:"¿Los horarios de cada turno están definidos por escrito y coinciden con el tipo de jornada pactado en los contratos?",r:"A"},
-{id:"4.2",t:"¿Existe un sistema de registro de asistencia (checador, huella, app) que genere evidencia documental conservable?",r:"A",h:"Sin registro de asistencia es imposible acreditar faltas injustificadas en una rescisión ante autoridad."},
-{id:"4.3",t:"¿Los registros de asistencia se conservan por al menos un año?",r:"M"},
-{id:"4.4",t:"¿El tiempo extraordinario se autoriza por escrito antes de trabajarse y queda registrado en bitácora?",r:"A",h:"El tiempo extra no autorizado es igualmente pagable. La ausencia de registro agrava la contingencia en juicio."},
-{id:"4.5",t:"¿Existe un procedimiento documentado para reportar ausencias y justificarlas con incapacidad del IMSS o constancia médica?",r:"M"},
-{id:"4.6",t:"¿El personal descansa efectivamente un día por cada seis de trabajo, o recibe el pago doble cuando trabaja ese día?",r:"A"},
-{id:"4.7",t:"¿El trabajo en días de descanso obligatorio (Art. 74 LFT) se retribuye con el pago triple que corresponde?",r:"A"},
+{id:'4.1',t:'¿Los horarios de cada turno están definidos por escrito y coinciden con el tipo de jornada pactado en los contratos?',r:'A'},
+{id:'4.2',t:'¿Existe sistema de registro de asistencia (checador, huella, app) que genere evidencia documental conservable?',r:'A',h:'Sin registro es imposible acreditar faltas injustificadas en una rescisión ante autoridad.'},
+{id:'4.3',t:'¿Los registros de asistencia se conservan por al menos un año?',r:'M'},
+{id:'4.4',t:'¿El tiempo extraordinario se autoriza por escrito antes de trabajarse y queda registrado en bitácora?',r:'A',h:'El tiempo extra no autorizado es igualmente pagable; la falta de registro agrava la contingencia.'},
+{id:'4.5',t:'¿Existe procedimiento documentado para reportar ausencias y justificarlas con incapacidad IMSS o constancia médica?',r:'M'},
+{id:'4.6',t:'¿El personal descansa efectivamente un día por cada seis de trabajo o recibe el pago doble cuando trabaja ese día?',r:'A'},
+{id:'4.7',t:'¿El trabajo en días de descanso obligatorio (Art. 74 LFT) se retribuye con el pago triple que corresponde?',r:'A'},
 ]},
-{id:5,title:"Salario e IMSS",desc:"Integración salarial, IMSS, INFONAVIT y nómina — la principal fuente de contingencia económica",
+{id:5,title:'Salario e IMSS',desc:'Integración salarial, IMSS, INFONAVIT y nómina',
 qs:[
-{id:"5.1",t:"¿El salario de todos los trabajadores es igual o superior al salario mínimo general vigente?",r:"A"},
-{id:"5.2",t:"¿El salario diario integrado declarado ante el IMSS incluye correctamente prima vacacional proporcional, aguinaldo, propinas y comisiones?",r:"A",h:"La subdeclaración del SDI es la contingencia más costosa del giro: genera multas del IMSS, diferencias de cuotas e indemnizaciones mayores."},
-{id:"5.3",t:"¿Todo el personal está inscrito ante el IMSS desde el primer día de labores?",r:"A"},
-{id:"5.4",t:"¿Las cuotas obrero-patronales al IMSS se pagan puntualmente y sin adeudos?",r:"A"},
-{id:"5.5",t:"¿Las aportaciones al INFONAVIT y al fondo de retiro (AFORE) están al corriente?",r:"A"},
-{id:"5.6",t:"¿Se emite y entrega CFDI de nómina al trabajador en cada período de pago?",r:"A",h:"La omisión del CFDI de nómina es una infracción al CFF con multa independiente de la sanción laboral."},
-{id:"5.7",t:"¿El aguinaldo se paga íntegramente antes del 20 de diciembre de cada año?",r:"A"},
-{id:"5.8",t:"¿Las vacaciones y la prima vacacional se otorgan conforme a la reforma de 2023 (mínimo 12 días desde el primer año)?",r:"A",h:"Verificar si se actualizaron los contratos y la política de vacaciones tras la reforma."},
-{id:"5.9",t:"¿Existe una política documentada y firmada para descuentos en nómina por anticipos, préstamos o faltantes de caja?",r:"A",h:"Los descuentos sin soporte escrito firmado por el trabajador son ilegales y generan contingencia de pago doble."},
-{id:"5.10",t:"¿Los recibos de nómina y CFDI se conservan en el expediente por al menos 5 años?",r:"M"},
+{id:'5.1',t:'¿El salario de todos los trabajadores es igual o superior al salario mínimo general vigente?',r:'A'},
+{id:'5.2',t:'¿El SDI declarado ante el IMSS incluye correctamente prima vacacional, aguinaldo proporcional, propinas y comisiones?',r:'A',h:'La subdeclaración del SDI genera multas, diferencias de cuotas e indemnizaciones mayores.'},
+{id:'5.3',t:'¿Todo el personal está inscrito ante el IMSS desde el primer día de labores?',r:'A'},
+{id:'5.4',t:'¿Las cuotas obrero-patronales al IMSS se pagan puntualmente y sin adeudos?',r:'A'},
+{id:'5.5',t:'¿Las aportaciones al INFONAVIT y AFORE están al corriente?',r:'A'},
+{id:'5.6',t:'¿Se emite y entrega CFDI de nómina al trabajador en cada período de pago?',r:'A',h:'La omisión del CFDI de nómina es infracción al CFF con multa independiente de la laboral.'},
+{id:'5.7',t:'¿El aguinaldo se paga íntegramente antes del 20 de diciembre de cada año?',r:'A'},
+{id:'5.8',t:'¿Las vacaciones y prima vacacional se otorgan conforme a la reforma de 2023 (mínimo 12 días desde el primer año)?',r:'A',h:'Verificar si se actualizaron contratos y política de vacaciones tras la reforma.'},
+{id:'5.9',t:'¿Existe política documentada y firmada para descuentos en nómina por anticipos, préstamos o faltantes de caja?',r:'A',h:'Los descuentos sin soporte escrito firmado son ilegales y generan contingencia de pago doble.'},
+{id:'5.10',t:'¿Los recibos de nómina y CFDI se conservan en el expediente por al menos 5 años?',r:'M'},
 ]},
-{id:6,title:"Propinas",desc:"Régimen, distribución e integración salarial — Arts. 346-349 LFT",
+{id:6,title:'Propinas',desc:'Régimen, distribución e integración salarial — Arts. 346-349 LFT',
 qs:[
-{id:"6.1",t:"¿El establecimiento tiene una política de propinas definida por escrito (pool, individual, por puntos u otro sistema)?",r:"M"},
-{id:"6.2",t:"¿El patrón se abstiene de retener, apropiarse o interferir de cualquier forma en las propinas de los trabajadores?",r:"A",h:"La retención de propinas por el patrón es causa de rescisión imputable a él, con derecho del trabajador a indemnización."},
-{id:"6.3",t:"¿Se ha acordado con el personal un componente de propinas para integrar el SDI ante el IMSS?",r:"A",h:"Sin este acuerdo el SDI está subdeclarado para todos los meseros, bartenders y hostess que reciben propinas."},
-{id:"6.4",t:"¿Existe bitácora o registro de propinas distribuidas que permita acreditarlas ante el IMSS o autoridad laboral?",r:"M"},
-{id:"6.5",t:"¿Las comisiones sobre ventas del barman están documentadas en contrato o anexo escrito, y se incluyen en el SDI?",r:"M"},
+{id:'6.1',t:'¿El establecimiento tiene política de propinas definida por escrito (pool, individual, por puntos)?',r:'M'},
+{id:'6.2',t:'¿El patrón se abstiene de retener o apropiarse de las propinas de los trabajadores?',r:'A',h:'La retención de propinas por el patrón es causa de rescisión con derecho del trabajador a indemnización.'},
+{id:'6.3',t:'¿Se ha acordado con el personal un componente de propinas para integrar el SDI ante el IMSS?',r:'A',h:'Sin este acuerdo el SDI está subdeclarado para todos los meseros, bartenders y hostess.'},
+{id:'6.4',t:'¿Existe bitácora o registro de propinas distribuidas que permita acreditarlas ante el IMSS o autoridad laboral?',r:'M'},
+{id:'6.5',t:'¿Las comisiones sobre ventas del barman están documentadas en contrato o anexo e incluidas en el SDI?',r:'M'},
 ]},
-{id:7,title:"Seguridad e higiene",desc:"NOM-019 · NOM-002 · NOM-017 · NOM-251-SSA1 · Arts. 509-512 LFT",
+{id:7,title:'Seguridad e higiene',desc:'NOM-019 · NOM-002 · NOM-017 · NOM-251-SSA1 · Arts. 509-512 LFT',
 qs:[
-{id:"7.1",t:"¿Existe Programa Anual de Seguridad e Higiene vigente elaborado por la Comisión?",r:"A"},
-{id:"7.2",t:"¿Se realizan recorridos de verificación periódicos y se levanta acta de cada uno?",r:"A",h:"Las actas de recorrido de la Comisión son la evidencia principal ante una inspección de la STPS."},
-{id:"7.3",t:"¿Los extintores tienen carga vigente, están accesibles y el personal sabe usarlos?",r:"A"},
-{id:"7.4",t:"¿Las salidas de emergencia están señalizadas, libres de obstáculos y el personal las conoce?",r:"A"},
-{id:"7.5",t:"¿Se realizan simulacros de evacuación y se levanta acta de cada uno?",r:"M"},
-{id:"7.6",t:"¿El equipo de protección personal (EPP) asignado a cada puesto es el correcto y se usa efectivamente durante la jornada?",r:"A"},
-{id:"7.7",t:"¿Existe procedimiento escrito para el manejo seguro de gas, fuego y equipos de cocina?",r:"A"},
-{id:"7.8",t:"¿Existe lista de químicos autorizados con hojas de seguridad (FDS) disponibles y accesibles para el personal de limpieza?",r:"M"},
-{id:"7.9",t:"¿Se llevan bitácoras de control de temperaturas de conservación y cocción en cocina?",r:"M"},
-{id:"7.10",t:"¿Los accidentes de trabajo ocurridos se reportaron al IMSS mediante la forma ST-7 en tiempo y forma?",r:"A",h:"La omisión del aviso puede hacer que el IMSS desconozca el carácter laboral del accidente, generando responsabilidad directa del patrón."},
-{id:"7.11",t:"¿El personal de cocina cuenta con certificado vigente de manipulador de alimentos?",r:"M"},
-{id:"7.12",t:"¿Existe botiquín de primeros auxilios completo, accesible y con inventario al día?",r:"M"},
+{id:'7.1',t:'¿Existe Programa Anual de Seguridad e Higiene vigente elaborado por la Comisión?',r:'A'},
+{id:'7.2',t:'¿Se realizan recorridos de verificación periódicos y se levanta acta de cada uno?',r:'A',h:'Las actas de recorrido son la evidencia principal ante una inspección de la STPS.'},
+{id:'7.3',t:'¿Los extintores tienen carga vigente, están accesibles y el personal sabe usarlos?',r:'A'},
+{id:'7.4',t:'¿Las salidas de emergencia están señalizadas, libres de obstáculos y el personal las conoce?',r:'A'},
+{id:'7.5',t:'¿Se realizan simulacros de evacuación y se levanta acta de cada uno?',r:'M'},
+{id:'7.6',t:'¿El EPP asignado a cada puesto es el correcto y se usa efectivamente durante la jornada?',r:'A'},
+{id:'7.7',t:'¿Existe procedimiento escrito para el manejo seguro de gas, fuego y equipos de cocina?',r:'A'},
+{id:'7.8',t:'¿Existe lista de químicos autorizados con hojas de seguridad disponibles para el personal de limpieza?',r:'M'},
+{id:'7.9',t:'¿Se llevan bitácoras de control de temperaturas de conservación y cocción en cocina?',r:'M'},
+{id:'7.10',t:'¿Los accidentes de trabajo se reportaron al IMSS mediante la forma ST-7 en tiempo y forma?',r:'A',h:'La omisión puede hacer que el IMSS desconozca el carácter laboral del accidente.'},
+{id:'7.11',t:'¿El personal de cocina cuenta con certificado vigente de manipulador de alimentos?',r:'M'},
+{id:'7.12',t:'¿Existe botiquín de primeros auxilios completo, accesible y con inventario al día?',r:'M'},
 ]},
-{id:8,title:"Capacitación",desc:"Planes, constancias y Comisión Mixta — Arts. 153-A a 153-F LFT",
+{id:8,title:'Capacitación',desc:'Planes, constancias y Comisión Mixta — Arts. 153-A a 153-F LFT',
 qs:[
-{id:"8.1",t:"¿Existe Plan y Programa de Capacitación (DC-1 / DC-2 o equivalente) registrado ante la STPS para el año en curso?",r:"A"},
-{id:"8.2",t:"¿Se expiden Constancias de Habilidades Laborales (DC-3) a los trabajadores que concluyen cursos, dentro de los 60 días?",r:"A"},
-{id:"8.3",t:"¿Los cursos impartidos cubren los temas esenciales del giro: manejo de alimentos, seguridad, servicio responsable de alcohol, NOM-035 y protección de datos?",r:"M"},
-{id:"8.4",t:"¿Se conserva lista de asistencia firmada de cada sesión de capacitación?",r:"M"},
-{id:"8.5",t:"¿La Comisión Mixta de Capacitación sesiona periódicamente y levanta actas?",r:"M"},
+{id:'8.1',t:'¿Existe Plan y Programa de Capacitación registrado ante la STPS para el año en curso?',r:'A'},
+{id:'8.2',t:'¿Se expiden Constancias de Habilidades Laborales (DC-3) a los trabajadores que concluyen cursos?',r:'A'},
+{id:'8.3',t:'¿Los cursos cubren los temas esenciales: manejo de alimentos, seguridad, alcohol, NOM-035 y datos personales?',r:'M'},
+{id:'8.4',t:'¿Se conserva lista de asistencia firmada de cada sesión de capacitación?',r:'M'},
+{id:'8.5',t:'¿La Comisión Mixta de Capacitación sesiona periódicamente y levanta actas?',r:'M'},
 ]},
-{id:9,title:"NOM-035 y violencia laboral",desc:"Riesgo psicosocial, hostigamiento y acoso — Obligación legal vigente desde 2019",
+{id:9,title:'NOM-035 y violencia laboral',desc:'Riesgo psicosocial — Obligación legal vigente desde 2019',
 qs:[
-{id:"9.1",t:"¿El establecimiento tiene adoptada y difundida formalmente la Política de Prevención de Factores de Riesgo Psicosocial?",r:"A"},
-{id:"9.2",t:"¿Se ha realizado la evaluación de factores de riesgo psicosocial con la guía que corresponde al número de trabajadores del establecimiento?",r:"A",h:"Hasta 15 trabajadores: guía I. De 16 a 50: guía II. Más de 50: guía III, con comisión formal."},
-{id:"9.3",t:"¿Existe canal de denuncia de violencia laboral y acoso, conocido por todo el personal?",r:"A"},
-{id:"9.4",t:"¿Existe protocolo de actuación frente a hostigamiento y acoso sexual documentado y difundido entre el personal?",r:"A"},
-{id:"9.5",t:"¿Ha habido en el último año denuncias de acoso, hostigamiento o violencia en el establecimiento?",r:"A",h:"Si las hubo, anotar si se investigaron formalmente y cuál fue el resultado."},
-{id:"9.6",t:"¿El personal ha recibido capacitación en prevención de violencia laboral y NOM-035 en el último año?",r:"M"},
+{id:'9.1',t:'¿Tiene adoptada y difundida formalmente la Política de Prevención de Factores de Riesgo Psicosocial?',r:'A'},
+{id:'9.2',t:'¿Se ha realizado la evaluación de factores de riesgo psicosocial con la guía que corresponde al número de trabajadores?',r:'A',h:'Hasta 15 trabajadores: guía I. De 16 a 50: guía II. Más de 50: guía III con comisión formal.'},
+{id:'9.3',t:'¿Existe canal de denuncia de violencia laboral y acoso conocido por todo el personal?',r:'A'},
+{id:'9.4',t:'¿Existe protocolo de actuación frente a hostigamiento y acoso sexual documentado y difundido?',r:'A'},
+{id:'9.5',t:'¿Ha habido en el último año denuncias de acoso, hostigamiento o violencia en el establecimiento?',r:'A',h:'Anotar si se investigaron formalmente y cuál fue el resultado.'},
+{id:'9.6',t:'¿El personal ha recibido capacitación en prevención de violencia laboral y NOM-035 en el último año?',r:'M'},
 ]},
-{id:10,title:"Datos personales",desc:"Avisos de privacidad y protección de datos — LFPDPPP",
+{id:10,title:'Datos personales',desc:'Avisos de privacidad — LFPDPPP',
 qs:[
-{id:"10.1",t:"¿El establecimiento cuenta con Aviso de Privacidad para los datos personales de los clientes (reservaciones, facturación)?",r:"M"},
-{id:"10.2",t:"¿Existe Aviso de Privacidad para el personal del establecimiento, entregado al inicio de la relación laboral?",r:"M"},
-{id:"10.3",t:"¿Los contratos individuales contienen autorización del trabajador para el tratamiento de sus datos para fines laborales?",r:"M"},
-{id:"10.4",t:"¿El personal que accede a datos de clientes ha sido instruido sobre la prohibición de usarlos para fines personales?",r:"M"},
-{id:"10.5",t:"¿Las cámaras de seguridad del establecimiento están señalizadas y el personal y los clientes son informados de su existencia?",r:"B"},
+{id:'10.1',t:'¿Tiene Aviso de Privacidad para datos personales de clientes (reservaciones, facturación)?',r:'M'},
+{id:'10.2',t:'¿Existe Aviso de Privacidad para el personal entregado al inicio de la relación laboral?',r:'M'},
+{id:'10.3',t:'¿Los contratos contienen autorización del trabajador para el tratamiento de sus datos con fines laborales?',r:'M'},
+{id:'10.4',t:'¿El personal que accede a datos de clientes fue instruido sobre la prohibición de usarlos para fines personales?',r:'M'},
+{id:'10.5',t:'¿Las cámaras de seguridad están señalizadas e informado el personal y clientes de su existencia?',r:'B'},
 ]},
-{id:11,title:"Contingencias actuales",desc:"Situación disciplinaria, litigiosa y gestión de expedientes",
+{id:11,title:'Contingencias actuales',desc:'Situación disciplinaria, litigiosa y expedientes',
 qs:[
-{id:"11.1",t:"¿Existen demandas laborales activas contra el establecimiento en este momento?",r:"A",h:"Anotar número de asuntos, instancia y monto aproximado de pretensiones."},
-{id:"11.2",t:"¿Ha habido rescisiones de contratos en el último año? ¿Se documentaron con acta de hechos y aviso escrito?",r:"A"},
-{id:"11.3",t:"¿Ha habido renuncias voluntarias en el último año? ¿Se elaboraron finiquitos firmados ante testigos?",r:"M"},
-{id:"11.4",t:"¿Existe expediente personal completo para cada trabajador activo: contrato, recibos, actas, acuses de RIT y aviso de privacidad?",r:"A"},
-{id:"11.5",t:"¿Se han levantado actas de amonestación o suspensión en el último año con procedimiento correcto: audiencia al trabajador, testigos y negativa documentada en caso de que no firmara?",r:"A"},
-{id:"11.6",t:"¿Hay personas que prestan servicios bajo honorarios o como independientes pero que en la práctica tienen características de relación laboral subordinada?",r:"A",h:"La simulación de relaciones laborales mediante honorarios es una de las contingencias más frecuentes y costosas del giro."},
-{id:"11.7",t:"¿Existe un protocolo interno para atender visitas de inspección de trabajo: quién atiende, qué documentos presentar y qué no firmar sin asesoría?",r:"M"},
+{id:'11.1',t:'¿Existen demandas laborales activas contra el establecimiento en este momento?',r:'A',h:'Anotar número de asuntos, instancia y monto aproximado de pretensiones.'},
+{id:'11.2',t:'¿Ha habido rescisiones en el último año? ¿Se documentaron con acta de hechos y aviso escrito?',r:'A'},
+{id:'11.3',t:'¿Ha habido renuncias voluntarias en el último año? ¿Se elaboraron finiquitos firmados ante testigos?',r:'M'},
+{id:'11.4',t:'¿Existe expediente personal completo para cada trabajador activo: contrato, recibos, actas y acuses de RIT?',r:'A'},
+{id:'11.5',t:'¿Se han levantado actas de amonestación o suspensión en el último año con procedimiento correcto?',r:'A'},
+{id:'11.6',t:'¿Hay personas bajo honorarios o como independientes que en la práctica tienen características de relación laboral subordinada?',r:'A',h:'La simulación laboral mediante honorarios es una de las contingencias más frecuentes y costosas.'},
+{id:'11.7',t:'¿Existe protocolo para atender visitas de inspección de trabajo?',r:'M'},
 ]},
 ];
 
 const DOCS=[
-  "Contratos individuales — todos los puestos",
-  "Expedientes personales completos",
-  "Reglamento Interior de Trabajo",
-  "Actas de constitución de comisiones (5 actas)",
-  "Depósito del RIT ante el CFCRL",
-  "Acuses de recibo del RIT por trabajador",
-  "Programa Anual de Seguridad e Higiene",
-  "Formatos de recorrido de verificación",
-  "Plan y Programa de Capacitación (DC-1/DC-2)",
-  "Constancias de habilidades laborales (DC-3)",
-  "Política NOM-035 difundida con acuse",
-  "Protocolo anti-hostigamiento y acoso sexual",
-  "Formato de reporte de violencia y acoso",
-  "Avisos de Privacidad (clientes y personal)",
-  "Formatos disciplinarios (amonestación, suspensión, acta de hechos)",
-  "Aviso de rescisión — modelo base",
-  "Reporte de accidente de trabajo",
-  "Finiquito / liquidación — modelo base",
+  'Contratos individuales — todos los puestos',
+  'Expedientes personales completos',
+  'Reglamento Interior de Trabajo',
+  'Actas de constitución de comisiones (5 actas)',
+  'Depósito del RIT ante el CFCRL',
+  'Acuses de recibo del RIT por trabajador',
+  'Programa Anual de Seguridad e Higiene',
+  'Formatos de recorrido de verificación',
+  'Plan y Programa de Capacitación (DC-1/DC-2)',
+  'Constancias de habilidades laborales (DC-3)',
+  'Política NOM-035 difundida con acuse',
+  'Protocolo anti-hostigamiento y acoso sexual',
+  'Formato de reporte de violencia y acoso',
+  'Avisos de Privacidad (clientes y personal)',
+  'Formatos disciplinarios (amonestación, suspensión, acta de hechos)',
+  'Aviso de rescisión — modelo base',
+  'Reporte de accidente de trabajo',
+  'Finiquito / liquidación — modelo base',
 ];
 
-// ── ESTADO ────────────────────────────────────────────────────────────────
-let curBlock = 0;
-const ans = {};          // { qId: 'si'|'no'|'parcial' }
-const notes = {};
-const puestos = {};      // { puestoId: numero }
-let personaTipo = '';
-let personaData = {nombre:'', rfc:'', regimen:''};  // campos estructurados 1.1
-let docChecks = {};
+// ═══════════════════════════════════════════════════════════
+// ESTADO — solo datos, nunca genera HTML
+// ═══════════════════════════════════════════════════════════
+let cur = 0;                          // bloque activo (BLOCKS.length = resumen)
+const A = {};                         // respuestas { qId: 'si'|'no'|'parcial' }
+const N = {};                         // notas { qId: texto }
+const PT = {};                        // plantilla { puestoId: numero }
+let persona = '';                     // 'pm' | 'pf'
+const PD = {nombre:'',rfc:'',regimen:'',representante:''};
+const DC = {};                        // doc checks
 let finalNotes = '';
 
-const TOTAL_BLOCKS = BLOCKS.length + 1; // +1 para resumen
-
-// ── HELPERS ───────────────────────────────────────────────────────────────
-function isSkipped(q){
-  return q.depende && ans[q.depende]==='no';
-}
-function answeredCount(){
-  let n = 0;
-  BLOCKS.forEach(b=>{
-    b.qs.forEach(q=>{
-      if(q.tipo==='persona' && personaTipo) n++;
-      else if(q.tipo==='puestos' && totalPuestos()>0) n++;
-      else if(!q.tipo && !isSkipped(q) && ans[q.id]) n++;
-    });
-  });
-  return n;
-}
-function totalQsVisible(){
+// ═══════════════════════════════════════════════════════════
+// HELPERS PUROS (sin DOM)
+// ═══════════════════════════════════════════════════════════
+const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const skip = q => q.dep && A[q.dep]==='no';
+const totalPt = () => Object.values(PT).reduce((s,v)=>s+(parseInt(v)||0),0);
+const answeredCount = () => {
   let n=0;
   BLOCKS.forEach(b=>b.qs.forEach(q=>{
-    if(!isSkipped(q)) n++;
+    if(skip(q)) return;
+    if(q.tipo==='persona' && persona) n++;
+    else if(q.tipo==='puestos' && totalPt()>0) n++;
+    else if(!q.tipo && A[q.id]) n++;
   }));
   return n;
-}
-function totalPuestos(){
-  return Object.values(puestos).reduce((s,v)=>s+(parseInt(v)||0),0);
-}
-function blockAnsweredCount(b){
-  return b.qs.filter(q=>{
-    if(isSkipped(q)) return true;
-    if(q.tipo==='persona') return !!personaTipo;
-    if(q.tipo==='puestos') return totalPuestos()>0;
-    return !!ans[q.id];
-  }).length;
-}
-function blockRisk(b){
-  const hasHighIssue=b.qs.some(q=>!isSkipped(q)&&(ans[q.id]==='no'||ans[q.id]==='parcial')&&q.r==='A');
-  const midCount=b.qs.filter(q=>!isSkipped(q)&&(ans[q.id]==='no'||ans[q.id]==='parcial')&&q.r==='M').length;
-  if(hasHighIssue) return 'A';
-  if(midCount>1) return 'M';
-  if(!b.qs.some(q=>ans[q.id]||q.tipo)) return null;
+};
+const visibleCount = () => BLOCKS.reduce((s,b)=>s+b.qs.filter(q=>!skip(q)).length, 0);
+const blkAnswered = b => b.qs.filter(q=>{
+  if(skip(q)) return true;
+  if(q.tipo==='persona') return !!persona;
+  if(q.tipo==='puestos') return totalPt()>0;
+  return !!A[q.id];
+}).length;
+const blkRisk = b => {
+  const hasA = b.qs.some(q=>!skip(q)&&(A[q.id]==='no'||A[q.id]==='parcial')&&q.r==='A');
+  const midN = b.qs.filter(q=>!skip(q)&&(A[q.id]==='no'||A[q.id]==='parcial')&&q.r==='M').length;
+  if(hasA) return 'A';
+  if(midN>1) return 'M';
+  if(!b.qs.some(q=>A[q.id]||q.tipo)) return null;
   return 'B';
-}
-function esc(s){
-  return String(s||'')
-    .replace(/&/g,'&amp;')
-    .replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;')
-    .replace(/"/g,'&quot;');
-}
+};
 
-// ── RENDER BARRA Y NAV ────────────────────────────────────────────────────
-function updateTopbar(){
-  const ac=answeredCount();
-  const tot=totalQsVisible();
-  const pct=tot>0?Math.round((ac/tot)*100):0;
-  document.getElementById('gp-fill').style.width=pct+'%';
-  document.getElementById('gp-pct').textContent=pct+'%';
+// ═══════════════════════════════════════════════════════════
+// GENERADORES DE HTML (llamados solo en init o cambio de bloque)
+// ═══════════════════════════════════════════════════════════
+function buildTabs(){
+  const c = document.getElementById('tabs');
+  let h='';
+  BLOCKS.forEach((b,i)=>{ h+=`<button type="button" class="tab" id="tab-${i}" onclick="go(${i})"><span class="tab-dot" id="tdot-${i}"></span>${b.id}. ${b.title}</button>`; });
+  h+=`<button type="button" class="tab" id="tab-${BLOCKS.length}" onclick="go(${BLOCKS.length})"><span class="tab-dot"></span>Diagnóstico</button>`;
+  c.innerHTML=h;
 }
 
-function renderBlockNav(){
-  const nav=document.getElementById('block-nav');
-  // Si el nav aún no está construido, construirlo una sola vez
-  if(nav.children.length===0){
-    let html='';
-    BLOCKS.forEach((b,i)=>{
-      html+=`<button type="button" class="bnav-btn" id="bnav-${i}" onclick="goBlock(${i})">
-        <span class="bnav-dot" id="bnavdot-${i}"></span>
-        <span class="bnav-label">${b.id}. ${b.title}</span>
-      </button>`;
-    });
-    html+=`<button type="button" class="bnav-btn" id="bnav-${BLOCKS.length}" onclick="goBlock(${BLOCKS.length})">
-      <span class="bnav-dot"></span>
-      <span class="bnav-label">Diagnóstico</span>
-    </button>`;
-    nav.innerHTML=html;
-  }
-  // Actualizar solo clases y colores — sin reemplazar el DOM
-  BLOCKS.forEach((b,i)=>{
-    const btn=document.getElementById('bnav-'+i);
-    const dot=document.getElementById('bnavdot-'+i);
-    if(!btn) return;
-    const r=blockRisk(b);
-    const done=blockAnsweredCount(b)===b.qs.length;
-    btn.className='bnav-btn'+(curBlock===i?' active':r==='A'?' warn':done?' done':'');
-    if(dot) dot.style.background=r==='A'?'var(--red)':r==='M'?'var(--amber)':done?'var(--green)':'transparent';
-  });
-  const sumBtn=document.getElementById('bnav-'+BLOCKS.length);
-  if(sumBtn) sumBtn.className='bnav-btn'+(curBlock===BLOCKS.length?' active':'');
-  // scroll active into view
-  const activeBtn=nav.querySelector('.active');
-  if(activeBtn) activeBtn.scrollIntoView({block:'nearest',inline:'center'});
-}
-
-function updateNav(){
-  const isSummary=curBlock===BLOCKS.length;
-  const prev=document.getElementById('btn-prev');
-  const next=document.getElementById('btn-next');
-  const status=document.getElementById('nav-status');
-  prev.disabled=curBlock===0;
-  if(isSummary){
-    next.textContent='Reiniciar';
-    next.onclick=()=>{ if(confirm('¿Reiniciar el diagnóstico?')){location.reload();} };
-  } else {
-    next.textContent='Siguiente →';
-    next.onclick=()=>navNext();
-  }
-  if(!isSummary){
-    const b=BLOCKS[curBlock];
-    const ac=blockAnsweredCount(b);
-    status.innerHTML=`<strong>${b.title}</strong><br>Bloque ${b.id} de ${BLOCKS.length}`;
-  } else {
-    status.innerHTML=`<strong>Diagnóstico final</strong>`;
-  }
-}
-
-function navNext(){
-  if(curBlock<BLOCKS.length) goBlock(curBlock+1);
-}
-
-// ── RENDER PRINCIPAL ──────────────────────────────────────────────────────
-function render(){
-  renderBlockNav();
-  updateNav();
-  updateTopbar();
-  const main=document.getElementById('main');
-  if(curBlock===BLOCKS.length){
-    main.innerHTML=renderSummary();
-  } else {
-    main.innerHTML=renderBlock(BLOCKS[curBlock]);
-  }
-  // resize textareas
-  main.querySelectorAll('textarea').forEach(ta=>{ta.style.height='auto';ta.style.height=ta.scrollHeight+'px';});
-}
-
-function renderBlock(b){
-  const bAns=blockAnsweredCount(b);
-  const bTot=b.qs.length;
-  const bPct=Math.round((bAns/bTot)*100);
-  const skipActive=b.id===2&&ans['2.1']==='no';
-  const skipCount=skipActive?b.qs.filter(q=>q.depende==='2.1').length:0;
-
-  let html=`
-  <div class="block-hd">
-    <div class="block-hd-top">
-      <span class="block-badge">Bloque ${b.id}</span>
-    </div>
-    <div class="block-title">${esc(b.title)}</div>
-    <div class="block-desc">${esc(b.desc)}</div>
-    <div class="block-prog-row">
-      <div class="block-prog-bar"><div class="block-prog-fill" style="width:${bPct}%"></div></div>
-      <div class="block-prog-label">${bAns} / ${bTot} respondidas</div>
-    </div>
-  </div>`;
-
-  if(skipActive){
-    html+=`<div class="skip-notice">
-      <span class="skip-notice-icon">⚠️</span>
-      <div class="skip-notice-text"><strong>Las preguntas 2.2 a 2.10 se omiten</strong> porque no hay contratos escritos. Esto constituye por sí solo la contingencia de mayor prioridad: elaborar contratos individuales para cada puesto activo.</div>
-    </div>`;
-  }
-
-  b.qs.forEach(q=>{
-    if(q.tipo==='persona'){html+=renderPersonaQ(q);return;}
-    if(q.tipo==='puestos'){html+=renderPuestosQ(q);return;}
-    html+=renderQ(q);
-  });
-  return html;
-}
-
-function renderQ(q){
-  const skipped=isSkipped(q);
-  const v=ans[q.id]||'';
-  const cardClass='q-card'+(skipped?' skipped':v?' answered-'+v:'');
-  const showNotes=(v==='no'||v==='parcial')&&!skipped;
-
-  const icons={si:'✓',no:'✗',parcial:'~'};
-  const labels={si:'Sí',no:'No',parcial:'Parcial'};
-
-  let btns='';
-  ['si','no','parcial'].forEach(opt=>{
-    const sel=v===opt;
-    btns+=`<button type="button" class="ans-btn${sel?' sel-'+opt:''}" onclick="setAns('${q.id}','${opt}')">
-      <span class="ans-icon">${icons[opt]}</span> ${labels[opt]}
-    </button>`;
-  });
-
-  return`<div class="${cardClass}" id="qcard-${q.id}">
-    <div class="q-card-body">
-      <div class="q-header">
-        <span class="q-num">${esc(q.id)}</span>
-        <span class="q-text">${esc(q.t)}</span>
-        <span class="risk-dot risk-dot-${q.r}" title="Riesgo ${q.r==='A'?'Alto':q.r==='M'?'Medio':'Bajo'}"></span>
-      </div>
-      ${q.h&&!skipped?`<div class="q-hint">${esc(q.h)}</div>`:''}
-      ${skipped?`<div class="q-hint" style="border-left-color:var(--amber-bd);background:var(--amber-lt);color:var(--amber)">Omitida — no aplica sin contratos escritos</div>`:''}
-      ${!skipped?`<div class="q-answers">${btns}</div>`:''}
-    </div>
-    <div class="q-notes${showNotes?' visible':''}" id="qnotes-${q.id}">
-      <div class="q-notes-label">Notas / detalle</div>
-      <textarea placeholder="Anote aquí los detalles relevantes para el expediente..." 
-        onchange="setNote('${q.id}',this.value)" oninput="autoResize(this)">${esc(notes[q.id]||'')}</textarea>
-    </div>
-  </div>`;
-}
-
-function renderPersonaQ(q){
-  const pm=personaTipo==='pm';
-  const pf=personaTipo==='pf';
-  return`<div class="q-special" id="qcard-1.1">
-    <div class="q-special-header">
-      <span class="q-num">${esc(q.id)}</span>
-      <span class="q-text">${esc(q.t)}</span>
-      <span class="risk-dot risk-dot-${q.r}"></span>
+function htmlPersona(){
+  const pm=persona==='pm', pf=persona==='pf';
+  return `<div class="persona-wrap" id="card-1.1">
+    <div class="persona-q-hdr">
+      <span class="q-num">1.1</span>
+      <span class="q-txt">¿Bajo qué figura jurídica opera el patrón?</span>
+      <span class="risk risk-B"></span>
     </div>
     <div class="persona-opts">
-      <div class="persona-card${pm?' selected':''}" onclick="setPersona('pm');return false;">
-        <div class="persona-icon">🏢</div>
-        <div class="persona-title">Persona Moral</div>
-        <div class="persona-sub">Sociedad, SA de CV, SRL, AC, etc.</div>
+      <div class="p-card${pm?' sel':''}" id="pcard-pm" onclick="selPersona('pm')">
+        <div class="p-icon">🏢</div>
+        <div class="p-title">Persona Moral</div>
+        <div class="p-sub">SA de CV, SRL, AC, etc.</div>
       </div>
-      <div class="persona-card${pf?' selected':''}" onclick="setPersona('pf');return false;">
-        <div class="persona-icon">👤</div>
-        <div class="persona-title">Persona Física</div>
-        <div class="persona-sub">Con Actividad Empresarial</div>
+      <div class="p-card${pf?' sel':''}" id="pcard-pf" onclick="selPersona('pf')">
+        <div class="p-icon">👤</div>
+        <div class="p-title">Persona Física</div>
+        <div class="p-sub">Con Actividad Empresarial</div>
       </div>
     </div>
     <div class="persona-fields">
-      <div class="pf-group full">
-        <label class="pf-label">${pm?'Denominación o razón social':'Nombre completo del patrón'}</label>
-        <input class="pf-input" type="text"
-          placeholder="${pm?'Ej. Restaurantes del Centro SA de CV':'Ej. Juan Pérez García'}"
-          value="${esc(personaData.nombre)}"
-          oninput="setPersonaField('nombre',this.value)">
+      <div class="pf-grp full">
+        <label class="pf-lbl" for="pd-nombre">${pm?'Denominación o razón social':'Nombre completo del patrón'}</label>
+        <input class="pf-in" id="pd-nombre" type="text" placeholder="${pm?'Ej. Restaurantes del Centro SA de CV':'Ej. Juan Pérez García'}" value="${esc(PD.nombre)}" oninput="pdSet('nombre',this.value)">
       </div>
-      <div class="pf-group">
-        <label class="pf-label">RFC</label>
-        <input class="pf-input" type="text"
-          placeholder="${pm?'Ej. RCE850301ABC':'Ej. PEGJ850301XYZ'}"
-          value="${esc(personaData.rfc)}"
-          style="text-transform:uppercase;letter-spacing:.05em"
-          oninput="setPersonaField('rfc',this.value.toUpperCase())">
+      <div class="pf-grp">
+        <label class="pf-lbl" for="pd-rfc">RFC</label>
+        <input class="pf-in" id="pd-rfc" type="text" placeholder="${pm?'Ej. RCE850301ABC':'Ej. PEGJ850301XYZ'}" value="${esc(PD.rfc)}" style="text-transform:uppercase" oninput="pdSet('rfc',this.value.toUpperCase())">
       </div>
-      <div class="pf-group">
-        <label class="pf-label">Régimen fiscal (SAT)</label>
-        <input class="pf-input" type="text"
-          placeholder="Ej. General de Ley, RESICO, RIF..."
-          value="${esc(personaData.regimen)}"
-          oninput="setPersonaField('regimen',this.value)">
+      <div class="pf-grp">
+        <label class="pf-lbl" for="pd-reg">Régimen fiscal (SAT)</label>
+        <input class="pf-in" id="pd-reg" type="text" placeholder="Ej. General de Ley, RESICO..." value="${esc(PD.regimen)}" oninput="pdSet('regimen',this.value)">
       </div>
-      ${pm?`<div class="pf-group full">
-        <label class="pf-label">Representante legal</label>
-        <input class="pf-input" type="text"
-          placeholder="Nombre completo del apoderado o representante"
-          value="${esc(personaData.representante||'')}"
-          oninput="setPersonaField('representante',this.value)">
+      ${pm?`<div class="pf-grp full">
+        <label class="pf-lbl" for="pd-rep">Representante legal</label>
+        <input class="pf-in" id="pd-rep" type="text" placeholder="Nombre completo del representante o apoderado" value="${esc(PD.representante)}" oninput="pdSet('representante',this.value)">
       </div>`:''}
     </div>
   </div>`;
 }
 
-function renderPuestosQ(q){
-  let cards='';
+function htmlPuestos(){
+  let rows='';
   PUESTOS.forEach(p=>{
-    const v=puestos[p.id]||0;
-    cards+=`<div class="puesto-card">
-      <span class="puesto-label">${esc(p.n)}</span>
-      <div class="puesto-stepper">
-        <button class="st-btn" onclick="adjPuesto('${p.id}',-1)" type="button">−</button>
-        <input class="st-num-input" type="number" id="pv-${p.id}" min="0" max="99" value="${v}"
-          oninput="setPuestoVal('${p.id}',this.value)">
-        <button class="st-btn" onclick="adjPuesto('${p.id}',1)" type="button">+</button>
+    const v=PT[p.id]||0;
+    rows+=`<div class="pt-row">
+      <span class="pt-lbl">${esc(p.n)}</span>
+      <div class="pt-ctrl">
+        <button type="button" class="pt-btn" onclick="adjPT('${p.id}',-1)">−</button>
+        <input type="number" class="pt-num" id="pt-${p.id}" min="0" max="99" value="${v}" oninput="setPT('${p.id}',this.value)">
+        <button type="button" class="pt-btn" onclick="adjPT('${p.id}',1)">+</button>
       </div>
     </div>`;
   });
-  const tot=totalPuestos();
-  return`<div class="q-special" id="qcard-1.2">
-    <div class="q-special-header">
-      <span class="q-num">${esc(q.id)}</span>
-      <span class="q-text">${esc(q.t)}</span>
-      <span class="risk-dot risk-dot-${q.r}"></span>
+  const tot=totalPt();
+  return `<div style="padding:14px 18px" id="card-1.2">
+    <div class="puestos-q-hdr">
+      <span class="q-num">1.2</span>
+      <span class="q-txt">¿Cuántas personas trabajan actualmente en el establecimiento?</span>
+      <span class="risk risk-B"></span>
     </div>
-    ${q.h?`<div class="q-hint">${esc(q.h)}</div>`:''}
-    <div class="puestos-grid">${cards}</div>
-    <div class="puestos-total" id="puestos-total">
-      <span>Total de personas en plantilla</span>
-      <span id="puestos-total-num">${tot} persona${tot!==1?'s':''}</span>
+    <div class="puestos-hint">Indique el número por puesto. Dimensiona las obligaciones y la paquetería necesaria.</div>
+    <div class="puestos-grid">${rows}</div>
+    <div class="pt-total">
+      <span>Total en plantilla</span>
+      <span id="pt-tot">${tot} persona${tot!==1?'s':''}</span>
     </div>
   </div>`;
 }
 
-// ── RESUMEN ───────────────────────────────────────────────────────────────
-function renderSummary(){
-  const allQs=BLOCKS.flatMap(b=>b.qs).filter(q=>!q.tipo&&!isSkipped(q));
-  const issues=allQs.filter(q=>ans[q.id]==='no'||ans[q.id]==='parcial');
-  const highIssues=issues.filter(q=>q.r==='A');
-  const midIssues=issues.filter(q=>q.r==='M');
-  const sinContratos=ans['2.1']==='no';
-  const ic=issues.length;
-  const hr=highIssues.length;
-
-  let html=`<div class="summary-wrap">
-    <div class="sum-hero">
-      <div class="sum-hero-title">Diagnóstico de cumplimiento laboral</div>
-      <div class="sum-stats">
-        <div class="sum-stat"><div class="sum-stat-val">${answeredCount()}</div><div class="sum-stat-label">Preguntas atendidas</div></div>
-        <div class="sum-stat"><div class="sum-stat-val ${ic>0?'red':''}">${ic}</div><div class="sum-stat-label">Incumplimientos</div></div>
-        <div class="sum-stat"><div class="sum-stat-val ${hr>0?'red':''}">${hr}</div><div class="sum-stat-label">Riesgo ALTO</div></div>
-        <div class="sum-stat"><div class="sum-stat-val ${midIssues.length>0?'amber':''}">${midIssues.length}</div><div class="sum-stat-label">Riesgo MEDIO</div></div>
+function htmlQ(q){
+  const sk=skip(q);
+  const v=A[q.id]||'';
+  const cardCls='q-card'+(sk?' skipped':v?' '+v:'');
+  const showN=!sk&&(v==='no'||v==='parcial');
+  return `<div class="${cardCls}" id="qcard-${q.id}">
+    <div class="q-body">
+      <div class="q-hdr">
+        <span class="q-num">${esc(q.id)}</span>
+        <span class="q-txt">${esc(q.t)}</span>
+        <span class="risk risk-${q.r}"></span>
       </div>
-    </div>`;
-
-  if(sinContratos){
-    html+=`<div class="no-contracts-banner">
-      <div class="ncb-icon">⚠️</div>
-      <div class="ncb-body">
-        <h4>Personal sin contrato escrito — máxima prioridad</h4>
-        <p>Las preguntas 2.2 a 2.10 fueron omitidas por no existir contratos. Elaborar contratos individuales para cada puesto activo es la primera acción del plan de trabajo, antes que cualquier otro documento.</p>
-      </div>
-    </div>`;
-  }
-
-  // Semáforo
-  html+=`<div class="sum-card">
-    <div class="sum-card-hd">Semáforo por bloque <span style="font-size:11px;font-weight:400">Clic para ir al bloque</span></div>
-    <div class="semaforo-list">`;
-  BLOCKS.forEach((b,i)=>{
-    const r=blockRisk(b);
-    const bi=b.qs.filter(q=>!isSkipped(q)&&(ans[q.id]==='no'||ans[q.id]==='parcial')).length;
-    const vis=b.qs.filter(q=>!isSkipped(q)).length;
-    html+=`<div class="sem-row" onclick="goBlock(${i})">
-      <div class="sem-blk">
-        <div class="sem-blk-num">Bloque ${b.id}</div>
-        <div>${esc(b.title)}</div>
-      </div>
-      <div class="sem-count">${bi>0?`${bi} problema${bi>1?'s':''}`:''}</div>
-      <span class="sem-badge ${r?'sem-badge-'+r:'sem-badge-none'}">${r?{A:'ALTO',M:'MEDIO',B:'BAJO'}[r]:'Sin responder'}</span>
-    </div>`;
-  });
-  html+=`</div></div>`;
-
-  // Contingencias ALTO
-  if(highIssues.length>0){
-    html+=`<div class="sum-card">
-      <div class="sum-card-hd" style="color:var(--red)">Contingencias de atención inmediata — Riesgo ALTO</div>
-      <div class="issue-list">`;
-    highIssues.forEach(q=>{
-      html+=`<div class="issue-row">
-        <div class="issue-badge-A">ALTO</div>
-        <div class="issue-body">
-          <div class="issue-id">${esc(q.id)}</div>
-          <div class="issue-txt">${esc(q.t)}</div>
-          ${notes[q.id]?`<div class="issue-note-txt">↳ ${esc(notes[q.id])}</div>`:''}
-        </div>
-      </div>`;
-    });
-    html+=`</div></div>`;
-  }
-
-  // Contingencias MEDIO
-  if(midIssues.length>0){
-    html+=`<div class="sum-card">
-      <div class="sum-card-hd" style="color:var(--amber)">Contingencias de seguimiento — Riesgo MEDIO</div>
-      <div class="issue-list">`;
-    midIssues.forEach(q=>{
-      html+=`<div class="issue-row">
-        <div class="issue-badge-M">MEDIO</div>
-        <div class="issue-body">
-          <div class="issue-id">${esc(q.id)}</div>
-          <div class="issue-txt">${esc(q.t)}</div>
-          ${notes[q.id]?`<div class="issue-note-txt">↳ ${esc(notes[q.id])}</div>`:''}
-        </div>
-      </div>`;
-    });
-    html+=`</div></div>`;
-  }
-
-  // Paquetería
-  html+=`<div class="sum-card">
-    <div class="sum-card-hd">Paquetería necesaria</div>
-    <div class="doc-list">`;
-  DOCS.forEach((d,i)=>{
-    const chk=docChecks[i]||false;
-    html+=`<label class="doc-item${chk?' checked':''}">
-      <input type="checkbox" ${chk?'checked':''} onchange="setDoc(${i},this.checked)">
-      <span class="doc-label">${esc(d)}</span>
-    </label>`;
-  });
-  html+=`</div></div>`;
-
-  // Notas finales
-  html+=`<div class="sum-card">
-    <div class="sum-card-hd">Observaciones y estrategia — uso exclusivo del despacho</div>
-    <div class="sum-notes-area">
-      <textarea placeholder="Contingencia más urgente · Estrategia de atención · Honorarios estimados · Fecha de inicio de trabajos..."
-        onchange="finalNotes=this.value" oninput="autoResize(this)">${esc(finalNotes)}</textarea>
+      ${q.h&&!sk?`<div class="q-hint">${esc(q.h)}</div>`:''}
+      ${sk?`<div class="q-hint skip-hint">Omitida — no aplica sin contratos escritos</div>`:''}
+      ${!sk?`<div class="ans-row">
+        <button type="button" class="ans${v==='si'?' si':''}" id="ans-${q.id}-si" onclick="setA('${q.id}','si')">✓ Sí</button>
+        <button type="button" class="ans${v==='no'?' no':''}" id="ans-${q.id}-no" onclick="setA('${q.id}','no')">✗ No</button>
+        <button type="button" class="ans${v==='parcial'?' parcial':''}" id="ans-${q.id}-parcial" onclick="setA('${q.id}','parcial')">~ Parcial</button>
+      </div>`:''}
     </div>
-    <div class="sum-actions">
-      <button type="button" class="sum-action-btn sum-action-print" onclick="window.print()">🖨 Imprimir / Guardar PDF</button>
-      <button type="button" class="sum-action-btn sum-action-restart" onclick="if(confirm('¿Reiniciar el diagnóstico?')){location.reload();}">Nuevo diagnóstico</button>
+    <div class="q-notes${showN?' show':''}" id="qnotes-${q.id}">
+      <div class="notes-lbl">Notas / detalle</div>
+      <textarea placeholder="Anote los detalles relevantes para el expediente..." onchange="N['${q.id}']=this.value" oninput="ar(this)">${esc(N[q.id]||'')}</textarea>
+    </div>
+  </div>`;
+}
+
+function htmlBlock(b){
+  const ba=blkAnswered(b), bt=b.qs.length;
+  const pct=Math.round((ba/bt)*100);
+  const skipBanner=b.id===2&&A['2.1']==='no'
+    ?`<div class="skip-notice"><strong>Las preguntas 2.2 a 2.10 se omiten</strong> porque no hay contratos escritos. Elaborar contratos para todo el personal es la acción de mayor prioridad.</div>`:'' ;
+  let qhtml='';
+  b.qs.forEach(q=>{
+    if(q.tipo==='persona') qhtml+=htmlPersona();
+    else if(q.tipo==='puestos') qhtml+=htmlPuestos();
+    else qhtml+=htmlQ(q);
+  });
+  return `<div class="blk-hd">
+    <span class="blk-badge">Bloque ${b.id}</span>
+    <div class="blk-title">${esc(b.title)}</div>
+    <div class="blk-desc">${esc(b.desc)}</div>
+    <div class="blk-prog-row">
+      <div class="blk-prog-bar"><div class="blk-prog-fill" id="bpf" style="width:${pct}%"></div></div>
+      <div class="blk-prog-lbl" id="bpl">${ba} / ${bt} respondidas</div>
     </div>
   </div>
+  ${skipBanner}${qhtml}`;
+}
+
+function htmlSummary(){
+  const allQ=BLOCKS.flatMap(b=>b.qs).filter(q=>!q.tipo&&!skip(q));
+  const issues=allQ.filter(q=>A[q.id]==='no'||A[q.id]==='parcial');
+  const hi=issues.filter(q=>q.r==='A'), mi=issues.filter(q=>q.r==='M');
+  const sc=A['2.1']==='no';
+  let h=`<div class="sum-hero">
+    <h2>Diagnóstico de cumplimiento laboral</h2>
+    <div class="sum-stats">
+      <div class="sum-stat"><div class="sum-stat-v">${answeredCount()}</div><div class="sum-stat-l">Preguntas atendidas</div></div>
+      <div class="sum-stat"><div class="sum-stat-v${issues.length?' r':''}">${issues.length}</div><div class="sum-stat-l">Incumplimientos</div></div>
+      <div class="sum-stat"><div class="sum-stat-v${hi.length?' r':''}">${hi.length}</div><div class="sum-stat-l">Riesgo ALTO</div></div>
+      <div class="sum-stat"><div class="sum-stat-v${mi.length?' a':''}">${mi.length}</div><div class="sum-stat-l">Riesgo MEDIO</div></div>
+    </div>
   </div>`;
-  return html;
+  if(sc) h+=`<div class="ncb"><div class="ncb-icon">⚠️</div><div><h4>Personal sin contrato escrito — máxima prioridad</h4><p>Las preguntas 2.2–2.10 fueron omitidas. Elaborar contratos para cada puesto activo es la primera acción del plan de trabajo.</p></div></div>`;
+  // semáforo
+  h+=`<div class="sum-card"><div class="sum-card-hd">Semáforo por bloque — clic para ir al bloque</div>`;
+  BLOCKS.forEach((b,i)=>{
+    const r=blkRisk(b);
+    const bi=b.qs.filter(q=>!skip(q)&&(A[q.id]==='no'||A[q.id]==='parcial')).length;
+    h+=`<div class="sem-row" onclick="go(${i})">
+      <div class="sem-blk"><div class="sem-blk-n">Bloque ${b.id}</div><div class="sem-blk-t">${esc(b.title)}</div></div>
+      <div class="sem-cnt">${bi>0?bi+' problema'+(bi>1?'s':''):''}</div>
+      <span class="sbadge ${r?'sbadge-'+r:'sbadge-n'}">${r?{A:'ALTO',M:'MEDIO',B:'BAJO'}[r]:'Sin responder'}</span>
+    </div>`;
+  });
+  h+=`</div>`;
+  if(hi.length){
+    h+=`<div class="sum-card"><div class="sum-card-hd" style="color:var(--red)">Contingencias de atención inmediata — Riesgo ALTO</div>`;
+    hi.forEach(q=>{ h+=`<div class="issue-row"><div class="ibadge-A">ALTO</div><div><div class="issue-id">${esc(q.id)}</div><div class="issue-t">${esc(q.t)}</div>${N[q.id]?`<div class="issue-note">↳ ${esc(N[q.id])}</div>`:''}</div></div>`; });
+    h+=`</div>`;
+  }
+  if(mi.length){
+    h+=`<div class="sum-card"><div class="sum-card-hd" style="color:var(--amber)">Contingencias de seguimiento — Riesgo MEDIO</div>`;
+    mi.forEach(q=>{ h+=`<div class="issue-row"><div class="ibadge-M">MEDIO</div><div><div class="issue-id">${esc(q.id)}</div><div class="issue-t">${esc(q.t)}</div>${N[q.id]?`<div class="issue-note">↳ ${esc(N[q.id])}</div>`:''}</div></div>`; });
+    h+=`</div>`;
+  }
+  h+=`<div class="sum-card"><div class="sum-card-hd">Paquetería necesaria</div><div class="doc-grid">`;
+  DOCS.forEach((d,i)=>{ h+=`<label class="doc-item${DC[i]?' chk':''}"><input type="checkbox" ${DC[i]?'checked':''} onchange="setDC(${i},this.checked)"><span>${esc(d)}</span></label>`; });
+  h+=`</div></div>`;
+  h+=`<div class="sum-card"><div class="sum-card-hd">Observaciones y estrategia — uso exclusivo del despacho</div>
+    <div class="sum-notes"><textarea placeholder="Contingencia más urgente · Estrategia · Honorarios · Fecha de inicio..." onchange="finalNotes=this.value" oninput="ar(this)">${esc(finalNotes)}</textarea></div>
+    <div class="sum-actions">
+      <button type="button" class="s-btn s-btn-sec" onclick="window.print()">🖨 Imprimir / PDF</button>
+      <button type="button" class="s-btn s-btn-pri" onclick="if(confirm('¿Reiniciar el diagnóstico?')){location.reload();}">Nuevo diagnóstico</button>
+    </div></div>`;
+  return h;
 }
 
-// ── ACCIONES ──────────────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════
+// RENDER INICIAL + CAMBIO DE BLOQUE
+// ═══════════════════════════════════════════════════════════
+function init(){
+  buildTabs();
+  paintTabs();
+  showBlock();
+  updateProg();
+  updateNav();
+}
 
-function goBlock(i){
-  curBlock=Math.max(0,Math.min(BLOCKS.length,i));
-  render();
+function showBlock(){
+  // Genera el HTML del bloque activo y lo inyecta
+  const m=document.getElementById('main');
+  m.innerHTML = cur===BLOCKS.length ? htmlSummary() : htmlBlock(BLOCKS[cur]);
+  m.querySelectorAll('textarea').forEach(ta=>{ta.style.height='auto';ta.style.height=ta.scrollHeight+'px';});
+}
+
+function go(i){
+  cur=Math.max(0,Math.min(BLOCKS.length,i));
+  showBlock();
+  paintTabs();
+  updateNav();
+  updateProg();
   window.scrollTo({top:0,behavior:'smooth'});
+  // Asegurar que el tab activo sea visible
+  const at=document.getElementById('tab-'+cur);
+  if(at) at.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
 }
 
-// Respuesta Sí/No/Parcial — manipulación quirúrgica, SIN re-render del bloque
-function setAns(id,val){
-  ans[id]=val;
+// ═══════════════════════════════════════════════════════════
+// ACCIONES — SOLO MUTACIONES DOM, SIN innerHTML
+// ═══════════════════════════════════════════════════════════
 
+// Respuesta Sí/No/Parcial
+function setA(id,val){
+  A[id]=val;
+
+  // Pivote 2.1: necesita re-render del bloque (aparece banner + skip)
+  // pero restauramos el scroll para no saltar
   if(id==='2.1'){
-    // Solo para el pivote necesitamos actualizar el contenido del bloque
-    // (aparece/desaparece el banner y las preguntas dependientes)
-    // Guardamos posición de scroll y la restauramos
     const sy=window.scrollY;
-    renderBlockNav();
-    updateNav();
-    updateTopbar();
-    const main=document.getElementById('main');
-    main.innerHTML=renderBlock(BLOCKS[curBlock]);
-    main.querySelectorAll('textarea').forEach(ta=>{ta.style.height='auto';ta.style.height=ta.scrollHeight+'px';});
-    window.scrollTo({top:sy});
+    showBlock();
+    requestAnimationFrame(()=>window.scrollTo({top:sy,behavior:'instant'}));
+    paintTabs();
+    updateProg();
     return;
   }
 
-  // Para todas las demás preguntas: solo tocamos la tarjeta afectada
+  // Para cualquier otra pregunta: mutación quirúrgica
+  // 1. Color de la tarjeta
   const card=document.getElementById('qcard-'+id);
-  if(!card) return;
+  if(card) card.className='q-card '+val;
 
-  // 1. Color de fondo de la tarjeta
-  card.className='q-card answered-'+val;
-
-  // 2. Estado de los botones de respuesta
-  const btnMap={si:0,no:1,parcial:2};
-  card.querySelectorAll('.ans-btn').forEach((btn,i)=>{
-    btn.className='ans-btn'+(i===btnMap[val]?' sel-'+val:'');
+  // 2. Estado de los tres botones
+  ['si','no','parcial'].forEach(opt=>{
+    const btn=document.getElementById('ans-'+id+'-'+opt);
+    if(btn) btn.className='ans'+(val===opt?' '+opt:'');
   });
 
-  // 3. Mostrar u ocultar el área de notas
-  const notesDiv=document.getElementById('qnotes-'+id);
-  if(notesDiv){
-    if(val==='no'||val==='parcial') notesDiv.classList.add('visible');
-    else notesDiv.classList.remove('visible');
+  // 3. Notas: mostrar si No o Parcial
+  const nd=document.getElementById('qnotes-'+id);
+  if(nd) nd.className='q-notes'+(val==='no'||val==='parcial'?' show':'');
+
+  // 4. Barra de progreso del bloque
+  if(cur<BLOCKS.length){
+    const b=BLOCKS[cur];
+    const ba=blkAnswered(b), pct=Math.round((ba/b.qs.length)*100);
+    const bf=document.getElementById('bpf');
+    const bl=document.getElementById('bpl');
+    if(bf) bf.style.width=pct+'%';
+    if(bl) bl.textContent=`${ba} / ${b.qs.length} respondidas`;
   }
 
-  updateTopbar();
-  renderBlockNav();
+  paintTabs();
+  updateProg();
 }
 
-function setNote(id,val){notes[id]=val;}
-
-function setDoc(i,val){
-  docChecks[i]=val;
-  const allDocs=document.querySelectorAll('.doc-item');
-  if(allDocs[i]) allDocs[i].classList.toggle('checked',val);
-}
-
-// Persona jurídica — solo actualiza la tarjeta 1.1 in-place
-function setPersonaField(field,val){
-  personaData[field]=val;
-  updateTopbar();
-  renderBlockNav();
-}
-
-function setPersona(tipo){
-  personaTipo=tipo;
-  const card=document.getElementById('qcard-1.1');
-  if(card){
-    const q=BLOCKS[0].qs.find(q=>q.id==='1.1');
-    const tmp=document.createElement('div');
-    tmp.innerHTML=renderPersonaQ(q);
-    card.replaceWith(tmp.firstElementChild);
+// Persona jurídica
+function selPersona(tipo){
+  persona=tipo;
+  // Actualizar solo las clases de las tarjetas de persona (sin innerHTML)
+  ['pm','pf'].forEach(t=>{
+    const c=document.getElementById('pcard-'+t);
+    if(c) c.className='p-card'+(tipo===t?' sel':'');
+  });
+  // Si cambia el tipo, actualizar labels de los campos
+  const lNombre=document.querySelector('label[for="pd-nombre"]');
+  if(lNombre) lNombre.textContent=tipo==='pm'?'Denominación o razón social':'Nombre completo del patrón';
+  const inNombre=document.getElementById('pd-nombre');
+  if(inNombre) inNombre.placeholder=tipo==='pm'?'Ej. Restaurantes del Centro SA de CV':'Ej. Juan Pérez García';
+  const inRfc=document.getElementById('pd-rfc');
+  if(inRfc) inRfc.placeholder=tipo==='pm'?'Ej. RCE850301ABC':'Ej. PEGJ850301XYZ';
+  // Campo representante: aparece solo en Persona Moral
+  const repWrap=document.getElementById('pd-rep');
+  if(!repWrap&&tipo==='pm'){
+    // Añadir campo representante sin reemplazar nada
+    const pf=document.querySelector('.persona-fields');
+    if(pf){
+      const d=document.createElement('div');
+      d.className='pf-grp full';
+      d.innerHTML='<label class="pf-lbl" for="pd-rep">Representante legal</label><input class="pf-in" id="pd-rep" type="text" placeholder="Nombre completo del representante o apoderado" oninput="pdSet(\'representante\',this.value)">';
+      pf.appendChild(d);
+    }
+  } else if(repWrap&&tipo==='pf'){
+    repWrap.closest('.pf-grp')&&repWrap.closest('.pf-grp').remove();
   }
-  updateTopbar();
-  renderBlockNav();
+  updateProg();
+  paintTabs();
 }
 
-// Steppers de puestos — botones +/- y escritura directa, sin re-render
-function adjPuesto(id,delta){
-  puestos[id]=Math.max(0,(parseInt(document.getElementById('pv-'+id).value)||0)+delta);
-  document.getElementById('pv-'+id).value=puestos[id];
-  _updatePuestosTotal();
-}
+function pdSet(field,val){ PD[field]=val; }
 
-function setPuestoVal(id,val){
-  const n=Math.max(0,parseInt(val)||0);
-  puestos[id]=n;
-  // corregir el input si el usuario escribe algo inválido
-  const el=document.getElementById('pv-'+id);
-  if(el&&el.value!==String(n)) el.value=n;
-  _updatePuestosTotal();
+// Steppers de puestos — NUNCA re-renderizan, solo tocan el input y el total
+function adjPT(id,delta){
+  const inp=document.getElementById('pt-'+id);
+  if(!inp) return;
+  const nv=Math.max(0,(parseInt(inp.value)||0)+delta);
+  inp.value=nv;
+  PT[id]=nv;
+  updPTTotal();
 }
-
-function _updatePuestosTotal(){
-  const tot=totalPuestos();
-  const el=document.getElementById('puestos-total-num');
+function setPT(id,val){
+  PT[id]=Math.max(0,parseInt(val)||0);
+  updPTTotal();
+}
+function updPTTotal(){
+  const el=document.getElementById('pt-tot');
+  const tot=totalPt();
   if(el) el.textContent=`${tot} persona${tot!==1?'s':''}`;
-  updateTopbar();
-  renderBlockNav();
+  updateProg();
+  paintTabs();
 }
 
-function autoResize(el){el.style.height='auto';el.style.height=el.scrollHeight+'px';}
+// Doc checks en resumen
+function setDC(i,v){
+  DC[i]=v;
+  const items=document.querySelectorAll('.doc-item');
+  if(items[i]) items[i].className='doc-item'+(v?' chk':'');
+}
 
-// ── INICIO ────────────────────────────────────────────────────────────────
-render();
+// ═══════════════════════════════════════════════════════════
+// ACTUALIZADORES LIGEROS DE UI
+// ═══════════════════════════════════════════════════════════
+function updateProg(){
+  const ac=answeredCount(), tot=visibleCount();
+  const pct=tot>0?Math.round((ac/tot)*100):0;
+  const gp=document.getElementById('gp');
+  const gc=document.getElementById('gpct');
+  if(gp) gp.style.width=pct+'%';
+  if(gc) gc.textContent=pct+'%';
+}
+
+function paintTabs(){
+  BLOCKS.forEach((b,i)=>{
+    const t=document.getElementById('tab-'+i);
+    const d=document.getElementById('tdot-'+i);
+    if(!t) return;
+    const r=blkRisk(b), done=blkAnswered(b)===b.qs.length;
+    t.className='tab'+(cur===i?' active':r==='A'?' warn':done?' done':'');
+    if(d) d.style.background=r==='A'?'var(--red)':r==='M'?'var(--amber)':done?'var(--green)':'transparent';
+  });
+  const st=document.getElementById('tab-'+BLOCKS.length);
+  if(st) st.className='tab'+(cur===BLOCKS.length?' active':'');
+}
+
+function updateNav(){
+  const prev=document.getElementById('btnPrev');
+  const next=document.getElementById('btnNext');
+  const lbl=document.getElementById('navLbl');
+  if(prev) prev.disabled=(cur===0);
+  if(next){
+    if(cur===BLOCKS.length){ next.textContent='Reiniciar'; next.onclick=()=>{if(confirm('¿Reiniciar?'))location.reload();}; }
+    else { next.textContent='Siguiente →'; next.onclick=()=>go(cur+1); }
+  }
+  if(lbl){
+    lbl.innerHTML= cur===BLOCKS.length
+      ? '<strong>Diagnóstico final</strong>'
+      : `<strong>${BLOCKS[cur].title}</strong><br>Bloque ${BLOCKS[cur].id} de ${BLOCKS.length}`;
+  }
+}
+
+function ar(el){el.style.height='auto';el.style.height=el.scrollHeight+'px';}
+
+// ═══════════════════════════════════════════════════════════
+// INICIO
+// ═══════════════════════════════════════════════════════════
+init();
 </script>
 </body>
 </html>
