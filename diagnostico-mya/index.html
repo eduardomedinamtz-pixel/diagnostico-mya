@@ -243,9 +243,9 @@ body{font-family:var(--sans);background:#F7F8FA;color:var(--text);min-height:100
 
 <div class="nav-footer">
   <div class="nav-inner">
-    <button class="nav-btn nav-btn-sec" id="btn-prev" onclick="goBlock(curBlock-1)">← Anterior</button>
+    <button type="button" class="nav-btn nav-btn-sec" id="btn-prev" onclick="goBlock(curBlock-1)">← Anterior</button>
     <div class="nav-status" id="nav-status"></div>
-    <button class="nav-btn nav-btn-pri" id="btn-next" onclick="navNext()">Siguiente →</button>
+    <button type="button" class="nav-btn nav-btn-pri" id="btn-next" onclick="navNext()">Siguiente →</button>
   </div>
 </div>
 
@@ -477,25 +477,33 @@ function updateTopbar(){
 
 function renderBlockNav(){
   const nav=document.getElementById('block-nav');
-  let html='';
+  // Si el nav aún no está construido, construirlo una sola vez
+  if(nav.children.length===0){
+    let html='';
+    BLOCKS.forEach((b,i)=>{
+      html+=`<button type="button" class="bnav-btn" id="bnav-${i}" onclick="goBlock(${i})">
+        <span class="bnav-dot" id="bnavdot-${i}"></span>
+        <span class="bnav-label">${b.id}. ${b.title}</span>
+      </button>`;
+    });
+    html+=`<button type="button" class="bnav-btn" id="bnav-${BLOCKS.length}" onclick="goBlock(${BLOCKS.length})">
+      <span class="bnav-dot"></span>
+      <span class="bnav-label">Diagnóstico</span>
+    </button>`;
+    nav.innerHTML=html;
+  }
+  // Actualizar solo clases y colores — sin reemplazar el DOM
   BLOCKS.forEach((b,i)=>{
+    const btn=document.getElementById('bnav-'+i);
+    const dot=document.getElementById('bnavdot-'+i);
+    if(!btn) return;
     const r=blockRisk(b);
     const done=blockAnsweredCount(b)===b.qs.length;
-    let cls='bnav-btn';
-    if(curBlock===i) cls+=' active';
-    else if(r==='A') cls+=' warn';
-    else if(done) cls+=' done';
-    const dotColor=r==='A'?'var(--red)':r==='M'?'var(--amber)':done?'var(--green)':'transparent';
-    html+=`<button class="${cls}" onclick="goBlock(${i})">
-      <span class="bnav-dot" style="background:${done||r?dotColor:'transparent'}"></span>
-      <span class="bnav-label">${b.id}. ${b.title}</span>
-    </button>`;
+    btn.className='bnav-btn'+(curBlock===i?' active':r==='A'?' warn':done?' done':'');
+    if(dot) dot.style.background=r==='A'?'var(--red)':r==='M'?'var(--amber)':done?'var(--green)':'transparent';
   });
-  html+=`<button class="bnav-btn${curBlock===BLOCKS.length?' active':''}" onclick="goBlock(${BLOCKS.length})">
-    <span class="bnav-dot"></span>
-    <span class="bnav-label">Diagnóstico</span>
-  </button>`;
-  nav.innerHTML=html;
+  const sumBtn=document.getElementById('bnav-'+BLOCKS.length);
+  if(sumBtn) sumBtn.className='bnav-btn'+(curBlock===BLOCKS.length?' active':'');
   // scroll active into view
   const activeBtn=nav.querySelector('.active');
   if(activeBtn) activeBtn.scrollIntoView({block:'nearest',inline:'center'});
@@ -589,7 +597,7 @@ function renderQ(q){
   let btns='';
   ['si','no','parcial'].forEach(opt=>{
     const sel=v===opt;
-    btns+=`<button class="ans-btn${sel?' sel-'+opt:''}" onclick="setAns('${q.id}','${opt}')">
+    btns+=`<button type="button" class="ans-btn${sel?' sel-'+opt:''}" onclick="setAns('${q.id}','${opt}')">
       <span class="ans-icon">${icons[opt]}</span> ${labels[opt]}
     </button>`;
   });
@@ -623,12 +631,12 @@ function renderPersonaQ(q){
       <span class="risk-dot risk-dot-${q.r}"></span>
     </div>
     <div class="persona-opts">
-      <div class="persona-card${pm?' selected':''}" onclick="setPersona('pm')">
+      <div class="persona-card${pm?' selected':''}" onclick="setPersona('pm');return false;">
         <div class="persona-icon">🏢</div>
         <div class="persona-title">Persona Moral</div>
         <div class="persona-sub">Sociedad, SA de CV, SRL, AC, etc.</div>
       </div>
-      <div class="persona-card${pf?' selected':''}" onclick="setPersona('pf')">
+      <div class="persona-card${pf?' selected':''}" onclick="setPersona('pf');return false;">
         <div class="persona-icon">👤</div>
         <div class="persona-title">Persona Física</div>
         <div class="persona-sub">Con Actividad Empresarial</div>
@@ -805,8 +813,8 @@ function renderSummary(){
         onchange="finalNotes=this.value" oninput="autoResize(this)">${esc(finalNotes)}</textarea>
     </div>
     <div class="sum-actions">
-      <button class="sum-action-btn sum-action-print" onclick="window.print()">🖨 Imprimir / Guardar PDF</button>
-      <button class="sum-action-btn sum-action-restart" onclick="if(confirm('¿Reiniciar el diagnóstico?')){location.reload();}">Nuevo diagnóstico</button>
+      <button type="button" class="sum-action-btn sum-action-print" onclick="window.print()">🖨 Imprimir / Guardar PDF</button>
+      <button type="button" class="sum-action-btn sum-action-restart" onclick="if(confirm('¿Reiniciar el diagnóstico?')){location.reload();}">Nuevo diagnóstico</button>
     </div>
   </div>
   </div>`;
