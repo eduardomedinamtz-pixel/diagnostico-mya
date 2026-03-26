@@ -18,120 +18,111 @@
 }
 body{font-family:var(--sans);background:#F7F8FA;color:var(--text);min-height:100vh;font-size:15px;line-height:1.5}
 /* TOPBAR */
-.topbar{background:var(--navy);position:sticky;top:0;z-index:100}
-.topbar-inner{max-width:780px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center}
-.topbar-name{font-size:13px;font-weight:600;color:#fff}
-.topbar-sub{font-size:11px;color:#9CB8D8;margin-top:1px}
-.topbar-link{font-size:11px;color:#9CB8D8;text-decoration:none}
+.topbar{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.topbar-inner{max-width:760px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center}
+.topbar-brand .name{font-size:13px;font-weight:600;color:#fff}
+.topbar-brand .sub{font-size:11px;color:#9CB8D8;margin-top:1px}
+.topbar-link{font-size:11px;color:#9CB8D8;text-decoration:none;white-space:nowrap}
 .topbar-link:hover{color:#fff}
-.gp-wrap{max-width:780px;margin:0 auto;padding:0 20px 8px;display:flex;align-items:center;gap:10px}
-.gp-bar{flex:1;height:4px;background:rgba(255,255,255,.2);border-radius:2px;overflow:hidden}
-.gp-fill{height:100%;background:#5B9CF6;border-radius:2px;transition:width .4s}
+.gp-wrap{max-width:760px;margin:0 auto;padding:0 20px 8px;display:flex;align-items:center;gap:10px}
+.gp-bar{flex:1;height:3px;background:rgba(255,255,255,.2);border-radius:2px;overflow:hidden}
+.gp-fill{height:100%;background:#5B9CF6;border-radius:2px;transition:width .5s}
 .gp-pct{font-size:11px;color:#9CB8D8;min-width:28px;text-align:right}
-/* BLOCK TABS */
+/* TABS */
 .tabs-wrap{background:#fff;border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
 .tabs-wrap::-webkit-scrollbar{display:none}
-.tabs{max-width:780px;margin:0 auto;padding:0 20px;display:flex}
-.tab{font-size:12px;font-weight:500;padding:12px 13px;border:none;background:transparent;color:var(--gray);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .15s;display:flex;align-items:center;gap:5px}
+.tabs{max-width:760px;margin:0 auto;padding:0 16px;display:flex}
+.tab{font-size:11px;font-weight:500;padding:11px 12px;border:none;background:transparent;color:var(--gray);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .15s;display:flex;align-items:center;gap:4px}
 .tab:hover{color:var(--text)}
 .tab.active{color:var(--navy);border-bottom-color:var(--navy)}
 .tab.done{color:var(--green)}
 .tab.warn{color:var(--red)}
-.tab-dot{width:6px;height:6px;border-radius:50%;background:transparent}
+.tab-dot{width:6px;height:6px;border-radius:50%;background:transparent;flex-shrink:0}
 /* MAIN */
-.main{max-width:780px;margin:0 auto;padding:24px 20px 90px}
-/* BLOCK PANEL — oculto por defecto */
-.block-panel{display:none}
-.block-panel.active{display:block}
+.main{max-width:760px;margin:0 auto;padding:24px 20px 100px}
 /* BLOCK HEADER */
-.blk-hd{margin-bottom:22px}
-.blk-badge{font-size:11px;font-weight:600;color:var(--blue);background:var(--blue-lt);padding:3px 10px;border-radius:20px;letter-spacing:.04em;text-transform:uppercase}
-.blk-title{font-size:21px;font-weight:600;color:var(--navy);margin:6px 0 3px}
-.blk-desc{font-size:13px;color:var(--sub);margin-bottom:10px}
-.blk-prog-row{display:flex;align-items:center;gap:10px}
+.blk-hd{margin-bottom:20px}
+.blk-badge{display:inline-block;font-size:10px;font-weight:700;color:var(--blue);background:var(--blue-lt);padding:3px 10px;border-radius:20px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
+.blk-title{font-size:21px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.blk-desc{font-size:13px;color:var(--sub);margin-bottom:12px}
+.blk-prog{display:flex;align-items:center;gap:10px}
 .blk-prog-bar{flex:1;height:4px;background:var(--border);border-radius:2px;overflow:hidden}
 .blk-prog-fill{height:100%;background:var(--blue);border-radius:2px;transition:width .4s}
 .blk-prog-lbl{font-size:11px;color:var(--sub);white-space:nowrap}
 /* QUESTION CARD */
-.q-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);margin-bottom:10px;transition:border-color .2s}
-.q-card.si{border-color:var(--green-bd);background:var(--green-lt)}
-.q-card.no{border-color:var(--red-bd);background:var(--red-lt)}
-.q-card.parcial{border-color:var(--amber-bd);background:var(--amber-lt)}
-.q-card.skipped{opacity:.4;pointer-events:none}
-.q-body{padding:15px 18px 13px}
-.q-hdr{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
-.q-num{font-size:11px;font-weight:700;color:var(--blue);background:var(--blue-lt);padding:2px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0;margin-top:2px}
-.q-txt{font-size:14px;font-weight:500;color:var(--text);line-height:1.5;flex:1}
-.risk{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:6px}
-.risk-A{background:var(--red)}.risk-M{background:var(--amber)}.risk-B{background:#A0AEC0}
-.q-hint{font-size:12px;color:var(--sub);padding:7px 11px;background:rgba(0,0,0,.03);border-left:2px solid var(--border);border-radius:4px;margin-bottom:11px}
-.q-hint.skip-hint{border-left-color:var(--amber-bd);background:var(--amber-lt);color:var(--amber)}
-/* ANSWER BUTTONS */
+.qc{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);margin-bottom:10px}
+.qc.si{border-color:var(--green-bd);background:var(--green-lt)}
+.qc.no{border-color:var(--red-bd);background:var(--red-lt)}
+.qc.medias{border-color:var(--amber-bd);background:var(--amber-lt)}
+.qc.skipped{opacity:.35;pointer-events:none}
+.qc-body{padding:16px 18px 13px}
+.qc-hdr{display:flex;align-items:flex-start;gap:10px;margin-bottom:13px}
+.qc-num{font-size:10px;font-weight:700;color:var(--blue);background:var(--blue-lt);padding:2px 7px;border-radius:5px;white-space:nowrap;margin-top:3px;flex-shrink:0;letter-spacing:.03em}
+.qc-txt{font-size:14px;font-weight:600;color:var(--text);line-height:1.5;flex:1}
+/* BOTONES DE RESPUESTA */
 .ans-row{display:flex;gap:7px;flex-wrap:wrap}
-.ans{border:1.5px solid var(--border);border-radius:30px;padding:8px 16px;font-size:13px;font-weight:500;color:var(--gray);background:#fff;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .15s}
-.ans:hover{border-color:var(--blue);color:var(--navy);background:var(--blue-lt)}
-.ans.si{background:var(--green-lt);border-color:var(--green);color:var(--green);font-weight:600}
-.ans.no{background:var(--red-lt);border-color:var(--red);color:var(--red);font-weight:600}
-.ans.parcial{background:var(--amber-lt);border-color:var(--amber);color:var(--amber);font-weight:600}
-/* NOTES */
-.q-notes{padding:0 18px 13px;display:none}
-.q-notes.show{display:block}
-.notes-lbl{font-size:10px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
-.notes-lbl+textarea{width:100%;font-family:var(--sans);font-size:12px;padding:8px 12px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--text);resize:none;line-height:1.5;min-height:54px;transition:border .15s}
-.notes-lbl+textarea:focus{outline:none;border-color:var(--blue)}
+.ab{border:1.5px solid var(--border);border-radius:30px;padding:8px 16px;font-size:13px;font-weight:500;color:var(--gray);background:#fff;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .15s;line-height:1}
+.ab:hover{border-color:var(--blue);color:var(--navy);background:var(--blue-lt)}
+.ab.si{background:var(--green-lt);border-color:var(--green);color:var(--green);font-weight:700}
+.ab.no{background:var(--red-lt);border-color:var(--red);color:var(--red);font-weight:700}
+.ab.medias{background:var(--amber-lt);border-color:var(--amber);color:var(--amber);font-weight:700}
+/* NOTAS — solo si No o A medias */
+.qnotes{padding:0 18px 13px;display:none}
+.qnotes.show{display:block}
+.qnotes-lbl{font-size:10px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
+.qnotes textarea{width:100%;font-family:var(--sans);font-size:13px;padding:8px 12px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--text);resize:none;line-height:1.5;min-height:50px;transition:border .15s}
+.qnotes textarea:focus{outline:none;border-color:var(--blue)}
 /* SKIP NOTICE */
-.skip-notice{background:#FFFBEB;border:1px solid #F5CE7A;border-radius:8px;padding:11px 15px;margin-bottom:10px;font-size:12px;color:#92600A;line-height:1.5}
-.skip-notice strong{font-weight:700}
-/* SPECIAL 1.1 PERSONA */
-.persona-wrap{padding:15px 18px}
-.persona-q-hdr{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px}
+.skip-notice{background:#FFFBEB;border:1px solid #F5CE7A;border-radius:8px;padding:11px 15px;margin-bottom:10px;font-size:13px;color:#92600A;line-height:1.5}
+/* ESPECIAL 1.1 PERSONA */
+.persona-wrap{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin-bottom:10px}
+.persona-hdr{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px}
 .persona-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
-@media(max-width:420px){.persona-opts{grid-template-columns:1fr}}
-.p-card{padding:14px;border:2px solid var(--border);border-radius:10px;cursor:pointer;text-align:center;background:#fff;transition:all .15s;user-select:none}
-.p-card:hover{border-color:var(--blue);background:var(--blue-lt)}
-.p-card.sel{border-color:var(--navy);background:var(--blue-lt)}
-.p-icon{font-size:24px;margin-bottom:6px}
-.p-title{font-size:13px;font-weight:700;color:var(--navy)}
-.p-sub{font-size:11px;color:var(--sub);margin-top:2px}
+@media(max-width:400px){.persona-opts{grid-template-columns:1fr}}
+.pc{padding:14px;border:2px solid var(--border);border-radius:10px;cursor:pointer;text-align:center;background:#fff;transition:all .15s;user-select:none}
+.pc:hover{border-color:var(--blue);background:var(--blue-lt)}
+.pc.sel{border-color:var(--navy);background:var(--blue-lt)}
+.pc-icon{font-size:26px;margin-bottom:6px}
+.pc-title{font-size:13px;font-weight:700;color:var(--navy)}
+.pc-sub{font-size:11px;color:var(--sub);margin-top:2px}
 .persona-fields{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-@media(max-width:480px){.persona-fields{grid-template-columns:1fr}}
-.pf-grp{display:flex;flex-direction:column;gap:4px}
-.pf-grp.full{grid-column:1/-1}
+@media(max-width:460px){.persona-fields{grid-template-columns:1fr}}
+.pf-g{display:flex;flex-direction:column;gap:4px}
+.pf-g.full{grid-column:1/-1}
 .pf-lbl{font-size:10px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.07em}
 .pf-in{font-family:var(--sans);font-size:13px;padding:8px 12px;border:1.5px solid var(--border);border-radius:7px;background:#fff;color:var(--text);transition:border .15s;width:100%}
 .pf-in:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(46,95,163,.08)}
 .pf-in::placeholder{color:#B0B7C3}
-/* SPECIAL 1.2 PUESTOS */
-.puestos-q-hdr{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
-.puestos-hint{font-size:12px;color:var(--sub);padding:7px 11px;background:rgba(0,0,0,.03);border-left:2px solid var(--border);border-radius:4px;margin-bottom:12px}
-.puestos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:7px}
+/* ESPECIAL 1.2 PUESTOS */
+.puestos-wrap{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin-bottom:10px}
+.puestos-hdr{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
+.puestos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:7px}
 .pt-row{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border:1px solid var(--border);border-radius:8px;background:#fff}
 .pt-lbl{font-size:12px;font-weight:500;color:var(--text)}
 .pt-ctrl{display:flex;align-items:center;gap:5px}
-.pt-btn{width:26px;height:26px;border:1px solid var(--border);border-radius:6px;background:#fff;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;color:var(--gray);transition:all .15s;flex-shrink:0;padding:0;line-height:1}
+.pt-btn{width:28px;height:28px;border:1px solid var(--border);border-radius:6px;background:#fff;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;color:var(--gray);padding:0;line-height:1;flex-shrink:0;transition:all .15s}
 .pt-btn:hover{background:var(--blue-lt);border-color:var(--blue);color:var(--navy)}
-.pt-num{width:40px;text-align:center;font-family:var(--sans);font-size:14px;font-weight:700;color:var(--navy);border:1.5px solid var(--border);border-radius:6px;padding:2px 4px;background:#fff;-moz-appearance:textfield}
+.pt-num{width:42px;text-align:center;font-family:var(--sans);font-size:14px;font-weight:700;color:var(--navy);border:1.5px solid var(--border);border-radius:6px;padding:3px 4px;background:#fff;-moz-appearance:textfield}
 .pt-num::-webkit-inner-spin-button,.pt-num::-webkit-outer-spin-button{-webkit-appearance:none}
 .pt-num:focus{outline:none;border-color:var(--blue)}
 .pt-total{margin-top:10px;padding:9px 13px;background:var(--blue-lt);border-radius:8px;font-size:13px;color:var(--blue);font-weight:600;display:flex;justify-content:space-between}
-/* SUMMARY */
+/* RESUMEN */
 .sum-hero{background:var(--navy);border-radius:var(--radius);padding:22px;color:#fff;margin-bottom:14px}
 .sum-hero h2{font-size:17px;font-weight:600;margin-bottom:14px}
 .sum-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-@media(max-width:500px){.sum-stats{grid-template-columns:repeat(2,1fr)}}
-.sum-stat{background:rgba(255,255,255,.1);border-radius:8px;padding:11px;text-align:center}
-.sum-stat-v{font-size:26px;font-weight:600;color:#fff;line-height:1}
-.sum-stat-v.r{color:#FCA5A5}.sum-stat-v.a{color:#FCD34D}
-.sum-stat-l{font-size:11px;color:rgba(255,255,255,.6);margin-top:3px}
+@media(max-width:480px){.sum-stats{grid-template-columns:repeat(2,1fr)}}
+.ss{background:rgba(255,255,255,.1);border-radius:8px;padding:12px;text-align:center}
+.ss-v{font-size:26px;font-weight:600;color:#fff;line-height:1}
+.ss-v.r{color:#FCA5A5}.ss-v.a{color:#FCD34D}
+.ss-l{font-size:11px;color:rgba(255,255,255,.6);margin-top:3px}
 .sum-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:12px}
 .sum-card-hd{padding:12px 18px;border-bottom:1px solid var(--border);font-size:11px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.07em}
 .sem-row{display:flex;align-items:center;gap:10px;padding:11px 18px;border-bottom:1px solid #F5F5F5;cursor:pointer;transition:background .1s}
 .sem-row:last-child{border-bottom:none}
 .sem-row:hover{background:var(--gray-lt)}
 .sem-blk{flex:1}
-.sem-blk-n{font-size:10px;color:var(--sub);margin-bottom:1px}
+.sem-blk-n{font-size:10px;color:var(--sub)}
 .sem-blk-t{font-size:13px;color:var(--text)}
-.sem-cnt{font-size:12px;font-weight:600;color:var(--sub);white-space:nowrap}
 .sbadge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:12px;white-space:nowrap}
 .sbadge-A{background:var(--red-lt);color:var(--red)}
 .sbadge-M{background:var(--amber-lt);color:var(--amber)}
@@ -139,14 +130,16 @@ body{font-family:var(--sans);background:#F7F8FA;color:var(--text);min-height:100
 .sbadge-n{background:var(--gray-lt);color:var(--gray)}
 .issue-row{padding:11px 18px;border-bottom:1px solid #F5F5F5;display:flex;gap:10px;align-items:flex-start}
 .issue-row:last-child{border-bottom:none}
-.ibadge-A{font-size:9px;font-weight:700;color:var(--red);background:var(--red-lt);padding:2px 7px;border-radius:5px;white-space:nowrap;margin-top:2px;flex-shrink:0}
-.ibadge-M{font-size:9px;font-weight:700;color:var(--amber);background:var(--amber-lt);padding:2px 7px;border-radius:5px;white-space:nowrap;margin-top:2px;flex-shrink:0}
+.ibadge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:5px;white-space:nowrap;margin-top:2px;flex-shrink:0}
+.ibadge-A{color:var(--red);background:var(--red-lt)}
+.ibadge-M{color:var(--amber);background:var(--amber-lt)}
 .issue-id{font-size:10px;font-weight:700;color:var(--sub);margin-bottom:2px}
-.issue-t{font-size:13px;color:var(--text);line-height:1.45}
-.issue-note{font-size:11px;color:var(--sub);margin-top:3px;font-style:italic}
+.issue-t{font-size:13px;color:var(--text);line-height:1.4}
+.issue-tech{font-size:11px;color:var(--sub);margin-top:3px;font-style:italic}
+.issue-note{font-size:11px;color:var(--blue);margin-top:3px}
 .doc-grid{padding:12px 18px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
-@media(max-width:480px){.doc-grid{grid-template-columns:1fr}}
-.doc-item{display:flex;align-items:center;gap:8px;padding:8px 11px;border:1px solid var(--border);border-radius:7px;font-size:12px;background:#fff;transition:border .15s;cursor:pointer}
+@media(max-width:460px){.doc-grid{grid-template-columns:1fr}}
+.doc-item{display:flex;align-items:center;gap:8px;padding:8px 11px;border:1px solid var(--border);border-radius:7px;font-size:12px;background:#fff;cursor:pointer;transition:border .15s}
 .doc-item:hover{border-color:var(--blue)}
 .doc-item.chk{border-color:var(--green-bd);background:var(--green-lt)}
 .doc-item input{accent-color:var(--green);cursor:pointer;width:13px;height:13px;flex-shrink:0}
@@ -159,32 +152,27 @@ body{font-family:var(--sans);background:#F7F8FA;color:var(--text);min-height:100
 .s-btn-sec:hover{background:var(--gray-lt)}
 .s-btn-pri{background:var(--navy);border-color:var(--navy);color:#fff}
 .s-btn-pri:hover{background:var(--blue)}
-.ncb{background:#FFFBEB;border:1px solid #F5CE7A;border-radius:8px;padding:13px 16px;display:flex;gap:11px;margin-bottom:12px}
-.ncb-icon{font-size:20px;flex-shrink:0}
-.ncb h4{font-size:13px;font-weight:700;color:#92600A;margin-bottom:3px}
-.ncb p{font-size:12px;color:#92600A;line-height:1.5}
 /* NAV FOOTER */
 .nav-ft{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);padding:11px 20px;z-index:50}
-.nav-ft-inner{max-width:780px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.nav-ft-inner{max-width:760px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px}
 .nav-btn{font-size:13px;font-weight:500;padding:9px 20px;border-radius:8px;cursor:pointer;border:1.5px solid;transition:all .15s}
-.nav-btn-s{background:#fff;border-color:var(--border);color:var(--text)}
-.nav-btn-s:hover{background:var(--gray-lt)}
-.nav-btn-s:disabled{opacity:.35;cursor:not-allowed}
-.nav-btn-p{background:var(--navy);border-color:var(--navy);color:#fff}
-.nav-btn-p:hover{background:var(--blue)}
-.nav-lbl{font-size:12px;color:var(--sub);text-align:center}
+.nb-s{background:#fff;border-color:var(--border);color:var(--text)}
+.nb-s:hover{background:var(--gray-lt)}
+.nb-s:disabled{opacity:.35;cursor:not-allowed}
+.nb-p{background:var(--navy);border-color:var(--navy);color:#fff}
+.nb-p:hover{background:var(--blue)}
+.nav-lbl{font-size:12px;color:var(--sub);text-align:center;line-height:1.4}
 .nav-lbl strong{color:var(--text)}
 @media print{.topbar,.tabs-wrap,.nav-ft,.sum-actions{display:none!important}body{background:#fff}.main{padding:10px}}
 </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
 <div class="topbar">
   <div class="topbar-inner">
-    <div>
-      <div class="topbar-name">Abogados MYA</div>
-      <div class="topbar-sub">Diagnóstico Laboral · Restaurante-Bar</div>
+    <div class="topbar-brand">
+      <div class="name">Abogados MYA</div>
+      <div class="sub">Diagnóstico Laboral · Restaurante-Bar</div>
     </div>
     <a class="topbar-link" href="https://finiquito-laboral.netlify.app">← Calculadora de Finiquito</a>
   </div>
@@ -194,25 +182,22 @@ body{font-family:var(--sans);background:#F7F8FA;color:var(--text);min-height:100
   </div>
 </div>
 
-<!-- TABS -->
 <div class="tabs-wrap"><div class="tabs" id="tabs"></div></div>
-
-<!-- MAIN -->
 <div class="main" id="main"></div>
 
-<!-- NAV FOOTER -->
 <div class="nav-ft">
   <div class="nav-ft-inner">
-    <button type="button" class="nav-btn nav-btn-s" id="btnPrev" onclick="go(cur-1)">← Anterior</button>
+    <button type="button" class="nav-btn nb-s" id="btnPrev" onclick="go(cur-1)">← Anterior</button>
     <div class="nav-lbl" id="navLbl"></div>
-    <button type="button" class="nav-btn nav-btn-p" id="btnNext" onclick="go(cur+1)">Siguiente →</button>
+    <button type="button" class="nav-btn nb-p" id="btnNext" onclick="go(cur+1)">Siguiente →</button>
   </div>
 </div>
 
 <script>
-// ═══════════════════════════════════════════════════════════
-// DATOS
-// ═══════════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════
+// DATOS — preguntas en lenguaje llano para el patrón
+// Metadatos jurídicos (r, tech) son solo para el resumen
+// ══════════════════════════════════════════════════════
 const PUESTOS=[
   {id:'hostess',n:'Hostess / Recepcionista'},
   {id:'mesero',n:'Mesero / Mesera'},
@@ -220,129 +205,111 @@ const PUESTOS=[
   {id:'cocinero',n:'Cocinero / Cocinera'},
   {id:'barman',n:'Barman / Bartender'},
   {id:'cajero',n:'Cajero / Cajera'},
-  {id:'limpieza',n:'Limpieza'},
+  {id:'limpieza',n:'Personal de Limpieza'},
   {id:'gerente',n:'Gerente / Encargado'},
   {id:'temporada',n:'Personal de Temporada'},
   {id:'otro',n:'Otro puesto'},
 ];
 
+// nota: campo "note" es la pregunta complementaria cuando responden No o A medias
 const BLOCKS=[
-{id:1,title:'Datos generales',desc:'Información básica del negocio y estructura de personal',
+{id:1,title:'Su negocio',desc:'Cuéntenos cómo está organizado su establecimiento',
 qs:[
-{id:'1.1',tipo:'persona',r:'B'},
-{id:'1.2',tipo:'puestos',r:'B'},
-{id:'1.3',t:'¿Cuenta con registro patronal vigente ante el IMSS?',r:'A',h:'Sin registro patronal no hay base para cumplir las obligaciones de seguridad social.'},
-{id:'1.4',t:'¿Tiene licencia de funcionamiento y permiso de venta de alcohol vigentes?',r:'A',h:'Su ausencia agrava el riesgo en inspecciones conjuntas de la STPS y la Cofepris.'},
-{id:'1.5',t:'¿Tiene definida formalmente la estructura de puestos del establecimiento?',r:'B'},
-{id:'1.6',t:'¿Hay más de un turno de trabajo operando simultáneamente o de forma rotatoria?',r:'B'},
-{id:'1.7',t:'¿Ha recibido visitas de inspección de la STPS, IMSS o Cofepris en los últimos 3 años?',r:'M',h:'Anote los resultados y observaciones que le hayan dejado.'},
-{id:'1.8',t:'¿Existe algún juicio o procedimiento laboral activo en este momento?',r:'A',h:'Incluye demandas, procedimientos de conciliación y amparos laborales.'},
+{id:'1.1',tipo:'persona'},
+{id:'1.2',tipo:'puestos'},
+{id:'1.3',t:'¿Está registrado como patrón ante el IMSS?',r:'A',tech:'Registro patronal — LSS Art. 15',note:'¿Sabe si tiene número de registro patronal?'},
+{id:'1.4',t:'¿Tiene en regla los permisos del negocio: funcionamiento y venta de alcohol?',r:'A',tech:'Licencias municipales y sanitarias',note:'¿Cuál de los permisos le falta o está vencido?'},
+{id:'1.5',t:'¿Tiene por escrito quién hace qué en su negocio (descripción de puestos)?',r:'B',tech:'Organigrama y descripción de funciones',note:'¿Cómo se organizan actualmente?'},
+{id:'1.6',t:'¿Su personal trabaja en más de un turno?',r:'B',tech:'Jornadas múltiples',note:'¿Cuántos turnos maneja?'},
+{id:'1.7',t:'¿Ha recibido inspectores del gobierno en su negocio en los últimos 3 años?',r:'M',tech:'Visitas STPS, IMSS, Cofepris',note:'¿De qué dependencia fueron y qué le observaron?'},
+{id:'1.8',t:'¿Tiene alguna demanda o conflicto laboral activo en este momento?',r:'A',tech:'Litigios laborales activos',note:'¿Cuántos asuntos y en qué etapa están?'},
 ]},
-{id:2,title:'Contratos de trabajo',desc:'Existencia, tipo y contenido de los contratos individuales — Art. 25 LFT',
+{id:2,title:'Su personal y contratos',desc:'Queremos saber cómo está documentada la relación con su gente',
 qs:[
-{id:'2.1',t:'¿Todo el personal activo tiene contrato individual de trabajo por escrito?',r:'A',h:'Sin contrato escrito la ley presume las condiciones más favorables al trabajador.',pivote:true},
-{id:'2.2',t:'¿Los contratos establecen el tipo correcto de relación: tiempo indeterminado, temporada o determinado según la función real?',r:'A',h:'Un contrato a plazo fijo para función permanente es nulo y revierte a tiempo indeterminado.',dep:'2.1'},
-{id:'2.3',t:'¿Los contratos contienen todos los datos mínimos del Art. 25 LFT: nombre, CURP, RFC, NSS, puesto, jornada, salario, lugar y día de pago?',r:'A',dep:'2.1'},
-{id:'2.4',t:'¿Los contratos de meseros, barman y hostess incluyen cláusula de propinas con componente de integración para el SDI ante el IMSS?',r:'A',h:'Sin esta cláusula el SDI está subdeclarado ante el IMSS en todos esos puestos.',dep:'2.1'},
-{id:'2.5',t:'¿Los contratos del chef y personal de confianza incluyen cláusula de confidencialidad con vigencia posterior al término de la relación?',r:'A',dep:'2.1'},
-{id:'2.6',t:'¿El contrato del cajero regula la responsabilidad por valores y prohíbe descuentos sin soporte documental?',r:'A',h:'Sin esta cláusula cualquier descuento por faltantes es potencialmente ilegal.',dep:'2.1'},
-{id:'2.7',t:'¿Los contratos regulan el uso de herramientas tecnológicas: WhatsApp institucional, POS, plataformas de reservaciones?',r:'M',dep:'2.1'},
-{id:'2.8',t:'¿Los contratos del personal de temporada están tipificados como contratos por temporada (discontinuos)?',r:'A',dep:'2.1'},
-{id:'2.9',t:'¿Cada trabajador tiene un ejemplar firmado de su contrato y el patrón conserva el acuse en el expediente?',r:'M',dep:'2.1'},
-{id:'2.10',t:'¿Los contratos regulan el período de prueba conforme a los Arts. 39-A a 39-F LFT?',r:'M',dep:'2.1'},
+{id:'2.1',t:'¿Todo su personal tiene un contrato de trabajo firmado?',r:'A',tech:'Contratos individuales — Art. 25 LFT',note:'¿Aproximadamente cuántos no tienen contrato?',pivote:true},
+{id:'2.2',t:'¿Los contratos especifican claramente el puesto, el horario y el sueldo de cada persona?',r:'A',tech:'Contenido mínimo — Art. 25 LFT',dep:'2.1'},
+{id:'2.3',t:'¿Los contratos de sus meseros, bartenders y hostess mencionan las propinas?',r:'A',tech:'Propinas e integración SDI — Arts. 346-349 LFT',dep:'2.1'},
+{id:'2.4',t:'¿El contrato de su cajero incluye cómo se maneja el dinero y la responsabilidad por el efectivo?',r:'A',tech:'Responsabilidad valores — cajero',dep:'2.1'},
+{id:'2.5',t:'¿Los contratos del chef y encargados incluyen algún compromiso de confidencialidad sobre recetas, costos y proveedores?',r:'A',tech:'Confidencialidad — personal de confianza',dep:'2.1'},
+{id:'2.6',t:'¿Los contratos mencionan qué equipos y herramientas se le entregan a cada trabajador (uniforme, celular, sistema)?',r:'M',tech:'Herramientas y tecnología — Art. 25 LFT fr. IX',dep:'2.1'},
+{id:'2.7',t:'¿El personal eventual o de temporada tiene un contrato diferente al del personal fijo?',r:'A',tech:'Contrato por temporada — Arts. 39-F LFT',dep:'2.1'},
+{id:'2.8',t:'¿Cada trabajador tiene una copia firmada de su contrato y usted conserva la suya?',r:'M',tech:'Duplicado — Art. 24 LFT',dep:'2.1'},
+{id:'2.9',t:'¿Los contratos tienen alguna cláusula de período de prueba para los nuevos empleados?',r:'M',tech:'Período de prueba — Arts. 39-A a 39-F LFT',dep:'2.1'},
 ]},
-{id:3,title:'Reglamento y comisiones',desc:'RIT y cinco comisiones obligatorias — Arts. 422-425 y 509-512 LFT',
+{id:3,title:'Reglas internas del negocio',desc:'Cómo están formalizadas las normas de conducta y organización',
 qs:[
-{id:'3.1',t:'¿Cuenta con Reglamento Interior de Trabajo elaborado por Comisión Mixta?',r:'A',h:'Sin RIT el patrón no tiene base formal para aplicar medidas disciplinarias.'},
-{id:'3.2',t:'¿El RIT fue depositado ante el CFCRL y se conserva el acuse?',r:'A',h:'Un RIT no depositado no es oponible al trabajador ni a ninguna autoridad.'},
-{id:'3.3',t:'¿El RIT está fijado permanentemente en los lugares más visibles del establecimiento?',r:'A'},
-{id:'3.4',t:'¿Se entregó un ejemplar del RIT a cada trabajador con acuse de recibo en su expediente?',r:'M'},
-{id:'3.5',t:'¿El RIT cubre todas las materias del Art. 423 LFT: jornada, descansos, sanciones, higiene, uso de asientos y exámenes médicos?',r:'A'},
-{id:'3.6',t:'¿Existe Comisión de Seguridad e Higiene constituida con acta formal y registrada ante la STPS?',r:'A'},
-{id:'3.7',t:'¿Existe Comisión Mixta de Capacitación, Adiestramiento y Productividad con acta formal?',r:'A'},
-{id:'3.8',t:'¿Se ha designado responsable o constituido comisión para la NOM-035-STPS-2018 con acta formal?',r:'A'},
-{id:'3.9',t:'¿El RIT o sus anexos contienen el protocolo frente a hostigamiento y acoso sexual exigido por el Art. 132, fr. XXXI LFT?',r:'A'},
+{id:'3.1',t:'¿Tiene un reglamento interno de trabajo escrito para su negocio?',r:'A',tech:'Reglamento Interior de Trabajo — Art. 422 LFT',note:'¿Tiene algo parecido aunque sea informal?'},
+{id:'3.2',t:'¿Ese reglamento fue entregado y firmado por cada uno de sus trabajadores?',r:'M',tech:'Acuse de recibo RIT — Art. 425 LFT',note:'¿Saben sus trabajadores que existe un reglamento?'},
+{id:'3.3',t:'¿Su negocio tiene una comisión o representante de seguridad en el trabajo?',r:'A',tech:'Comisión de Seguridad e Higiene — NOM-019-STPS',note:'¿Quién se encarga de los temas de seguridad actualmente?'},
+{id:'3.4',t:'¿Tiene algo organizado para la capacitación del personal: cursos, entrenamientos, certificaciones?',r:'A',tech:'Comisión Mixta Capacitación — Art. 153-E LFT',note:'¿Qué tipo de capacitación han recibido?'},
+{id:'3.5',t:'¿Hay alguien designado para atender quejas del personal sobre mal ambiente o maltrato en el trabajo?',r:'A',tech:'NOM-035-STPS-2018 · Protocolo hostigamiento Art. 132 fr. XXXI',note:'¿Cómo se manejan actualmente esas situaciones?'},
 ]},
-{id:4,title:'Jornada y asistencia',desc:'Horarios, registro y tiempo extraordinario — Arts. 58-68 LFT',
+{id:4,title:'Horarios y días de trabajo',desc:'Cómo están organizados los turnos y los descansos',
 qs:[
-{id:'4.1',t:'¿Los horarios de cada turno están definidos por escrito y coinciden con el tipo de jornada pactado en los contratos?',r:'A'},
-{id:'4.2',t:'¿Existe sistema de registro de asistencia (checador, huella, app) que genere evidencia documental conservable?',r:'A',h:'Sin registro es imposible acreditar faltas injustificadas en una rescisión ante autoridad.'},
-{id:'4.3',t:'¿Los registros de asistencia se conservan por al menos un año?',r:'M'},
-{id:'4.4',t:'¿El tiempo extraordinario se autoriza por escrito antes de trabajarse y queda registrado en bitácora?',r:'A',h:'El tiempo extra no autorizado es igualmente pagable; la falta de registro agrava la contingencia.'},
-{id:'4.5',t:'¿Existe procedimiento documentado para reportar ausencias y justificarlas con incapacidad IMSS o constancia médica?',r:'M'},
-{id:'4.6',t:'¿El personal descansa efectivamente un día por cada seis de trabajo o recibe el pago doble cuando trabaja ese día?',r:'A'},
-{id:'4.7',t:'¿El trabajo en días de descanso obligatorio (Art. 74 LFT) se retribuye con el pago triple que corresponde?',r:'A'},
+{id:'4.1',t:'¿Los horarios de cada turno están definidos y el personal los conoce con anticipación?',r:'A',tech:'Jornada — Arts. 58-68 LFT',note:'¿Cómo se comunican los horarios actualmente?'},
+{id:'4.2',t:'¿Lleva algún registro de entradas y salidas de su personal (tarjeta, app, hoja, checador)?',r:'A',tech:'Control de asistencia — evidencia documental',note:'¿Qué sistema utiliza actualmente?'},
+{id:'4.3',t:'¿Guarda esos registros de asistencia por al menos un año?',r:'M',tech:'Conservación de evidencia',note:'¿Cuánto tiempo los conserva?'},
+{id:'4.4',t:'¿Cuando alguien trabaja horas extra, lo autoriza por escrito y queda registrado?',r:'A',tech:'Tiempo extraordinario — Arts. 66-67 LFT',note:'¿Cómo se manejan actualmente las horas extra?'},
+{id:'4.5',t:'¿Todo su personal descansa al menos un día por cada seis que trabaja?',r:'A',tech:'Descanso semanal — Art. 69 LFT',note:'¿Hay personal que trabaja los siete días?'},
+{id:'4.6',t:'¿Cuando alguien falta, le piden un justificante (incapacidad del IMSS, nota médica)?',r:'M',tech:'Justificación de ausencias',note:'¿Cómo manejan las ausencias actualmente?'},
 ]},
-{id:5,title:'Salario e IMSS',desc:'Integración salarial, IMSS, INFONAVIT y nómina',
+{id:5,title:'Sueldos y pagos',desc:'Cómo está organizada la nómina y los beneficios del personal',
 qs:[
-{id:'5.1',t:'¿El salario de todos los trabajadores es igual o superior al salario mínimo general vigente?',r:'A'},
-{id:'5.2',t:'¿El SDI declarado ante el IMSS incluye correctamente prima vacacional, aguinaldo proporcional, propinas y comisiones?',r:'A',h:'La subdeclaración del SDI genera multas, diferencias de cuotas e indemnizaciones mayores.'},
-{id:'5.3',t:'¿Todo el personal está inscrito ante el IMSS desde el primer día de labores?',r:'A'},
-{id:'5.4',t:'¿Las cuotas obrero-patronales al IMSS se pagan puntualmente y sin adeudos?',r:'A'},
-{id:'5.5',t:'¿Las aportaciones al INFONAVIT y AFORE están al corriente?',r:'A'},
-{id:'5.6',t:'¿Se emite y entrega CFDI de nómina al trabajador en cada período de pago?',r:'A',h:'La omisión del CFDI de nómina es infracción al CFF con multa independiente de la laboral.'},
-{id:'5.7',t:'¿El aguinaldo se paga íntegramente antes del 20 de diciembre de cada año?',r:'A'},
-{id:'5.8',t:'¿Las vacaciones y prima vacacional se otorgan conforme a la reforma de 2023 (mínimo 12 días desde el primer año)?',r:'A',h:'Verificar si se actualizaron contratos y política de vacaciones tras la reforma.'},
-{id:'5.9',t:'¿Existe política documentada y firmada para descuentos en nómina por anticipos, préstamos o faltantes de caja?',r:'A',h:'Los descuentos sin soporte escrito firmado son ilegales y generan contingencia de pago doble.'},
-{id:'5.10',t:'¿Los recibos de nómina y CFDI se conservan en el expediente por al menos 5 años?',r:'M'},
+{id:'5.1',t:'¿Todos sus trabajadores ganan igual o más que el salario mínimo vigente?',r:'A',tech:'Salario mínimo — Art. 90 LFT',note:'¿Algún puesto está por debajo del mínimo?'},
+{id:'5.2',t:'¿Le entrega a cada trabajador un recibo o comprobante de pago en cada quincena o semana?',r:'A',tech:'CFDI nómina — CFF · Art. 101 LFT',note:'¿Cómo comprueban actualmente el pago?'},
+{id:'5.3',t:'¿Todo su personal está dado de alta en el IMSS desde que empezó a trabajar con usted?',r:'A',tech:'Alta IMSS — Art. 15 LSS',note:'¿Hay alguien sin alta o dado de alta tardíamente?'},
+{id:'5.4',t:'¿Está al corriente con los pagos del IMSS e INFONAVIT?',r:'A',tech:'Cuotas — LSS · Ley INFONAVIT',note:'¿Tiene adeudos pendientes?'},
+{id:'5.5',t:'¿Paga el aguinaldo a más tardar el 20 de diciembre de cada año?',r:'A',tech:'Aguinaldo — Art. 87 LFT',note:'¿Cuándo y cómo lo paga habitualmente?'},
+{id:'5.6',t:'¿Su personal toma sus vacaciones pagadas cada año?',r:'A',tech:'Vacaciones y prima — Arts. 76-80 LFT (reforma 2023: 12 días mínimo)',note:'¿Cómo se organiza el período vacacional?'},
+{id:'5.7',t:'¿Cuando hace algún descuento al sueldo de un trabajador (préstamo, uniforme, faltante), queda firmado por el trabajador?',r:'A',tech:'Descuentos nómina — Art. 110 LFT',note:'¿Qué tipo de descuentos hace habitualmente?'},
+{id:'5.8',t:'¿Guarda los recibos de nómina o comprobantes de pago de su personal?',r:'M',tech:'Conservación nómina — 5 años',note:'¿Por cuánto tiempo los guarda?'},
 ]},
-{id:6,title:'Propinas',desc:'Régimen, distribución e integración salarial — Arts. 346-349 LFT',
+{id:6,title:'Propinas',desc:'Cómo se manejan las propinas en su establecimiento',
 qs:[
-{id:'6.1',t:'¿El establecimiento tiene política de propinas definida por escrito (pool, individual, por puntos)?',r:'M'},
-{id:'6.2',t:'¿El patrón se abstiene de retener o apropiarse de las propinas de los trabajadores?',r:'A',h:'La retención de propinas por el patrón es causa de rescisión con derecho del trabajador a indemnización.'},
-{id:'6.3',t:'¿Se ha acordado con el personal un componente de propinas para integrar el SDI ante el IMSS?',r:'A',h:'Sin este acuerdo el SDI está subdeclarado para todos los meseros, bartenders y hostess.'},
-{id:'6.4',t:'¿Existe bitácora o registro de propinas distribuidas que permita acreditarlas ante el IMSS o autoridad laboral?',r:'M'},
-{id:'6.5',t:'¿Las comisiones sobre ventas del barman están documentadas en contrato o anexo e incluidas en el SDI?',r:'M'},
+{id:'6.1',t:'¿Tiene una forma definida de repartir las propinas entre su personal (por igual, por puntos, individual)?',r:'M',tech:'Política de propinas — Arts. 346-349 LFT',note:'¿Cómo se reparten actualmente?'},
+{id:'6.2',t:'¿El dinero de las propinas llega completo a sus trabajadores, sin que el negocio se quede con nada?',r:'A',tech:'No retención propinas — Art. 347 LFT',note:'¿Quién controla actualmente las propinas?'},
+{id:'6.3',t:'¿Las propinas que recibe su personal están consideradas al momento de calcular lo que se declara al IMSS?',r:'A',tech:'Integración propinas al SDI — Arts. 346-349 LFT · LSS',note:'¿Cómo se maneja este cálculo actualmente?'},
+{id:'6.4',t:'¿Lleva algún registro de las propinas que se distribuyen?',r:'M',tech:'Bitácora de propinas',note:'¿Cómo comprueban lo que se reparte?'},
 ]},
-{id:7,title:'Seguridad e higiene',desc:'NOM-019 · NOM-002 · NOM-017 · NOM-251-SSA1 · Arts. 509-512 LFT',
+{id:7,title:'Seguridad en el trabajo',desc:'Condiciones físicas y protección del personal en el establecimiento',
 qs:[
-{id:'7.1',t:'¿Existe Programa Anual de Seguridad e Higiene vigente elaborado por la Comisión?',r:'A'},
-{id:'7.2',t:'¿Se realizan recorridos de verificación periódicos y se levanta acta de cada uno?',r:'A',h:'Las actas de recorrido son la evidencia principal ante una inspección de la STPS.'},
-{id:'7.3',t:'¿Los extintores tienen carga vigente, están accesibles y el personal sabe usarlos?',r:'A'},
-{id:'7.4',t:'¿Las salidas de emergencia están señalizadas, libres de obstáculos y el personal las conoce?',r:'A'},
-{id:'7.5',t:'¿Se realizan simulacros de evacuación y se levanta acta de cada uno?',r:'M'},
-{id:'7.6',t:'¿El EPP asignado a cada puesto es el correcto y se usa efectivamente durante la jornada?',r:'A'},
-{id:'7.7',t:'¿Existe procedimiento escrito para el manejo seguro de gas, fuego y equipos de cocina?',r:'A'},
-{id:'7.8',t:'¿Existe lista de químicos autorizados con hojas de seguridad disponibles para el personal de limpieza?',r:'M'},
-{id:'7.9',t:'¿Se llevan bitácoras de control de temperaturas de conservación y cocción en cocina?',r:'M'},
-{id:'7.10',t:'¿Los accidentes de trabajo se reportaron al IMSS mediante la forma ST-7 en tiempo y forma?',r:'A',h:'La omisión puede hacer que el IMSS desconozca el carácter laboral del accidente.'},
-{id:'7.11',t:'¿El personal de cocina cuenta con certificado vigente de manipulador de alimentos?',r:'M'},
-{id:'7.12',t:'¿Existe botiquín de primeros auxilios completo, accesible y con inventario al día?',r:'M'},
+{id:'7.1',t:'¿Tiene extintores vigentes en su negocio y su personal sabe dónde están y cómo usarlos?',r:'A',tech:'NOM-002-STPS-2010 · Prevención incendios',note:'¿Cuándo fue la última recarga o revisión?'},
+{id:'7.2',t:'¿Las salidas de emergencia están señalizadas y siempre libres de obstáculos?',r:'A',tech:'Señalización — NOM-003-STPS',note:'¿Hay alguna que esté bloqueada o sin señal?'},
+{id:'7.3',t:'¿Su personal de cocina, barra y limpieza usa el equipo de protección que corresponde a su área (guantes, cofia, calzado antiderrapante)?',r:'A',tech:'EPP — NOM-017-STPS-2008',note:'¿Quién proporciona el equipo actualmente?'},
+{id:'7.4',t:'¿Tiene procedimientos definidos para el uso seguro del gas, la freidora, los cuchillos y los equipos de cocina?',r:'A',tech:'Manejo seguro equipos — NOM-019-STPS',note:'¿Cómo se capacita al personal en esto?'},
+{id:'7.5',t:'¿Los productos de limpieza (desengrasantes, desinfectantes, cloro) están almacenados en un lugar seguro y etiquetados?',r:'M',tech:'Manejo químicos — NOM-006-STPS',note:'¿Dónde se guardan actualmente?'},
+{id:'7.6',t:'¿Tiene un botiquín de primeros auxilios completo y accesible en el negocio?',r:'M',tech:'Primeros auxilios',note:'¿En qué área está y quién sabe usarlo?'},
+{id:'7.7',t:'¿Ha habido accidentes de trabajo en el último año?',r:'A',tech:'Accidentes — ST-7 IMSS · Arts. 509-512 LFT',note:'¿Qué tipo de accidentes y cómo se atendieron?'},
+{id:'7.8',t:'¿Realiza simulacros de emergencia o evacuación de vez en cuando?',r:'M',tech:'Simulacros — NOM-002-STPS',note:'¿Cuándo fue el último?'},
 ]},
-{id:8,title:'Capacitación',desc:'Planes, constancias y Comisión Mixta — Arts. 153-A a 153-F LFT',
+{id:8,title:'Capacitación del personal',desc:'Entrenamiento y desarrollo del equipo de trabajo',
 qs:[
-{id:'8.1',t:'¿Existe Plan y Programa de Capacitación registrado ante la STPS para el año en curso?',r:'A'},
-{id:'8.2',t:'¿Se expiden Constancias de Habilidades Laborales (DC-3) a los trabajadores que concluyen cursos?',r:'A'},
-{id:'8.3',t:'¿Los cursos cubren los temas esenciales: manejo de alimentos, seguridad, alcohol, NOM-035 y datos personales?',r:'M'},
-{id:'8.4',t:'¿Se conserva lista de asistencia firmada de cada sesión de capacitación?',r:'M'},
-{id:'8.5',t:'¿La Comisión Mixta de Capacitación sesiona periódicamente y levanta actas?',r:'M'},
+{id:'8.1',t:'¿Tiene registrados ante la Secretaría del Trabajo los cursos o entrenamientos que da a su personal?',r:'A',tech:'DC-1/DC-2 — Art. 153-E LFT',note:'¿Ha hecho algún trámite de capacitación ante la STPS?'},
+{id:'8.2',t:'¿Les entrega a sus trabajadores alguna constancia cuando terminan un curso o capacitación?',r:'A',tech:'Constancias DC-3 — Art. 153-T LFT',note:'¿Qué tipo de capacitación han recibido?'},
+{id:'8.3',t:'¿Su personal de cocina ha recibido capacitación en manejo higiénico de alimentos?',r:'M',tech:'NOM-251-SSA1-2009',note:'¿Tienen certificado vigente de manipulador de alimentos?'},
+{id:'8.4',t:'¿Ha capacitado a su personal sobre cómo servir alcohol de forma responsable (no servir a menores, no servir a personas en estado de ebriedad)?',r:'M',tech:'Servicio responsable de alcohol',note:'¿Tienen alguna instrucción al respecto?'},
 ]},
-{id:9,title:'NOM-035 y violencia laboral',desc:'Riesgo psicosocial — Obligación legal vigente desde 2019',
+{id:9,title:'Ambiente laboral',desc:'Cómo se relaciona el personal entre sí y con la dirección',
 qs:[
-{id:'9.1',t:'¿Tiene adoptada y difundida formalmente la Política de Prevención de Factores de Riesgo Psicosocial?',r:'A'},
-{id:'9.2',t:'¿Se ha realizado la evaluación de factores de riesgo psicosocial con la guía que corresponde al número de trabajadores?',r:'A',h:'Hasta 15 trabajadores: guía I. De 16 a 50: guía II. Más de 50: guía III con comisión formal.'},
-{id:'9.3',t:'¿Existe canal de denuncia de violencia laboral y acoso conocido por todo el personal?',r:'A'},
-{id:'9.4',t:'¿Existe protocolo de actuación frente a hostigamiento y acoso sexual documentado y difundido?',r:'A'},
-{id:'9.5',t:'¿Ha habido en el último año denuncias de acoso, hostigamiento o violencia en el establecimiento?',r:'A',h:'Anotar si se investigaron formalmente y cuál fue el resultado.'},
-{id:'9.6',t:'¿El personal ha recibido capacitación en prevención de violencia laboral y NOM-035 en el último año?',r:'M'},
+{id:'9.1',t:'¿Ha tenido quejas o situaciones de maltrato, acoso o conflictos graves entre el personal en el último año?',r:'A',tech:'NOM-035-STPS-2018 · Violencia laboral',note:'¿Cómo se resolvieron esas situaciones?'},
+{id:'9.2',t:'¿Su personal sabe a quién acudir si tiene un problema, una queja o se siente maltratado?',r:'A',tech:'Canal de denuncia — NOM-035 · Art. 132 fr. XXXI LFT',note:'¿Quién atiende actualmente ese tipo de situaciones?'},
+{id:'9.3',t:'¿Ha aplicado alguna encuesta o revisión del ambiente de trabajo en el último año?',r:'A',tech:'Evaluación factores riesgo psicosocial — NOM-035-STPS-2018',note:'¿Cómo evalúa el clima laboral actualmente?'},
+{id:'9.4',t:'¿Tiene por escrito una política de respeto y buen trato entre el personal?',r:'M',tech:'Política prevención violencia — NOM-035',note:'¿Existe algo parecido aunque sea informal?'},
 ]},
-{id:10,title:'Datos personales',desc:'Avisos de privacidad — LFPDPPP',
+{id:10,title:'Información y privacidad',desc:'Cómo se maneja la información de clientes y empleados',
 qs:[
-{id:'10.1',t:'¿Tiene Aviso de Privacidad para datos personales de clientes (reservaciones, facturación)?',r:'M'},
-{id:'10.2',t:'¿Existe Aviso de Privacidad para el personal entregado al inicio de la relación laboral?',r:'M'},
-{id:'10.3',t:'¿Los contratos contienen autorización del trabajador para el tratamiento de sus datos con fines laborales?',r:'M'},
-{id:'10.4',t:'¿El personal que accede a datos de clientes fue instruido sobre la prohibición de usarlos para fines personales?',r:'M'},
-{id:'10.5',t:'¿Las cámaras de seguridad están señalizadas e informado el personal y clientes de su existencia?',r:'B'},
+{id:'10.1',t:'¿Cuando sus clientes hacen una reservación y dejan sus datos (nombre, teléfono), les informa para qué se usará esa información?',r:'M',tech:'Aviso de Privacidad clientes — LFPDPPP',note:'¿Cómo recaban y usan esos datos actualmente?'},
+{id:'10.2',t:'¿Al contratar a un empleado, le informa cómo va a usar sus datos personales (CURP, domicilio, etc.)?',r:'M',tech:'Aviso de Privacidad personal — LFPDPPP',note:'¿Qué datos solicita al contratar?'},
+{id:'10.3',t:'¿Tiene cámaras de seguridad en su negocio? ¿Su personal y clientes saben que están ahí?',r:'B',tech:'Videovigilancia — LFPDPPP',note:'¿En qué áreas están instaladas?'},
 ]},
-{id:11,title:'Contingencias actuales',desc:'Situación disciplinaria, litigiosa y expedientes',
+{id:11,title:'Situación actual',desc:'Conflictos, expedientes y documentación del personal activo',
 qs:[
-{id:'11.1',t:'¿Existen demandas laborales activas contra el establecimiento en este momento?',r:'A',h:'Anotar número de asuntos, instancia y monto aproximado de pretensiones.'},
-{id:'11.2',t:'¿Ha habido rescisiones en el último año? ¿Se documentaron con acta de hechos y aviso escrito?',r:'A'},
-{id:'11.3',t:'¿Ha habido renuncias voluntarias en el último año? ¿Se elaboraron finiquitos firmados ante testigos?',r:'M'},
-{id:'11.4',t:'¿Existe expediente personal completo para cada trabajador activo: contrato, recibos, actas y acuses de RIT?',r:'A'},
-{id:'11.5',t:'¿Se han levantado actas de amonestación o suspensión en el último año con procedimiento correcto?',r:'A'},
-{id:'11.6',t:'¿Hay personas bajo honorarios o como independientes que en la práctica tienen características de relación laboral subordinada?',r:'A',h:'La simulación laboral mediante honorarios es una de las contingencias más frecuentes y costosas.'},
-{id:'11.7',t:'¿Existe protocolo para atender visitas de inspección de trabajo?',r:'M'},
+{id:'11.1',t:'¿Tiene en este momento algún trabajador que le haya puesto una demanda o presentado una queja formal?',r:'A',tech:'Demandas laborales activas',note:'¿Cuántos asuntos y en qué etapa están?'},
+{id:'11.2',t:'¿Ha despedido a algún trabajador en el último año? ¿Firmaron algún documento de terminación?',r:'A',tech:'Rescisión con acta y aviso — Art. 47 LFT',note:'¿Cómo se manejó esa separación?'},
+{id:'11.3',t:'¿Ha habido renuncias voluntarias en el último año? ¿Firmaron su liquidación o finiquito?',r:'M',tech:'Finiquito — renuncia voluntaria',note:'¿Cómo se tramitaron esas renuncias?'},
+{id:'11.4',t:'¿Tiene un expediente o archivo para cada trabajador con sus documentos (contrato, identificación, comprobante de pago)?',r:'A',tech:'Expediente laboral completo',note:'¿Qué documentos tiene actualmente por trabajador?'},
+{id:'11.5',t:'¿Cuando llama la atención a un trabajador por una falta, lo hace por escrito y queda firmado?',r:'A',tech:'Actas disciplinarias — procedimiento Art. 423 LFT',note:'¿Cómo maneja actualmente las sanciones?'},
+{id:'11.6',t:'¿Tiene trabajadores que le dan facturas o recibos de honorarios pero en la práctica trabajan como cualquier otro empleado (horario fijo, bajo sus órdenes)?',r:'A',tech:'Simulación relación laboral — contingencia fiscal y laboral',note:'¿Cuántas personas están en esa situación?'},
 ]},
 ];
 
@@ -367,97 +334,92 @@ const DOCS=[
   'Finiquito / liquidación — modelo base',
 ];
 
-// ═══════════════════════════════════════════════════════════
-// ESTADO — solo datos, nunca genera HTML
-// ═══════════════════════════════════════════════════════════
-let cur = 0;                          // bloque activo (BLOCKS.length = resumen)
-const A = {};                         // respuestas { qId: 'si'|'no'|'parcial' }
-const N = {};                         // notas { qId: texto }
-const PT = {};                        // plantilla { puestoId: numero }
-let persona = '';                     // 'pm' | 'pf'
-const PD = {nombre:'',rfc:'',regimen:'',representante:''};
-const DC = {};                        // doc checks
-let finalNotes = '';
+// ══════════════════════════════════════════════════════
+// ESTADO
+// ══════════════════════════════════════════════════════
+let cur=0;
+const A={}, N={}, PT={}, DC={};
+let persona='', finalNotes='';
+const PD={nombre:'',rfc:'',regimen:'',representante:''};
 
-// ═══════════════════════════════════════════════════════════
-// HELPERS PUROS (sin DOM)
-// ═══════════════════════════════════════════════════════════
-const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-const skip = q => q.dep && A[q.dep]==='no';
-const totalPt = () => Object.values(PT).reduce((s,v)=>s+(parseInt(v)||0),0);
-const answeredCount = () => {
+// ══════════════════════════════════════════════════════
+// HELPERS PUROS
+// ══════════════════════════════════════════════════════
+const esc=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const skip=q=>q.dep&&A[q.dep]==='no';
+const totalPt=()=>Object.values(PT).reduce((s,v)=>s+(parseInt(v)||0),0);
+const answeredCount=()=>{
   let n=0;
   BLOCKS.forEach(b=>b.qs.forEach(q=>{
-    if(skip(q)) return;
-    if(q.tipo==='persona' && persona) n++;
-    else if(q.tipo==='puestos' && totalPt()>0) n++;
-    else if(!q.tipo && A[q.id]) n++;
+    if(skip(q))return;
+    if(q.tipo==='persona'&&persona)n++;
+    else if(q.tipo==='puestos'&&totalPt()>0)n++;
+    else if(!q.tipo&&A[q.id])n++;
   }));
   return n;
 };
-const visibleCount = () => BLOCKS.reduce((s,b)=>s+b.qs.filter(q=>!skip(q)).length, 0);
-const blkAnswered = b => b.qs.filter(q=>{
-  if(skip(q)) return true;
-  if(q.tipo==='persona') return !!persona;
-  if(q.tipo==='puestos') return totalPt()>0;
-  return !!A[q.id];
+const visibleCount=()=>BLOCKS.reduce((s,b)=>s+b.qs.filter(q=>!skip(q)).length,0);
+const blkAnswered=b=>b.qs.filter(q=>{
+  if(skip(q))return true;
+  if(q.tipo==='persona')return!!persona;
+  if(q.tipo==='puestos')return totalPt()>0;
+  return!!A[q.id];
 }).length;
-const blkRisk = b => {
-  const hasA = b.qs.some(q=>!skip(q)&&(A[q.id]==='no'||A[q.id]==='parcial')&&q.r==='A');
-  const midN = b.qs.filter(q=>!skip(q)&&(A[q.id]==='no'||A[q.id]==='parcial')&&q.r==='M').length;
-  if(hasA) return 'A';
-  if(midN>1) return 'M';
-  if(!b.qs.some(q=>A[q.id]||q.tipo)) return null;
-  return 'B';
+const blkRisk=b=>{
+  const hasA=b.qs.some(q=>!skip(q)&&(A[q.id]==='no'||A[q.id]==='medias')&&q.r==='A');
+  const midN=b.qs.filter(q=>!skip(q)&&(A[q.id]==='no'||A[q.id]==='medias')&&q.r==='M').length;
+  if(hasA)return'A';
+  if(midN>1)return'M';
+  if(!b.qs.some(q=>A[q.id]||q.tipo))return null;
+  return'B';
 };
 
-// ═══════════════════════════════════════════════════════════
-// GENERADORES DE HTML (llamados solo en init o cambio de bloque)
-// ═══════════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════
+// GENERADORES HTML — usados solo en init/cambio de bloque
+// ══════════════════════════════════════════════════════
 function buildTabs(){
-  const c = document.getElementById('tabs');
+  const c=document.getElementById('tabs');
   let h='';
-  BLOCKS.forEach((b,i)=>{ h+=`<button type="button" class="tab" id="tab-${i}" onclick="go(${i})"><span class="tab-dot" id="tdot-${i}"></span>${b.id}. ${b.title}</button>`; });
+  BLOCKS.forEach((b,i)=>{h+=`<button type="button" class="tab" id="tab-${i}" onclick="go(${i})"><span class="tab-dot" id="tdot-${i}"></span>${b.id}. ${b.title}</button>`;});
   h+=`<button type="button" class="tab" id="tab-${BLOCKS.length}" onclick="go(${BLOCKS.length})"><span class="tab-dot"></span>Diagnóstico</button>`;
   c.innerHTML=h;
 }
 
 function htmlPersona(){
-  const pm=persona==='pm', pf=persona==='pf';
-  return `<div class="persona-wrap" id="card-1.1">
-    <div class="persona-q-hdr">
-      <span class="q-num">1.1</span>
-      <span class="q-txt">¿Bajo qué figura jurídica opera el patrón?</span>
-      <span class="risk risk-B"></span>
+  const pm=persona==='pm',pf=persona==='pf';
+  return`<div class="persona-wrap" id="card-1.1">
+    <div class="persona-hdr">
+      <span class="qc-num">1.1</span>
+      <span class="qc-txt">¿Cómo está constituido legalmente su negocio?</span>
     </div>
     <div class="persona-opts">
-      <div class="p-card${pm?' sel':''}" id="pcard-pm" onclick="selPersona('pm')">
-        <div class="p-icon">🏢</div>
-        <div class="p-title">Persona Moral</div>
-        <div class="p-sub">SA de CV, SRL, AC, etc.</div>
+      <div class="pc${pm?' sel':''}" id="pcard-pm" onclick="selPersona('pm')">
+        <div class="pc-icon">🏢</div>
+        <div class="pc-title">Persona Moral</div>
+        <div class="pc-sub">SA de CV, SRL, AC, etc.</div>
       </div>
-      <div class="p-card${pf?' sel':''}" id="pcard-pf" onclick="selPersona('pf')">
-        <div class="p-icon">👤</div>
-        <div class="p-title">Persona Física</div>
-        <div class="p-sub">Con Actividad Empresarial</div>
+      <div class="pc${pf?' sel':''}" id="pcard-pf" onclick="selPersona('pf')">
+        <div class="pc-icon">👤</div>
+        <div class="pc-title">Persona Física</div>
+        <div class="pc-sub">Con Actividad Empresarial</div>
       </div>
     </div>
     <div class="persona-fields">
-      <div class="pf-grp full">
-        <label class="pf-lbl" for="pd-nombre">${pm?'Denominación o razón social':'Nombre completo del patrón'}</label>
-        <input class="pf-in" id="pd-nombre" type="text" placeholder="${pm?'Ej. Restaurantes del Centro SA de CV':'Ej. Juan Pérez García'}" value="${esc(PD.nombre)}" oninput="pdSet('nombre',this.value)">
+      <div class="pf-g full">
+        <label class="pf-lbl" for="pd-nombre">${persona==='pm'?'Nombre de la empresa':'Su nombre completo'}</label>
+        <input class="pf-in" id="pd-nombre" type="text" placeholder="${persona==='pm'?'Ej. Restaurantes del Centro SA de CV':'Ej. Juan Pérez García'}" value="${esc(PD.nombre)}" oninput="pdSet('nombre',this.value)">
       </div>
-      <div class="pf-grp">
+      <div class="pf-g">
         <label class="pf-lbl" for="pd-rfc">RFC</label>
-        <input class="pf-in" id="pd-rfc" type="text" placeholder="${pm?'Ej. RCE850301ABC':'Ej. PEGJ850301XYZ'}" value="${esc(PD.rfc)}" style="text-transform:uppercase" oninput="pdSet('rfc',this.value.toUpperCase())">
+        <input class="pf-in" id="pd-rfc" type="text" placeholder="${persona==='pm'?'Ej. RCE850301ABC':'Ej. PEGJ850301XYZ'}" value="${esc(PD.rfc)}" style="text-transform:uppercase" oninput="pdSet('rfc',this.value.toUpperCase())">
       </div>
-      <div class="pf-grp">
-        <label class="pf-lbl" for="pd-reg">Régimen fiscal (SAT)</label>
+      <div class="pf-g">
+        <label class="pf-lbl" for="pd-reg">Régimen fiscal</label>
         <input class="pf-in" id="pd-reg" type="text" placeholder="Ej. General de Ley, RESICO..." value="${esc(PD.regimen)}" oninput="pdSet('regimen',this.value)">
       </div>
-      ${pm?`<div class="pf-grp full">
+      ${persona==='pm'?`<div class="pf-g full" id="rep-grp">
         <label class="pf-lbl" for="pd-rep">Representante legal</label>
-        <input class="pf-in" id="pd-rep" type="text" placeholder="Nombre completo del representante o apoderado" value="${esc(PD.representante)}" oninput="pdSet('representante',this.value)">
+        <input class="pf-in" id="pd-rep" type="text" placeholder="Nombre completo de quien representa a la empresa" value="${esc(PD.representante)}" oninput="pdSet('representante',this.value)">
       </div>`:''}
     </div>
   </div>`;
@@ -477,13 +439,11 @@ function htmlPuestos(){
     </div>`;
   });
   const tot=totalPt();
-  return `<div style="padding:14px 18px" id="card-1.2">
-    <div class="puestos-q-hdr">
-      <span class="q-num">1.2</span>
-      <span class="q-txt">¿Cuántas personas trabajan actualmente en el establecimiento?</span>
-      <span class="risk risk-B"></span>
+  return`<div class="puestos-wrap" id="card-1.2">
+    <div class="puestos-hdr">
+      <span class="qc-num">1.2</span>
+      <span class="qc-txt">¿Cuántas personas trabajan en su negocio en este momento?</span>
     </div>
-    <div class="puestos-hint">Indique el número por puesto. Dimensiona las obligaciones y la paquetería necesaria.</div>
     <div class="puestos-grid">${rows}</div>
     <div class="pt-total">
       <span>Total en plantilla</span>
@@ -495,94 +455,106 @@ function htmlPuestos(){
 function htmlQ(q){
   const sk=skip(q);
   const v=A[q.id]||'';
-  const cardCls='q-card'+(sk?' skipped':v?' '+v:'');
-  const showN=!sk&&(v==='no'||v==='parcial');
-  return `<div class="${cardCls}" id="qcard-${q.id}">
-    <div class="q-body">
-      <div class="q-hdr">
-        <span class="q-num">${esc(q.id)}</span>
-        <span class="q-txt">${esc(q.t)}</span>
-        <span class="risk risk-${q.r}"></span>
+  const showN=!sk&&(v==='no'||v==='medias');
+  return`<div class="qc${sk?' skipped':v?' '+v:''}" id="qcard-${q.id}">
+    <div class="qc-body">
+      <div class="qc-hdr">
+        <span class="qc-num">${esc(q.id)}</span>
+        <span class="qc-txt">${esc(q.t)}</span>
       </div>
-      ${q.h&&!sk?`<div class="q-hint">${esc(q.h)}</div>`:''}
-      ${sk?`<div class="q-hint skip-hint">Omitida — no aplica sin contratos escritos</div>`:''}
+      ${sk?`<div style="font-size:12px;color:var(--amber);padding:4px 0 6px">— No aplica: no hay contratos escritos</div>`:''}
       ${!sk?`<div class="ans-row">
-        <button type="button" class="ans${v==='si'?' si':''}" id="ans-${q.id}-si" onclick="setA('${q.id}','si')">✓ Sí</button>
-        <button type="button" class="ans${v==='no'?' no':''}" id="ans-${q.id}-no" onclick="setA('${q.id}','no')">✗ No</button>
-        <button type="button" class="ans${v==='parcial'?' parcial':''}" id="ans-${q.id}-parcial" onclick="setA('${q.id}','parcial')">~ Parcial</button>
+        <button type="button" class="ab${v==='si'?' si':''}" id="ab-${q.id}-si" onclick="setA('${q.id}','si')">✓ Sí</button>
+        <button type="button" class="ab${v==='no'?' no':''}" id="ab-${q.id}-no" onclick="setA('${q.id}','no')">✗ No</button>
+        <button type="button" class="ab${v==='medias'?' medias':''}" id="ab-${q.id}-medias" onclick="setA('${q.id}','medias')">~ A medias</button>
       </div>`:''}
     </div>
-    <div class="q-notes${showN?' show':''}" id="qnotes-${q.id}">
-      <div class="notes-lbl">Notas / detalle</div>
-      <textarea placeholder="Anote los detalles relevantes para el expediente..." onchange="N['${q.id}']=this.value" oninput="ar(this)">${esc(N[q.id]||'')}</textarea>
-    </div>
+    ${!sk?`<div class="qnotes${showN?' show':''}" id="qnotes-${q.id}">
+      <div class="qnotes-lbl">${q.note||'Cuéntenos más'}</div>
+      <div class="qnotes"><textarea placeholder="Escriba aquí los detalles..." onchange="N['${q.id}']=this.value" oninput="ar(this)">${esc(N[q.id]||'')}</textarea></div>
+    </div>`:''}
   </div>`;
 }
 
 function htmlBlock(b){
-  const ba=blkAnswered(b), bt=b.qs.length;
-  const pct=Math.round((ba/bt)*100);
-  const skipBanner=b.id===2&&A['2.1']==='no'
-    ?`<div class="skip-notice"><strong>Las preguntas 2.2 a 2.10 se omiten</strong> porque no hay contratos escritos. Elaborar contratos para todo el personal es la acción de mayor prioridad.</div>`:'' ;
+  const ba=blkAnswered(b),bt=b.qs.length,pct=Math.round((ba/bt)*100);
+  const skipB=b.id===2&&A['2.1']==='no';
   let qhtml='';
   b.qs.forEach(q=>{
-    if(q.tipo==='persona') qhtml+=htmlPersona();
-    else if(q.tipo==='puestos') qhtml+=htmlPuestos();
+    if(q.tipo==='persona')qhtml+=htmlPersona();
+    else if(q.tipo==='puestos')qhtml+=htmlPuestos();
     else qhtml+=htmlQ(q);
   });
-  return `<div class="blk-hd">
-    <span class="blk-badge">Bloque ${b.id}</span>
+  return`<div class="blk-hd">
+    <span class="blk-badge">Tema ${b.id} de ${BLOCKS.length}</span>
     <div class="blk-title">${esc(b.title)}</div>
     <div class="blk-desc">${esc(b.desc)}</div>
-    <div class="blk-prog-row">
+    <div class="blk-prog">
       <div class="blk-prog-bar"><div class="blk-prog-fill" id="bpf" style="width:${pct}%"></div></div>
-      <div class="blk-prog-lbl" id="bpl">${ba} / ${bt} respondidas</div>
+      <div class="blk-prog-lbl" id="bpl">${ba} / ${bt} preguntas</div>
     </div>
   </div>
-  ${skipBanner}${qhtml}`;
+  ${skipB?`<div class="skip-notice">Las preguntas siguientes sobre contratos se omiten porque indicó que no hay contratos firmados.</div>`:''}
+  ${qhtml}`;
 }
 
 function htmlSummary(){
   const allQ=BLOCKS.flatMap(b=>b.qs).filter(q=>!q.tipo&&!skip(q));
-  const issues=allQ.filter(q=>A[q.id]==='no'||A[q.id]==='parcial');
-  const hi=issues.filter(q=>q.r==='A'), mi=issues.filter(q=>q.r==='M');
-  const sc=A['2.1']==='no';
+  const issues=allQ.filter(q=>A[q.id]==='no'||A[q.id]==='medias');
+  const hi=issues.filter(q=>q.r==='A'),mi=issues.filter(q=>q.r==='M');
   let h=`<div class="sum-hero">
-    <h2>Diagnóstico de cumplimiento laboral</h2>
+    <h2>Resumen del diagnóstico</h2>
     <div class="sum-stats">
-      <div class="sum-stat"><div class="sum-stat-v">${answeredCount()}</div><div class="sum-stat-l">Preguntas atendidas</div></div>
-      <div class="sum-stat"><div class="sum-stat-v${issues.length?' r':''}">${issues.length}</div><div class="sum-stat-l">Incumplimientos</div></div>
-      <div class="sum-stat"><div class="sum-stat-v${hi.length?' r':''}">${hi.length}</div><div class="sum-stat-l">Riesgo ALTO</div></div>
-      <div class="sum-stat"><div class="sum-stat-v${mi.length?' a':''}">${mi.length}</div><div class="sum-stat-l">Riesgo MEDIO</div></div>
+      <div class="ss"><div class="ss-v">${answeredCount()}</div><div class="ss-l">Preguntas atendidas</div></div>
+      <div class="ss"><div class="ss-v${issues.length?' r':''}">${issues.length}</div><div class="ss-l">Áreas de atención</div></div>
+      <div class="ss"><div class="ss-v${hi.length?' r':''}">${hi.length}</div><div class="ss-l">Prioridad alta</div></div>
+      <div class="ss"><div class="ss-v${mi.length?' a':''}">${mi.length}</div><div class="ss-l">Prioridad media</div></div>
     </div>
   </div>`;
-  if(sc) h+=`<div class="ncb"><div class="ncb-icon">⚠️</div><div><h4>Personal sin contrato escrito — máxima prioridad</h4><p>Las preguntas 2.2–2.10 fueron omitidas. Elaborar contratos para cada puesto activo es la primera acción del plan de trabajo.</p></div></div>`;
-  // semáforo
-  h+=`<div class="sum-card"><div class="sum-card-hd">Semáforo por bloque — clic para ir al bloque</div>`;
+  // Semáforo
+  h+=`<div class="sum-card"><div class="sum-card-hd">Estado por tema — clic para ir al tema</div>`;
   BLOCKS.forEach((b,i)=>{
     const r=blkRisk(b);
-    const bi=b.qs.filter(q=>!skip(q)&&(A[q.id]==='no'||A[q.id]==='parcial')).length;
+    const bi=b.qs.filter(q=>!skip(q)&&(A[q.id]==='no'||A[q.id]==='medias')).length;
     h+=`<div class="sem-row" onclick="go(${i})">
-      <div class="sem-blk"><div class="sem-blk-n">Bloque ${b.id}</div><div class="sem-blk-t">${esc(b.title)}</div></div>
-      <div class="sem-cnt">${bi>0?bi+' problema'+(bi>1?'s':''):''}</div>
+      <div class="sem-blk"><div class="sem-blk-n">Tema ${b.id}</div><div class="sem-blk-t">${esc(b.title)}</div></div>
+      <div style="font-size:12px;font-weight:600;color:var(--sub);white-space:nowrap">${bi>0?bi+' a revisar':''}</div>
       <span class="sbadge ${r?'sbadge-'+r:'sbadge-n'}">${r?{A:'ALTO',M:'MEDIO',B:'BAJO'}[r]:'Sin responder'}</span>
     </div>`;
   });
   h+=`</div>`;
   if(hi.length){
-    h+=`<div class="sum-card"><div class="sum-card-hd" style="color:var(--red)">Contingencias de atención inmediata — Riesgo ALTO</div>`;
-    hi.forEach(q=>{ h+=`<div class="issue-row"><div class="ibadge-A">ALTO</div><div><div class="issue-id">${esc(q.id)}</div><div class="issue-t">${esc(q.t)}</div>${N[q.id]?`<div class="issue-note">↳ ${esc(N[q.id])}</div>`:''}</div></div>`; });
+    h+=`<div class="sum-card"><div class="sum-card-hd" style="color:var(--red)">Atención inmediata — Riesgo alto</div>`;
+    hi.forEach(q=>{
+      h+=`<div class="issue-row">
+        <div class="ibadge ibadge-A">ALTO</div>
+        <div>
+          <div class="issue-id">${esc(q.id)} · ${esc(q.tech||'')}</div>
+          <div class="issue-t">${esc(q.t)}</div>
+          ${N[q.id]?`<div class="issue-note">↳ ${esc(N[q.id])}</div>`:''}
+        </div>
+      </div>`;
+    });
     h+=`</div>`;
   }
   if(mi.length){
-    h+=`<div class="sum-card"><div class="sum-card-hd" style="color:var(--amber)">Contingencias de seguimiento — Riesgo MEDIO</div>`;
-    mi.forEach(q=>{ h+=`<div class="issue-row"><div class="ibadge-M">MEDIO</div><div><div class="issue-id">${esc(q.id)}</div><div class="issue-t">${esc(q.t)}</div>${N[q.id]?`<div class="issue-note">↳ ${esc(N[q.id])}</div>`:''}</div></div>`; });
+    h+=`<div class="sum-card"><div class="sum-card-hd" style="color:var(--amber)">Seguimiento — Riesgo medio</div>`;
+    mi.forEach(q=>{
+      h+=`<div class="issue-row">
+        <div class="ibadge ibadge-M">MEDIO</div>
+        <div>
+          <div class="issue-id">${esc(q.id)} · ${esc(q.tech||'')}</div>
+          <div class="issue-t">${esc(q.t)}</div>
+          ${N[q.id]?`<div class="issue-note">↳ ${esc(N[q.id])}</div>`:''}
+        </div>
+      </div>`;
+    });
     h+=`</div>`;
   }
   h+=`<div class="sum-card"><div class="sum-card-hd">Paquetería necesaria</div><div class="doc-grid">`;
-  DOCS.forEach((d,i)=>{ h+=`<label class="doc-item${DC[i]?' chk':''}"><input type="checkbox" ${DC[i]?'checked':''} onchange="setDC(${i},this.checked)"><span>${esc(d)}</span></label>`; });
+  DOCS.forEach((d,i)=>{h+=`<label class="doc-item${DC[i]?' chk':''}"><input type="checkbox" ${DC[i]?'checked':''} onchange="setDC(${i},this.checked)"><span>${esc(d)}</span></label>`;});
   h+=`</div></div>`;
-  h+=`<div class="sum-card"><div class="sum-card-hd">Observaciones y estrategia — uso exclusivo del despacho</div>
+  h+=`<div class="sum-card"><div class="sum-card-hd">Observaciones y estrategia — uso del despacho</div>
     <div class="sum-notes"><textarea placeholder="Contingencia más urgente · Estrategia · Honorarios · Fecha de inicio..." onchange="finalNotes=this.value" oninput="ar(this)">${esc(finalNotes)}</textarea></div>
     <div class="sum-actions">
       <button type="button" class="s-btn s-btn-sec" onclick="window.print()">🖨 Imprimir / PDF</button>
@@ -591,21 +563,12 @@ function htmlSummary(){
   return h;
 }
 
-// ═══════════════════════════════════════════════════════════
-// RENDER INICIAL + CAMBIO DE BLOQUE
-// ═══════════════════════════════════════════════════════════
-function init(){
-  buildTabs();
-  paintTabs();
-  showBlock();
-  updateProg();
-  updateNav();
-}
-
+// ══════════════════════════════════════════════════════
+// RENDER — solo en init y go()
+// ══════════════════════════════════════════════════════
 function showBlock(){
-  // Genera el HTML del bloque activo y lo inyecta
   const m=document.getElementById('main');
-  m.innerHTML = cur===BLOCKS.length ? htmlSummary() : htmlBlock(BLOCKS[cur]);
+  m.innerHTML=cur===BLOCKS.length?htmlSummary():htmlBlock(BLOCKS[cur]);
   m.querySelectorAll('textarea').forEach(ta=>{ta.style.height='auto';ta.style.height=ta.scrollHeight+'px';});
 }
 
@@ -616,168 +579,127 @@ function go(i){
   updateNav();
   updateProg();
   window.scrollTo({top:0,behavior:'smooth'});
-  // Asegurar que el tab activo sea visible
-  const at=document.getElementById('tab-'+cur);
-  if(at) at.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
+  document.getElementById('tab-'+cur)?.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
 }
 
-// ═══════════════════════════════════════════════════════════
-// ACCIONES — SOLO MUTACIONES DOM, SIN innerHTML
-// ═══════════════════════════════════════════════════════════
+function init(){
+  buildTabs();
+  paintTabs();
+  showBlock();
+  updateProg();
+  updateNav();
+}
 
-// Respuesta Sí/No/Parcial
+// ══════════════════════════════════════════════════════
+// ACCIONES — SOLO mutaciones quirúrgicas, NUNCA innerHTML
+// ══════════════════════════════════════════════════════
 function setA(id,val){
   A[id]=val;
-
-  // Pivote 2.1: necesita re-render del bloque (aparece banner + skip)
-  // pero restauramos el scroll para no saltar
+  // Pivote 2.1 — necesita re-render para el banner, restauramos scroll
   if(id==='2.1'){
     const sy=window.scrollY;
     showBlock();
     requestAnimationFrame(()=>window.scrollTo({top:sy,behavior:'instant'}));
-    paintTabs();
-    updateProg();
+    paintTabs();updateProg();
     return;
   }
-
-  // Para cualquier otra pregunta: mutación quirúrgica
-  // 1. Color de la tarjeta
+  // Todas las demás: mutación quirúrgica
   const card=document.getElementById('qcard-'+id);
-  if(card) card.className='q-card '+val;
-
-  // 2. Estado de los tres botones
-  ['si','no','parcial'].forEach(opt=>{
-    const btn=document.getElementById('ans-'+id+'-'+opt);
-    if(btn) btn.className='ans'+(val===opt?' '+opt:'');
+  if(card) card.className='qc '+val;
+  ['si','no','medias'].forEach(opt=>{
+    const btn=document.getElementById('ab-'+id+'-'+opt);
+    if(btn) btn.className='ab'+(val===opt?' '+opt:'');
   });
-
-  // 3. Notas: mostrar si No o Parcial
   const nd=document.getElementById('qnotes-'+id);
-  if(nd) nd.className='q-notes'+(val==='no'||val==='parcial'?' show':'');
-
-  // 4. Barra de progreso del bloque
+  if(nd) nd.className='qnotes'+(val==='no'||val==='medias'?' show':'');
+  // barra de progreso del bloque
   if(cur<BLOCKS.length){
-    const b=BLOCKS[cur];
-    const ba=blkAnswered(b), pct=Math.round((ba/b.qs.length)*100);
-    const bf=document.getElementById('bpf');
-    const bl=document.getElementById('bpl');
-    if(bf) bf.style.width=pct+'%';
-    if(bl) bl.textContent=`${ba} / ${b.qs.length} respondidas`;
+    const b=BLOCKS[cur],ba=blkAnswered(b),pct=Math.round((ba/b.qs.length)*100);
+    const bf=document.getElementById('bpf'),bl=document.getElementById('bpl');
+    if(bf)bf.style.width=pct+'%';
+    if(bl)bl.textContent=`${ba} / ${b.qs.length} preguntas`;
   }
-
-  paintTabs();
-  updateProg();
+  paintTabs();updateProg();
 }
 
-// Persona jurídica
 function selPersona(tipo){
   persona=tipo;
-  // Actualizar solo las clases de las tarjetas de persona (sin innerHTML)
+  // solo mutar clases de las tarjetas
   ['pm','pf'].forEach(t=>{
     const c=document.getElementById('pcard-'+t);
-    if(c) c.className='p-card'+(tipo===t?' sel':'');
+    if(c)c.className='pc'+(tipo===t?' sel':'');
   });
-  // Si cambia el tipo, actualizar labels de los campos
+  // actualizar label y placeholder del nombre
   const lNombre=document.querySelector('label[for="pd-nombre"]');
-  if(lNombre) lNombre.textContent=tipo==='pm'?'Denominación o razón social':'Nombre completo del patrón';
-  const inNombre=document.getElementById('pd-nombre');
-  if(inNombre) inNombre.placeholder=tipo==='pm'?'Ej. Restaurantes del Centro SA de CV':'Ej. Juan Pérez García';
-  const inRfc=document.getElementById('pd-rfc');
-  if(inRfc) inRfc.placeholder=tipo==='pm'?'Ej. RCE850301ABC':'Ej. PEGJ850301XYZ';
-  // Campo representante: aparece solo en Persona Moral
-  const repWrap=document.getElementById('pd-rep');
-  if(!repWrap&&tipo==='pm'){
-    // Añadir campo representante sin reemplazar nada
-    const pf=document.querySelector('.persona-fields');
-    if(pf){
-      const d=document.createElement('div');
-      d.className='pf-grp full';
-      d.innerHTML='<label class="pf-lbl" for="pd-rep">Representante legal</label><input class="pf-in" id="pd-rep" type="text" placeholder="Nombre completo del representante o apoderado" oninput="pdSet(\'representante\',this.value)">';
-      pf.appendChild(d);
-    }
-  } else if(repWrap&&tipo==='pf'){
-    repWrap.closest('.pf-grp')&&repWrap.closest('.pf-grp').remove();
-  }
-  updateProg();
-  paintTabs();
+  if(lNombre)lNombre.textContent=tipo==='pm'?'Nombre de la empresa':'Su nombre completo';
+  const iNombre=document.getElementById('pd-nombre');
+  if(iNombre)iNombre.placeholder=tipo==='pm'?'Ej. Restaurantes del Centro SA de CV':'Ej. Juan Pérez García';
+  const iRfc=document.getElementById('pd-rfc');
+  if(iRfc)iRfc.placeholder=tipo==='pm'?'Ej. RCE850301ABC':'Ej. PEGJ850301XYZ';
+  // campo representante: añadir/quitar sin reemplazar nada más
+  const repGrp=document.getElementById('rep-grp');
+  const pfields=document.querySelector('.persona-fields');
+  if(tipo==='pm'&&!repGrp&&pfields){
+    const d=document.createElement('div');
+    d.className='pf-g full';d.id='rep-grp';
+    d.innerHTML='<label class="pf-lbl" for="pd-rep">Representante legal</label><input class="pf-in" id="pd-rep" type="text" placeholder="Nombre completo de quien representa a la empresa" oninput="pdSet(\'representante\',this.value)">';
+    pfields.appendChild(d);
+  }else if(tipo==='pf'&&repGrp){repGrp.remove();}
+  updateProg();paintTabs();
 }
 
-function pdSet(field,val){ PD[field]=val; }
+function pdSet(field,val){PD[field]=val;}
 
-// Steppers de puestos — NUNCA re-renderizan, solo tocan el input y el total
 function adjPT(id,delta){
   const inp=document.getElementById('pt-'+id);
-  if(!inp) return;
+  if(!inp)return;
   const nv=Math.max(0,(parseInt(inp.value)||0)+delta);
-  inp.value=nv;
-  PT[id]=nv;
-  updPTTotal();
+  inp.value=nv;PT[id]=nv;updPTTotal();
 }
-function setPT(id,val){
-  PT[id]=Math.max(0,parseInt(val)||0);
-  updPTTotal();
-}
+function setPT(id,val){PT[id]=Math.max(0,parseInt(val)||0);updPTTotal();}
 function updPTTotal(){
-  const el=document.getElementById('pt-tot');
-  const tot=totalPt();
-  if(el) el.textContent=`${tot} persona${tot!==1?'s':''}`;
-  updateProg();
-  paintTabs();
+  const el=document.getElementById('pt-tot'),tot=totalPt();
+  if(el)el.textContent=`${tot} persona${tot!==1?'s':''}`;
+  updateProg();paintTabs();
 }
 
-// Doc checks en resumen
 function setDC(i,v){
   DC[i]=v;
   const items=document.querySelectorAll('.doc-item');
-  if(items[i]) items[i].className='doc-item'+(v?' chk':'');
+  if(items[i])items[i].className='doc-item'+(v?' chk':'');
 }
 
-// ═══════════════════════════════════════════════════════════
-// ACTUALIZADORES LIGEROS DE UI
-// ═══════════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════
+// ACTUALIZADORES LIGEROS
+// ══════════════════════════════════════════════════════
 function updateProg(){
-  const ac=answeredCount(), tot=visibleCount();
-  const pct=tot>0?Math.round((ac/tot)*100):0;
-  const gp=document.getElementById('gp');
-  const gc=document.getElementById('gpct');
-  if(gp) gp.style.width=pct+'%';
-  if(gc) gc.textContent=pct+'%';
+  const ac=answeredCount(),tot=visibleCount(),pct=tot>0?Math.round((ac/tot)*100):0;
+  const gp=document.getElementById('gp'),gc=document.getElementById('gpct');
+  if(gp)gp.style.width=pct+'%';
+  if(gc)gc.textContent=pct+'%';
 }
-
 function paintTabs(){
   BLOCKS.forEach((b,i)=>{
-    const t=document.getElementById('tab-'+i);
-    const d=document.getElementById('tdot-'+i);
-    if(!t) return;
-    const r=blkRisk(b), done=blkAnswered(b)===b.qs.length;
+    const t=document.getElementById('tab-'+i),d=document.getElementById('tdot-'+i);
+    if(!t)return;
+    const r=blkRisk(b),done=blkAnswered(b)===b.qs.length;
     t.className='tab'+(cur===i?' active':r==='A'?' warn':done?' done':'');
-    if(d) d.style.background=r==='A'?'var(--red)':r==='M'?'var(--amber)':done?'var(--green)':'transparent';
+    if(d)d.style.background=r==='A'?'var(--red)':r==='M'?'var(--amber)':done?'var(--green)':'transparent';
   });
   const st=document.getElementById('tab-'+BLOCKS.length);
-  if(st) st.className='tab'+(cur===BLOCKS.length?' active':'');
+  if(st)st.className='tab'+(cur===BLOCKS.length?' active':'');
 }
-
 function updateNav(){
-  const prev=document.getElementById('btnPrev');
-  const next=document.getElementById('btnNext');
-  const lbl=document.getElementById('navLbl');
-  if(prev) prev.disabled=(cur===0);
+  const prev=document.getElementById('btnPrev'),next=document.getElementById('btnNext'),lbl=document.getElementById('navLbl');
+  if(prev)prev.disabled=(cur===0);
   if(next){
-    if(cur===BLOCKS.length){ next.textContent='Reiniciar'; next.onclick=()=>{if(confirm('¿Reiniciar?'))location.reload();}; }
-    else { next.textContent='Siguiente →'; next.onclick=()=>go(cur+1); }
+    if(cur===BLOCKS.length){next.textContent='Reiniciar';next.onclick=()=>{if(confirm('¿Reiniciar el diagnóstico?'))location.reload();};}
+    else{next.textContent='Siguiente →';next.onclick=()=>go(cur+1);}
   }
-  if(lbl){
-    lbl.innerHTML= cur===BLOCKS.length
-      ? '<strong>Diagnóstico final</strong>'
-      : `<strong>${BLOCKS[cur].title}</strong><br>Bloque ${BLOCKS[cur].id} de ${BLOCKS.length}`;
-  }
+  if(lbl)lbl.innerHTML=cur===BLOCKS.length?'<strong>Diagnóstico final</strong>':`<strong>${BLOCKS[cur].title}</strong><br>Tema ${BLOCKS[cur].id} de ${BLOCKS.length}`;
 }
-
 function ar(el){el.style.height='auto';el.style.height=el.scrollHeight+'px';}
 
-// ═══════════════════════════════════════════════════════════
-// INICIO
-// ═══════════════════════════════════════════════════════════
 init();
 </script>
 </body>
